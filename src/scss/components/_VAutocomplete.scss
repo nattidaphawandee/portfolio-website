@@ -1,0 +1,26 @@
+.v-text-field input {
+  // background-color: green;
+  font-size: 0.875rem;
+}
+.v-input--density-default {
+  .v-field__input {
+    min-height: 54px;
+  }
+}
+
+.v-field__outline {
+  color: rgb(var(--v-theme-inputBorder));
+}
+.inputWithbg {
+  .v-field--variant-outlined {
+    background-color: rgba(0, 0, 0, 0.025);
+    border-radius: 12px !important;
+  }
+}
+.v-autocomplete {
+  .v-input--density-default {
+    .v-input__control {
+      height: 54px !important;
+    }
+  }
+}

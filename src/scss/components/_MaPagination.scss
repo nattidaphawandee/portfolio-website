@@ -1,0 +1,26 @@
+.pagination-main {
+  width: 100%;
+  padding: 12px 10px 10px 10px;
+  // background-color: pink;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  .title-pagination {
+    font-size: 14px;
+    padding-top: 5px;
+  }
+  .v-field__input {
+    padding-right: 0 !important;
+    // padding-bottom: 10px !important;
+  }
+  .title-pagination-page {
+    padding: 7px 10px 0 10px !important;
+    font-size: 15px;
+  }
+  .pagination-btn {
+    padding: 7px 10px 0 10px !important;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}

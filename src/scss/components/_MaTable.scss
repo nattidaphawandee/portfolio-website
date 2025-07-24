@@ -1,0 +1,77 @@
+.table-main {
+  height: 100%;
+  width: 100%;
+  .table-prepend {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .prepend-space {
+    padding: 0 15px 10px 15px;
+  }
+  .table-body {
+    .custom-table-ma {
+      border-bottom: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+      .v-table__wrapper {
+        table {
+          thead {
+            tr {
+              th {
+                font-size: 15px;
+              }
+              // mobile break point ปิดกล่อง sort เหลือกล่อง th
+              th.v-data-table-headers--mobile {
+                height: 20px;
+                .v-data-table-header__content {
+                  display: none;
+                }
+              }
+              .v-data-table-header__content {
+                text-wrap: nowrap !important ;
+              }
+            }
+          }
+        }
+      }
+
+      // ยังไม่ mobile break point
+      tr {
+        td {
+          padding-top: 10px !important;
+          padding-bottom: 10px !important;
+        }
+        td.expland-td {
+          height: auto;
+          padding: 0 !important;
+        }
+      }
+
+      // mobile break point
+      // เพิ่มพื้นที่ด้านบนของข้อมูลบนสุด
+      tr.v-data-table__tr--mobile:last-child {
+        td:last-child {
+          padding-bottom: 30px;
+        }
+      }
+      // พื้นที่ด้านล่างของข้อมูลล่างสุด
+      tr.v-data-table__tr--mobile:first-child {
+        td:first-child {
+          padding-top: 30px;
+        }
+      }
+      // กล่อง colum action เรียงแถวเดียว จัด center
+      .box-table-actions {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-items: center;
+        justify-content: center;
+      }
+      // mobile break point กล่อง colum action เรียงแถวเดียว จัดชิดขวา เมื่อ
+      .v-data-table__tr--mobile {
+        .box-table-actions {
+          justify-content: end;
+        }
+      }
+    }
+  }
+}

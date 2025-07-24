@@ -1,0 +1,32 @@
+.v-field--variant-outlined .v-field__outline__start.v-locale--is-ltr,
+.v-locale--is-ltr .v-field--variant-outlined .v-field__outline__start {
+  border-radius: $border-radius-root 0 0 $border-radius-root;
+}
+
+.v-field--variant-outlined .v-field__outline__end.v-locale--is-ltr,
+.v-locale--is-ltr .v-field--variant-outlined .v-field__outline__end {
+  border-radius: 0 $border-radius-root $border-radius-root 0;
+}
+
+// custom show detail
+.ct-show-detail {
+  .v-input__details {
+    min-height: unset;
+    padding-top: 0;
+    .v-messages {
+      min-height: unset;
+      .v-messages__message {
+        padding-top: 6px;
+        padding-bottom: 3px;
+      }
+    }
+  }
+  .v-input__control{
+    .v-field--disabled{
+      opacity: 0.6 !important;
+      .v-field__outline {
+        color: rgb(var(--v-theme-primary)) !important;
+      }
+    }
+  }
+}

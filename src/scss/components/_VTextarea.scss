@@ -1,0 +1,33 @@
+.v-textarea input {
+  font-size: 0.875rem;
+  font-weight: 500;
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.38);
+  }
+  .v-input--density-default {
+    .v-input__control {
+      height: unset;
+    }
+  }
+}
+
+.show-textarea {
+  white-space: pre-line;
+  // line-height: 0;
+}
+
+.show-textarea p {
+  line-height: normal !important;
+}
+
+.show-textarea a {
+  line-height: normal !important;
+}
+
+.show-textarea div {
+  line-height: normal !important;
+}
+
+.show-textarea span {
+  line-height: normal !important;
+}
