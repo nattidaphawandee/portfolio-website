@@ -27,14 +27,15 @@ const isGroupItem = (item: MenuChild | MenuGroup): item is MenuGroup =>
     <template v-for="(item, index) in items" :key="index">
     <!-- เมนูปกติ -->
     <v-btn v-if="!item.children" :to="item.to" variant="text" color="primary">
-      {{ item.title }}
+      {{ $t(item.title) }}
     </v-btn>
 
     <!-- เมนูมี children -->
     <v-menu v-else offset-y>
       <template #activator="{ props: menuProps }">
         <v-btn v-bind="menuProps" variant="text" color="primary">
-          {{ item.title }}
+          <!-- {{ item.title }} -->
+          {{ $t(item.title) }}
           <v-icon end>mdi-menu-down</v-icon>
         </v-btn>
       </template>
@@ -51,7 +52,9 @@ const isGroupItem = (item: MenuChild | MenuGroup): item is MenuGroup =>
                   :key="j"
                   :to="child.to"
                 >
-                  <v-list-item-title>{{ child.title }}</v-list-item-title>
+                  <v-list-item-title>
+                     {{ $t(child.title) }}
+                  </v-list-item-title>
                 </v-list-item>
               </v-list>
             </v-col>
@@ -66,7 +69,10 @@ const isGroupItem = (item: MenuChild | MenuGroup): item is MenuGroup =>
               :key="j"
               :to="(child as MenuChild).to"
             >
-              <v-list-item-title>{{ (child as MenuChild).title }}</v-list-item-title>
+              <v-list-item-title>
+                <!-- {{ (child as MenuChild).title }} -->
+               {{ $t((child as MenuChild).title) }}
+              </v-list-item-title>
             </v-list-item>
           </v-list>
         </template>

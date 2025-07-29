@@ -2,14 +2,6 @@
 import { ref, shallowRef } from 'vue';
 import compenstaionChart from './landingpage/compenstaionChart.vue';
 
-// icons
-import {
-  CoinIcon,
-  UserCircleIcon,
-  BasketIcon,
-
-} from 'vue-tabler-icons';
-
 const page = ref({ title: 'Statistics' });
 const breadcrumbs = ref([
   {
@@ -28,15 +20,7 @@ const cards = shallowRef([
   { earn: 'รายเดือน', text: 'รูปแบบการจ่าย', color: 'primary' },
   { earn: '17 ครั้ง', text: 'จำนวนการจ่าย', color: 'error' },
   { earn: '23,099,012 บาท', text: 'มูลค่ารวมทั้งสิ้น', color: 'success' },
-  // { earn: '500', text: 'Downloads', icon: ThumbDownIcon, color: 'secondary' }
 ]);
-
-const twocards = shallowRef([
-  { title: 'Revenue', earn: '$42,562', text: '$50,032 Last Month', icon: CoinIcon, color: 'secondary' },
-  { title: 'Orders Received', earn: '486', text: '20% Increase', icon: UserCircleIcon, color: 'primary' },
-  { title: 'Total Sales', earn: '1641', text: '$1,055 Revenue Generated', icon: BasketIcon, color: 'error' }
-]);
-
 </script>
 
 <template>
@@ -88,10 +72,6 @@ const twocards = shallowRef([
             <v-col cols="6" sm="6" class="pa-9 pb-6 border-blue-right">
               <v-card-text class="pa-0">
                 <div class="d-flex align-center">
-                  <v-btn class="text-primary" color="lightprimary" icon variant="flat">
-                    <ShareIcon stroke-width="1.5" size="24" />
-                  </v-btn>
-
                   <div class="ml-6 text-center">
                     <h5 class="text-subtitle-1 mt-1">1000</h5>
                     <span class="text-medium-emphasis text-subtitle-2 text-uppercase">Shares</span>
@@ -102,9 +82,7 @@ const twocards = shallowRef([
             <v-col cols="6" sm="6" class="pa-9 pb-6 pl-4 pl-sm-9">
               <v-card-text class="pa-0">
                 <div class="d-flex align-center">
-                  <v-btn class="text-primary" color="lightprimary" icon variant="flat">
-                    <RouterIcon stroke-width="1.5" size="24" />
-                  </v-btn>
+            
 
                   <div class="ml-6 text-center">
                     <h5 class="text-subtitle-1 mt-1">600</h5>
@@ -119,7 +97,6 @@ const twocards = shallowRef([
               <v-card-text class="pa-0">
                 <div class="d-flex align-center">
                   <v-btn class="text-primary" color="lightprimary" icon variant="flat">
-                    <FlowerIcon stroke-width="1.5" size="24" />
                   </v-btn>
 
                   <div class="ml-6 text-center">

@@ -1,0 +1,46 @@
+{
+  "language": {
+    "en": "English",
+    "th": "Thai",
+    "fr": "French",
+    "ro": "Romanian",
+    "zh": "Chinese"
+  },
+  "menu": {
+    "home": "Home",
+    "about": "About Us",
+    "management": "Management",
+    "assets": "Invested Assets",
+    "investorRelations": "Investor Relations",
+    "news": "Newsroom",
+    "contact": "Contact Us"
+  },
+  "about": {
+    "overview": "Overview",
+    "board": "Trust Structure",
+    "policy": "Milestone"
+  },
+  "managementDetails": {
+    "manager": "Trust Manager",
+    "structure": "Organization Structure",
+    "managementTeam": "Board of Directors",
+    "board": "Executives"
+  },
+  "investor": {
+    "financialStatement": "Financial Statements",
+    "nav": "NAV",
+    "stockQuote": "Stock Price",
+    "historicalPrice": "Historical Price",
+    "unitholdersStructure": "Unitholder Structure",
+    "unitholdersMeeting": "Unitholders Meeting",
+    "compensation": "Dividend Payment",
+    "annual": "Annual Report and 56-REIT",
+    "appraisalReport": "Property Appraisal Report",
+    "prospectus": "Prospectus",
+    "investorDocuments": "Investor Documents"
+  },
+  "news": {
+    "setAnnouncements": "SET Announcements",
+    "otherNews": "Press Releases"
+  }
+}

@@ -37,8 +37,9 @@ export default defineConfig({
     chunkSizeWarningLimit: 1024 * 1024 // Set the limit to 1 MB
   },
   resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+   alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      'vue-i18n': 'vue-i18n/dist/vue-i18n.esm-bundler.js'
     }
   },
   css: {
