@@ -23,7 +23,8 @@ const isGroupItem = (item: MenuChild | MenuGroup): item is MenuGroup =>
 </script>
 
 <template>
-  <template v-for="(item, index) in items" :key="index">
+  <div style="padding: 5px; background: papayawhip; width: 100%;  padding: 5px; display: flex; justify-content: space-between;">
+    <template v-for="(item, index) in items" :key="index">
     <!-- เมนูปกติ -->
     <v-btn v-if="!item.children" :to="item.to" variant="text" color="primary">
       {{ item.title }}
@@ -38,7 +39,7 @@ const isGroupItem = (item: MenuChild | MenuGroup): item is MenuGroup =>
         </v-btn>
       </template>
 
-      <v-card class="pa-3" style="background-color: lightblue; min-width: 300px;">
+      <v-card class="pa-3 mt-3" style="background-color: lightblue; min-width: 300px;">
         <!-- ถ้าเป็นเมนูกลุ่มแบบซับซ้อน เช่น นักลงทุนสัมพันธ์ -->
         <template v-if="item.children && isGroupItem(item.children[0])">
           <v-row dense>
@@ -72,4 +73,5 @@ const isGroupItem = (item: MenuChild | MenuGroup): item is MenuGroup =>
       </v-card>
     </v-menu>
   </template>
+  </div>
 </template>

@@ -6,7 +6,6 @@ import { useDisplay } from 'vuetify';
 // import { menuItems } from './menuData';
 import DesktopMenu from './DesktopMenu.vue'
 import MobileMenu from './MobileMenu.vue'
-import { icons } from '@/plugins/mdi-icon';
 
 const { mdAndUp } = useDisplay();
 const drawer = ref(false);
@@ -91,8 +90,7 @@ const menuItems = [
   },
   {
     title: 'ติดต่อเรา',
-    to: '/contact',
-    icon: 'mdi-phone'
+    to: '/contact'
   }
 ];
 
