@@ -9,7 +9,7 @@ import alertMessage from '@/components/alert/MaAlert.vue';
 import Customizer from '@/components/customizerPanel.vue';
 // import FooterPanel from './footer/FooterPanel.vue';
 import { useCustomizerStore } from '@/stores/customizer';
-import { useMenuStore } from '@/stores/menu';
+// import { useMenuStore } from '@/stores/menu';
 // import { useWebsocket } from '@/stores/websocket';
 // import { useEventBus } from '@/stores/eventBus';
 import { useAuthStore } from '@/stores/authentication';

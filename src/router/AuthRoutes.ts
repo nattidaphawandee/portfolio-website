@@ -6,11 +6,16 @@ const AuthRoutes = {
     requiresAuth: false
   },
   children: [
-    {
-      name: 'LandingPage',
-      path: '/homepage',
-      component: () => import('@/views/homePage/homePage.vue')
-    },
+    // {
+    //   name: 'LandingPage',
+    //   path: '/homepage',
+    //   component: () => import('@/views/homePage/homePage.vue')
+    // },
+    // {
+    //   name: 'LandingPage',
+    //   path: '/',
+    //   component: () => import('@/views/homePage/homePage.vue')
+    // },
      {
       name: 'CompensationPage',
       path: '/unitholdersInformation/compensation',
@@ -26,15 +31,15 @@ const AuthRoutes = {
     //   path: '/FullLayout',
     //   component: () => import('@/layouts/full/FullLayout.vue')
     // },
-    {
-      name: 'LoginPage',
-      path: '/login',
-      component: () => import('@/views/loginPage/loginPage.vue')
-    },
-    {
-      path: '/login/:provider',
-      component: () => import('@/views/loginPage/loginPage.vue')
-    }
+    // {
+    //   name: 'LoginPage',
+    //   path: '/login',
+    //   component: () => import('@/views/loginPage/loginPage.vue')
+    // },
+    // {
+    //   path: '/login/:provider',
+    //   component: () => import('@/views/loginPage/loginPage.vue')
+    // }
   ]
 };
 

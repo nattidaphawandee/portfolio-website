@@ -1,7 +1,46 @@
 <template>
     <div>
 
-        <div ref="container" style="height: 600px; min-width: 310px"></div>
+        <!-- <div ref="container" style="height: 600px; min-width: 310px"></div> -->
+        <div>
+            Home : หน้าหลัก
+            About Us :เกี่ยวกับเรา
+                - General ข้อมูลทั่วไป
+                - REIT Structure โครงสร้างกองทรัสต์
+                - * milestone
+            Management : การบริหารจัดการ
+                - Reit Manager : ผู้จัดการกองทรัสต์
+                - * โครงสร้างองค์กร : organizational structure
+                - * คณะกรรมการบริษัท : Board of Directors
+                - * คณะผู้บริหาร : Management Team
+                -TrustTee : ทรัสตี
+            Asset Investment : ทรัพย์สินที่ลงทุน
+            Investor Relation : นักลงทุนสัมพันธ์ 
+                - Financial StockInformation : ข้อมูลการเงิน
+                    - * งบการเงิน : Financial Statement
+                    - * มูลค่าทรัพย์สินสุทธิ (Unit NAV) 
+                - Stock Information : ข้อมูลราคาหลักทรัพย์
+                    - * ราคาหลักทรัพย์ : stock Quote
+                    - * ราคาย้อนหลัง : Historical Price
+                - Unitholders Information : ข้อมูลผู้ถือหน่วยทรัสต์
+                    - * โครงสร้างผู้ถือหน่วยทรัสต์ : Unitholders Structure
+                    - * การประชุมผู้ถือหน่วยทรัสต์ : Unitholders Meeting
+                    - * การจ่ายเงินปันผล : compensation
+                - Published Docments : เอกสารเผยแพร่
+                    - Annual Reports and Form 56-REIT : รายงานประจำปี และแบบ 56-REIT
+                    - Appraisal Reports :รายงานการประเมินมูลค่าทรัพย์สิน
+                    - Prospectus : หนังสือชี้ชวน
+                    - * เอกสารสำหรับนักลงทุน
+            New Roow : ห้องข่าว
+                - SET Announcements : ข่าวแจ้งตลาดหลักทรัพย์
+                - * ข่าวสารอื่น ๆ
+                
+                - Press Releass : ข่าวจากสื่อสิ่งพิม (ตัดออก)
+                - Clippings: ข่าวจากสื่อสิ่งพิม (ตัดออก)
+                - Video: สื่อวิดิโอประชาสัมพันธ์ (ตัดออก)
+
+            Contact Us : ติดต่อเรา
+        </div>
     </div>
 </template>
 

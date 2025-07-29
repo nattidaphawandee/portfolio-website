@@ -1,41 +1,82 @@
-<!-- ถ้าฉันต้อง นำข้อมูลของวันล่าสุดมาแสดง (ข้อมูลindex สุดท้าย) โดยจะต้องมีข้อมูลดังนี้ 1. ราคาเปิด 2. ราคาสูงสุด 3.
-มูลค่าซื้อขาย (บาท) 4. ราคาปิดก่อนหน้า 5. ราคาต่ำสุด 6. ปริมาณซื้อขาย (หุ้น) 7. ราคาล่าสุด 8. เปลี่ยนแปลงกี(%) 9. stats
-ว่าขึ้นหรือลง เทียบกับวันก่อน (เทียบกับ ข้อมูลก่อนสุดท้าย) เพื่อเอาไปทำสีแดงเขียนให้ข้อมูล -->
 <template>
-    <div>
-        <div>
-            <h3>ข้อมูลวันล่าสุด ({{ latestInfo.date }})</h3>
-            <ul>
-                <li>ราคาเปิด: {{ latestInfo.open }}</li>
-                <li>ราคาสูงสุด: {{ latestInfo.high }}</li>
-                <li>ราคาต่ำสุด: {{ latestInfo.low }}</li>
-                <li>ราคาปิดก่อนหน้า: {{ latestInfo.closePrev }}</li>
-                <li>ปริมาณซื้อขาย (หุ้น): {{ latestInfo.volume }}</li>
-                <li>มูลค่าซื้อขาย (บาท): {{ latestInfo.tradingValue.toFixed(2) }}</li>
-                <li>ราคาล่าสุด: {{ latestInfo.lastPrice }}</li>
-                <li>เปลี่ยนแปลง (%):
-                    <span
-                        :style="{ color: latestInfo.stats === 'up' ? 'green' : latestInfo.stats === 'down' ? 'red' : 'black' }">
-                        {{ latestInfo.changePercent.toFixed(2) }}%
-                    </span>
-                </li>
-                <li>สถานะ:
-                    <span
-                        :style="{ color: latestInfo.stats === 'up' ? 'green' : latestInfo.stats === 'down' ? 'red' : 'black' }">
-                        {{ latestInfo.stats === 'up' ? 'ขึ้น' : latestInfo.stats === 'down' ? 'ลง' : 'คงที่' }}
-                    </span>
-                </li>
-            </ul>
+    <div class="summary-container">
+        <div class="left-box">
+            <div style="font-size: 40px;">INETREIT</div>
+            <!-- <p>{{ latestInfo.lastPrice }}</p> -->
+            <div style="display: flex; justify-items: center;">
+                <div
+                    :style="{color: latestInfo.stats === 'up' ? 'green' : latestInfo.stats === 'down' ? 'red' : 'black'}"
+                    class="my-3  left-box-font-lastPrice"
+                    >
+                    <v-icon
+                    
+                        :style="{ color: latestInfo.stats === 'up' ? 'green' : latestInfo.stats === 'down' ? 'red' : 'black' }"
+                        size="20" class="mr-1">
+                        {{ latestInfo.stats === 'up' ? 'mdi-triangle' : latestInfo.stats === 'down' ?
+                            'mdi-triangle-down' : 'คงที่' }}
+                    </v-icon>
+                    {{ latestInfo.lastPrice }}
+                </div>
+            </div>
+
+            <p>
+                <span
+                    :style="{ color: latestInfo.stats === 'up' ? 'green' : latestInfo.stats === 'down' ? 'red' : 'black' }">
+                    {{ latestInfo.changeDiff.toFixed(2) }} ({{ latestInfo.stats === 'up' ? '+' : latestInfo.stats ===
+                        'down' ?
+                    '-' : '' }} {{ latestInfo.changePercent.toFixed(2) }}% )
+                </span>
+            </p>
+            <p style="font-size: 16px; color: #a2a2a2; font-weight: 400;">ปรับปรุงเมื่อ: {{
+                formatThaiDate(latestInfo.date) }}</p>
         </div>
 
-        <v-btn size="small" variant="outlined" color="red" class="mx-2" @click="changeChartType('line')">Line</v-btn>
-        <v-btn size="small" variant="outlined" color="red" class="mx-2"
-            @click="changeChartType('candlestick')">Candlestick</v-btn>
-        <v-btn size="small" variant="outlined" color="red" class="mx-2" @click="changeChartType('ohlc')">OHLC</v-btn>
+        <div class="right-box">
+            <div class="stats-box">
+                <div>
+                    <div>ราคาปิด</div>
+                    <div>{{ latestInfo.lastPrice }}</div>
+                </div>
+                <div class="highlighted-box">
+                    <div style="font-size: 20px; font-weight: 400;">ราคาสูงสุด</div>
+                    <div>{{ latestInfo.high }}</div>
+                </div>
+                <div>
+                    <div>มูลค่าซื้อขาย (บาท)</div>
+                    <div>{{ formatNumber(latestInfo.tradingValue) }}</div>
+                </div>
+            </div>
 
-        <div ref="container" style="height: 600px; min-width: 310px"></div>
+            <hr class="stats-divider" />
+
+
+            <div class="stats-box">
+                <div>
+                    <div>ราคาปิดก่อนหน้า</div>
+                    <div>{{ latestInfo.closePrev }}</div>
+                </div>
+                <div class="highlighted-box">
+                    <div>ราคาต่ำสุด</div>
+                    <div>{{ latestInfo.low }}</div>
+                </div>
+                <div>
+                    <div>ปริมาณซื้อขาย (หุ้น)</div>
+                    <div>{{ formatNumber(latestInfo.volume) }}</div>
+                </div>
+            </div>
+
+        </div>
     </div>
+
+    <div class="chart-buttons">
+        <v-btn size="small" @click="changeChartType('line')">Line</v-btn>
+        <v-btn size="small" @click="changeChartType('candlestick')">Candlestick</v-btn>
+        <v-btn size="small" @click="changeChartType('ohlc')">OHLC</v-btn>
+    </div>
+
+    <div id="chart-container" ref="container"></div>
 </template>
+
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, reactive } from 'vue';
@@ -53,6 +94,7 @@ const latestInfo = reactive({
     high: 0,
     low: 0,
     closePrev: 0,
+    changeDiff: 0,
     volume: 0,
     lastPrice: 0,
     tradingValue: 0,
@@ -93,6 +135,24 @@ function changeChartType(type: 'line' | 'area' | 'candlestick' | 'ohlc') {
 
     chart.redraw();
 }
+// สำหรับใส่ , (comma คั่นตัวเลข)
+function formatNumber(value: number) {
+    return new Intl.NumberFormat('th-TH').format(value);
+}
+//สำหรับแปลงวัน
+function formatThaiDate(dateStr: string): string {
+    const monthsThai = [
+        'ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.',
+        'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'
+    ];
+
+    const [year, month, day] = dateStr.split('-').map(Number);
+    const thaiYear = year + 543;
+    const monthName = monthsThai[month - 1];
+
+    return `${day} ${monthName} ${thaiYear}`;
+}
+
 let rawData: any
 async function init() {
     const res = await fetch('https://www.inetreit.com/stockservice/getStockNew/INETREIT.BK/1900', {
@@ -105,20 +165,15 @@ async function init() {
     rawData = data;
     return data;
 }
-// async function getINET() {
-//   const url = 'https://api.twelvedata.com/time_series' +
-//               '?symbol=SET/INET&interval=1day&apikey=YOUR_API_KEY';
-//   const res = await fetch(url);
-//   const data = await res.json();
-//   console.log(data);
-// }
+
 function calculateLatestInfo() {
     if (!rawData || rawData.length < 2) return;
 
-    //   const latest = rawData[rawData.length - 1];
-    //   const prev = rawData[rawData.length - 2];
-    const latest = rawData[rawData.length - 8];
-    const prev = rawData[rawData.length - 1];
+
+
+    const latest = rawData[rawData.length - 1];
+    const prev = rawData[rawData.length - 2];
+
 
     latestInfo.open = latest.open;
     latestInfo.high = latest.high;
@@ -132,6 +187,8 @@ function calculateLatestInfo() {
 
     const diff = latest.close - prev.close;
     latestInfo.changePercent = (diff / prev.close) * 100;
+
+    latestInfo.changeDiff = diff;
 
     if (diff > 0) {
         latestInfo.stats = 'up';
@@ -376,14 +433,137 @@ onBeforeUnmount(() => {
 </script>
 
 <style>
-.highcharts-range-input {
+/* .highcharts-range-input {
     border: 1px solid #fd2222 !important;
-    /* Tailwind gray-700 */
     border-radius: 4px;
     padding: 4px 8px;
     background-color: #fff;
     font-size: 14px;
     color: #111827;
-    /* Tailwind gray-900 */
+} */
+.summary-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    /* สำคัญสำหรับ mobile */
+    background: #fdf5ce;
+    padding: 15px;
 }
+
+.left-box {
+    flex: 1 1 100%;
+    max-width: 100%;
+    background: pink;
+    padding: 10px;
+    justify-items: center;
+    padding-top: 20px;
+}
+/* font  แสดงหุ้น */
+.left-box-font-lastPrice{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.right-box {
+    flex: 1 1 100%;
+    max-width: 100%;
+    background: deeppink;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ส่วนของ responsive */
+.stats-box {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* มือถือ 1 คอลัมน์ */
+    gap: 10px;
+}
+
+
+.chart-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.ibm-plex-sans-thai-extralight {
+  font-family: "IBM Plex Sans Thai", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+
+/* -------------เส้นกัน--------------- */
+.highlighted-box {
+    position: relative;
+    padding: 8px;
+    height: 100%;
+}
+
+
+.highlighted-box::before,
+.highlighted-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: red;
+}
+
+.highlighted-box::before {
+    left: 0;
+}
+
+.highlighted-box::after {
+    right: 0;
+}
+
+#chart-container {
+    width: 100%;
+    height: 60vh;
+    min-height: 300px;
+}
+
+@media (min-width: 400px) {
+    .stats-box {
+        grid-template-columns: repeat(3, 1fr);
+        background: yellow;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .left-box {
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+
+    .right-box {
+        flex: 0 0 70%;
+        max-width: 70%;
+    }
+}
+
+/* ให้เส้นหายเมื่อขนาดจอเล็ก */
+@media (max-width: 767px) {
+
+    .highlighted-box::before,
+    .highlighted-box::after,
+    .stats-divider,
+    .stats-box hr {
+        display: none;
+    }
+}
+
+/* @media (max-width: 767px) {
+  .stats-divider {
+    display: none;
+  }
+} */
 </style>

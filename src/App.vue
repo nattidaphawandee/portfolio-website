@@ -13,6 +13,7 @@ import alertMessage from '@/components/alert/MaAlert.vue';
 </script>
 <style>
 .v-overlay-container {
-  font-family: 'Noto Sans Thai', sans-serif !important;
+  /* font-family: 'Noto Sans Thai', sans-serif !important; */
+  font-family: "IBM Plex Sans Thai", sans-serif;
 }
 </style>

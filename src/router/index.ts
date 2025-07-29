@@ -1,17 +1,20 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import MainRoutes from './MainRoutes';
 import AuthRoutes from './AuthRoutes';
+import LandingPageRoutes from './LandingPageRoutes';
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_APP_BASE_URL),
   routes: [
     {
       path: '/:pathMatch(.*)*',
-      redirect: { name: 'LoginPage' }
+      // redirect: { name: 'LandingPage' }
       // component: () => import('@/views/404Page/404Page.vue')
+    redirect: { name: 'HomePage' }
     },
-    MainRoutes,
-    AuthRoutes
+    // MainRoutes,
+    LandingPageRoutes
+    // AuthRoutes
   ]
 });
 router.beforeEach(async (to, from, next) => {

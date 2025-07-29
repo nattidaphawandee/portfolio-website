@@ -27,26 +27,8 @@
         การจ่ายผลประโยชน์ตอบแทน
       </div>
       <!-- box -->
-      <div style="background-color: pink; padding: 5px; display: flex;">
-        <!-- <cardBox title="รูปแบบการจ่าย" ></cardBox>
-            <cardBox title="จำนวนการจ่าย"></cardBox>
-            <cardBox title="มูลค่ารวมทั้งสิ้น"></cardBox> -->
-        <div class="box-three">
-          <div class="box-three-title">รูปแบบการจ่าย</div>
-          <div class="box-three-result">รายเดือน</div>
-        </div>
-        <div class="box-three">
-          <div>จำนวนการจ่าย</div>
-        </div>
-        <div class="box-three">
-          <div>มูลค่ารวมทั้งสิ้น</div>
-        </div>
-      </div>
-      <div>
-        อัตราการจ่ายผลประโยชน์ตอบแทน
-        <div>
-          <compenstaionChart></compenstaionChart>
-        </div>
+      <div style="background: yellow; padding: 5px;">
+          <cardBox />
       </div>
     </div>
   </div>
@@ -81,20 +63,29 @@ async function init() {
 await init()
 </script>
 <style scoped lang="scss">
+// .box-three {
+//   background: brown;
+//   max-width: 405.67px;
+
+//   width: 100%;
+//   height: 131px;
+//   margin: 3px;
+//   // display: flex;
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-content: space-between;
+//   // background: #FFFFFF;
+// }
+
 .box-three {
-  background: brown;
-  max-width: 405.67px;
-
-  width: 100%;
-  height: 131px;
-  margin: 3px;
-  // display: flex;
-  display: flex;
+   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  width: 400px;
+  height: 300px;
   align-content: space-between;
-  // background: #FFFFFF;
+  border: 2px dotted rgb(96 139 168);
 }
-
 .icon-loading {
   font-size: 70px;
   color: rgba(var(--v-theme-primary));
