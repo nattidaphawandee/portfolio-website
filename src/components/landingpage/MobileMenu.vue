@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-
+import LanguageDD from '@/layouts/LanguageDD.vue';
 defineProps<{
   items: any[];
 }>();
@@ -19,7 +19,13 @@ function goTo(to: string) {
 </script>
 
 <template>
-  <v-list dense>
+ <div>
+  <div style="background: palegoldenrod; padding: 10px; height: 76px; display: flex; justify-content: space-between; align-items: center;">
+     <LanguageDD />
+    <v-icon @click="goTo('')">mdi-close</v-icon>
+
+  </div>
+   <v-list style="background: pink; height: 100%;">
     <template v-for="item in items" :key="item.title">
       <v-list-group v-if="item.children" v-model="openMenus[item.title]" :prepend-icon="item.icon || 'mdi-menu-down'"
         no-action>
@@ -61,4 +67,5 @@ function goTo(to: string) {
       
     </template>
   </v-list>
+ </div>
 </template>

@@ -90,7 +90,7 @@ const drawer = ref(false);
 //       { title: 'ข่าวแจ้งตลาดหลักทรัพย์', to: '/news/setAnnouncements' },
 //       { title: 'ข่าวประชาสัมพันธ์', to: '/news/OtherNews' },
 //     ]
-//   },
+//   }, 
 //   {
 //     title: 'ติดต่อเรา',
 //     to: '/contact',
@@ -141,7 +141,6 @@ const menuItems = [
       {
         group: 'menuAll.investor.investorForGrop.stockInformation',
         children: [
-          // { title: 'ราคาหลักทรัพย์', to: '/price/current' },
           { title: 'menuAll.investor.stockQuote', to: '/StockInformation/stockQuote' },
           { title: 'menuAll.investor.historicalPrice', to: '/StockInformation/historicalPrice' },
         ]
@@ -196,10 +195,14 @@ const menuItems = [
 
       <div
         v-else
-        style="background: pink; width: 100%; display: flex; justify-content: center; align-items: center;"
+        style="background: pink; width: 100%; display: flex; align-items: center; "
       >
-        <img :src="InetReitLogo" height="45" />
-          <LanguageDD />
+       <div style="width: 90%; display: flex; justify-content: center;">
+         <img :src="InetReitLogo" height="45" />
+       </div>
+       <div style="background: yellow; width: 10%;">
+            <LanguageDD />
+       </div>
       </div>
 
       <div class="d-flex align-center ga-10 w-100">
@@ -214,15 +217,13 @@ const menuItems = [
   <v-navigation-drawer
     v-if="!mdAndUp"
     v-model="drawer"
-    class="left-sidebar"
+    class="left-sidebar no-scrollbar"
     location="left"
     floating
-    style="position: fixed; top: 0; left: 0; z-index: 2000; height: 100%;"
-    temporary
+    width="345"
+    style="position: fixed; top: 0; left: 0; z-index: 2000; height: 100vh; overflow-y: auto;"
+    
   >
-    <div style="background: pink; padding: 3px; display: flex; justify-content: center;">
-      <LanguageDD />
-    </div>
     <MobileMenu :items="menuItems" @close="drawer = false" />
   </v-navigation-drawer>
 </template>
@@ -231,4 +232,14 @@ const menuItems = [
 .left-sidebar {
   z-index: 2000;
 }
+/* ซ่อน scrollbar ในเว็บทั่วไป */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE และ Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 </style>
