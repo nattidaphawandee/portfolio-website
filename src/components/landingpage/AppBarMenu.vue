@@ -220,6 +220,9 @@ const menuItems = [
     style="position: fixed; top: 0; left: 0; z-index: 2000; height: 100%;"
     temporary
   >
+    <div style="background: pink; padding: 3px; display: flex; justify-content: center;">
+      <LanguageDD />
+    </div>
     <MobileMenu :items="menuItems" @close="drawer = false" />
   </v-navigation-drawer>
 </template>

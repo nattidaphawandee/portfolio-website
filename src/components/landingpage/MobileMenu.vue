@@ -28,16 +28,17 @@ function goTo(to: string) {
             <template #prepend>
               <v-icon v-if="item.icon">{{ item.icon }}</v-icon>
             </template>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <!-- <v-list-item-title>{{ item.title }}</v-list-item-title> -->
+            <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
           </v-list-item>
         </template>
 
         <!-- children แบบมี group -->
         <template v-if="item.children[0]?.group">
           <template v-for="group in item.children" :key="group.group">
-            <v-list-subheader>{{ group.group }}</v-list-subheader>
+            <v-list-subheader>{{ $t(group.group) }}</v-list-subheader>
             <v-list-item v-for="sub in group.children" :key="sub.title" @click="goTo(sub.to)">
-              <v-list-item-title>{{ sub.title }}</v-list-item-title>
+              <v-list-item-title>{{ $t(sub.title) }}</v-list-item-title>
             </v-list-item>
           </template>
         </template>
@@ -45,7 +46,7 @@ function goTo(to: string) {
         <!-- children แบบ list ปกติ -->
         <template v-else>
           <v-list-item v-for="sub in item.children" :key="sub.title" @click="goTo(sub.to)">
-            <v-list-item-title>{{ sub.title }}</v-list-item-title>
+              <v-list-item-title>{{ $t(sub.title) }}</v-list-item-title>
           </v-list-item>
         </template>
       </v-list-group>
@@ -55,7 +56,7 @@ function goTo(to: string) {
         <template #prepend>
           <v-icon v-if="item.icon">{{ item.icon }}</v-icon>
         </template>
-        <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
       </v-list-item>
       
     </template>
