@@ -1,15 +1,18 @@
-import en from './en.json';
-import fr from './fr.json';
-import ro from './ro.json';
-import zh from './zh.json';
-import th from './th.json'
+import engLanguage from './en';
+import ThaiLanguage from './th';
 
 const messages = {
-  en: en,
-  fr: fr,
-  ro: ro,
-  zh: zh,
-  th: th
+  en: engLanguage,
+  th: ThaiLanguage
 };
 
 export default messages;
+// import en from './en.json';
+// import th from './th.json'
+
+// const messages = {
+//   en: en,
+//   th: th s
+// };
+
+// export default messages;

@@ -99,87 +99,82 @@ const drawer = ref(false);
 // ];
 
 const menuItems = [
-  // {
-  //   title: 'หน้าหลัก',
-  //   to: '/',
-  //   icon: 'mdi-home',
-  // },
-    { title: 'menuMain.home', to: '/', icon: 'mdi-home' },
+    { title: 'menuAll.subMain.home', to: '/', icon: 'mdi-home' },
 
   {
-    title: 'menuMain.about',
+    title: 'menuAll.subMain.about',
     icon: 'mdi-information-outline',
     children: [
-      { title: 'aboutUs.overview', to: '/aboutUs/overview' },
-      { title: 'aboutUs.board', to: '/aboutUs/board' },
-      { title: 'aboutUs.milestone', to: '/aboutUs/policy' },
+      { title: 'menuAll.aboutUs.overview', to: '/aboutUs/overview' },
+      { title: 'menuAll.aboutUs.board', to: '/aboutUs/board' },
+      { title: 'menuAll.aboutUs.milestone', to: '/aboutUs/policy' },
     ]
   },
   {
-    title: 'menuMain.management',
+    title: 'menuAll.subMain.management',
     icon: 'mdi-cog-outline',
     children: [
-      { title: 'managementDetails.manager', to: '/management/manager' },
-      { title: 'managementDetails.structure', to: '/management/structure' },
-      { title: 'managementDetails.managementTeam', to: '/management/managementTeam' },
-      { title: 'managementDetails.board', to: '/management/board' },
+      { title: 'menuAll.managementDetails.manager', to: '/management/manager' },
+      { title: 'menuAll.managementDetails.structure', to: '/management/structure' },
+      { title: 'menuAll.managementDetails.managementTeam', to: '/management/managementTeam' },
+      { title: 'menuAll.managementDetails.board', to: '/management/board' },
     ]
   },
   {
-    title: 'menuMain.assets',
+    title: 'menuAll.subMain.assets',
     icon: 'mdi-domain',
     children: [
-      { title: 'ทรัพย์สินที่ลงทุน', to: '/assets/invested' },
+      { title: 'menuAll.investedAssets.assets', to: '/assets/invested' },
     ]
   },
   {
-    title: 'menuMain.investorRelations',
+    title: 'menuAll.subMain.investorRelations',
     icon: 'mdi-chart-line',
     children: [
       {
-        group: 'ข้อมูลการเงิน',
+        group: 'menuAll.investor.investorForGrop.financialInformation',
         children: [
-          { title: 'งบการเงิน', to: '/financial/financial-statement' },
-          { title: 'มูลค่าทรัพย์สินสุทธิ (NAV)', to: '/financial/nav' },
+          { title: 'menuAll.investor.financialStatement', to: '/financial/financial-statement' },
+          { title: 'menuAll.investor.nav', to: '/financial/nav' },
         ]
       },
       {
-        group: 'ข้อมูลราคาหลักทรัพย์',
+        group: 'menuAll.investor.investorForGrop.stockInformation',
         children: [
           // { title: 'ราคาหลักทรัพย์', to: '/price/current' },
-          { title: 'ราคาหลักทรัพย์', to: '/StockInformation/stockQuote' },
-          { title: 'ราคาย้อนหลัง', to: '/StockInformation/historicalPrice' },
+          { title: 'menuAll.investor.stockQuote', to: '/StockInformation/stockQuote' },
+          { title: 'menuAll.investor.historicalPrice', to: '/StockInformation/historicalPrice' },
         ]
       },
       {
-        group: 'ข้อมูลผู้ถือหน่วยทรัสต์',
+        group: 'menuAll.investor.investorForGrop.unitholdersInformation',
         children: [
-          { title: 'โครงสร้างผู้ถือหน่วย', to: '/unitholdersInformation/UnitholdersStructure' },
-          { title: 'การประชุมผู้ถือหน่วย', to: '/unitholdersInformation/UnitholdersMeeting' },
-          { title: 'การจ่ายเงินปันผล', to: '/unitholdersInformation/compensation' },
+          { title: 'menuAll.investor.unitholdersStructure', to: '/unitholdersInformation/UnitholdersStructure' },
+          { title: 'menuAll.investor.unitholdersMeeting', to: '/unitholdersInformation/UnitholdersMeeting' },
+          { title: 'menuAll.investor.compensation', to: '/unitholdersInformation/compensation' },
         ]
       },
       {
-        group: 'เอกสารเผยแพร่',
+        group: 'menuAll.investor.investorForGrop.publishedDocuments',
         children: [
-          { title: 'รายงานประจำปี และแบบ 56-REIT', to: '/documents/annual' },
-          { title: 'รายงานการประเมินมูลค่าทรัพย์สิน', to: '/documents/appraisalReport' },
-          { title: 'หนังสือชี้ชวน', to: '/documents/prospectus' },
-          { title: 'เอกสารสำหรับนักลงทุน', to: '/documents/investor' },
+          { title: 'menuAll.investor.annual', to: '/documents/annual' },
+          { title: 'menuAll.investor.appraisalReport', to: '/documents/appraisalReport' },
+          { title: 'menuAll.investor.prospectus', to: '/documents/prospectus' },
+          { title: 'menuAll.investor.investorDocuments', to: '/documents/investor' },
         ]
       }
     ]
   },
   {
-    title: 'menuMain.news',
+    title: 'menuAll.subMain.news',
     icon: 'mdi-newspaper',
     children: [
-      { title: 'ข่าวแจ้งตลาดหลักทรัพย์', to: '/news/setAnnouncements' },
-      { title: 'ข่าวประชาสัมพันธ์', to: '/news/OtherNews' },
+      { title: 'menuAll.news.setAnnouncements', to: '/news/setAnnouncements' },
+      { title: 'menuAll.news.otherNews', to: '/news/OtherNews' },
     ]
   },
   {
-    title: 'menuMain.contact',
+    title: 'menuAll.subMain.contact',
     to: '/contact',
     icon: 'mdi-phone'
   }

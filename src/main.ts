@@ -12,8 +12,8 @@ import { createI18n } from 'vue-i18n';
 import messages from'@/utils/locales/messages';
 
 const i18n = createI18n({
-  locale: 'th',    
-  messages: messages,              // กำหนดภาษาหลัก (ภาษาเริ่มต้น) เป็น 'en' (อังกฤษ)
+  locale: 'th',    // กำหนดภาษาหลัก (ภาษาเริ่มต้น) เป็น 'th' (อังกฤษ)
+  messages: messages,             
   silentTranslationWarn: true,  // ปิดการแจ้งเตือนเวลาหากข้อความแปลไม่พบ (ไม่ให้ขึ้น warning ใน console)
   silentFallbackWarn: true      // ปิดการแจ้งเตือนเมื่อ fallback ไปใช้ภาษาสำรอง (fallback locale) หากข้อความแปลไม่พบในภาษาหลัก
 });
@@ -21,8 +21,6 @@ const i18n = createI18n({
 
 dayjs.extend(utc);
 import 'ant-design-vue/dist/reset.css';
-// import 'ag-grid-community/styles/ag-grid.css'
-// import 'ag-grid-community/styes/ag-theme-alpine.css'
 
 const app = createApp(App);
 app.use(createPinia());

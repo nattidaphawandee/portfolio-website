@@ -1,0 +1,61 @@
+const ThaiLanguage = {
+  language: {
+    en: "อังกฤษ",
+    th: "ไทย",
+  },
+  //สำหรับส่วนที่เป็น Menu หลัก
+  menuAll: {
+    // menu หลัก
+    subMain: {
+      home: "หน้าหลัก",
+      about: "เกี่ยวกับเรา",
+      management: "การบริหารจัดการ",
+      assets: "ทรัพย์สินที่ลงทุน",
+      investorRelations: "นักลงทุนสัมพันธ์",
+      news: "ห้องข่าว",
+      contact: "ติดต่อเรา",
+    },
+
+    aboutUs: {
+      overview: "ข้อมูลทั่วไป",
+      board: "โครงสร้างกองทรัสต์",
+      milestone: "Milestone",
+    },
+    managementDetails: {
+      manager: "ผู้จัดการกองทรัสต์",
+      structure: "โครงสร้างองค์กร",
+      managementTeam: "คณะกรรมการบริษัท",
+      board: "คณะผู้บริหาร",
+    },
+    investedAssets: {
+      assets: "ทรัพย์สินที่ลงทุน",
+    },
+    investor: {
+      financialStatement: "งบการเงิน",
+      nav: "มูลค่าทรัพย์สินสุทธิ (NAV)",
+      stockQuote: "ราคาหลักทรัพย์",
+      historicalPrice: "ราคาย้อนหลัง",
+      unitholdersStructure: "โครงสร้างผู้ถือหน่วย",
+      unitholdersMeeting: "การประชุมผู้ถือหน่วย",
+      compensation: "การจ่ายเงินปันผล",
+      annual: "รายงานประจำปี และแบบ 56-REIT",
+      appraisalReport: "รายงานการประเมินมูลค่าทรัพย์สิน",
+      prospectus: "หนังสือชี้ชวน",
+      investorDocuments: "เอกสารสำหรับนักลงทุน",
+      //หัวข้อ grop
+      investorForGrop:{
+        financialInformation: "ข้อมูลการเงิน",
+        stockInformation : "ข้อมูลราคาหลักทรัพย์",
+        unitholdersInformation : "ข้อมูลผู้ถือหน่วยทรัสต์",
+        publishedDocuments : "เอกสารเผยแพร่"
+      }
+
+    },
+    news: {
+      setAnnouncements: "ข่าวแจ้งตลาดหลักทรัพย์",
+      otherNews: "ข่าวประชาสัมพันธ์",
+    },
+  },
+};
+
+export default ThaiLanguage;

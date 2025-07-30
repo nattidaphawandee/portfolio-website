@@ -45,7 +45,8 @@ const isGroupItem = (item: MenuChild | MenuGroup): item is MenuGroup =>
         <template v-if="item.children && isGroupItem(item.children[0])">
           <v-row dense>
             <v-col v-for="(group, i) in item.children" :key="i" cols="12" md="3">
-              <strong>{{ (group as MenuGroup).group }}</strong>
+              <!-- <strong>{{ (group as MenuGroup).group }}</strong> -->
+              {{ $t((group as MenuGroup).group) }}
               <v-list density="compact">
                 <v-list-item
                   v-for="(child, j) in (group as MenuGroup).children"
