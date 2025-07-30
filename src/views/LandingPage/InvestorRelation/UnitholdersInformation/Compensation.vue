@@ -54,7 +54,7 @@ async function init() {
   dividendsData = data;
   paymentFrequency = dividendsData.length
   totalValue = 23099012
-  console.log(totalValue)
+  // console.log(totalValue)
 
   // console.log(paymentFrequency)
   return data;

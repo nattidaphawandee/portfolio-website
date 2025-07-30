@@ -104,36 +104,36 @@ const menuItems = [
   //   to: '/',
   //   icon: 'mdi-home',
   // },
-    { title: 'menu.home', to: '/', icon: 'mdi-home' },
+    { title: 'menuMain.home', to: '/', icon: 'mdi-home' },
 
   {
-    title: 'เกี่ยวกับเรา',
+    title: 'menuMain.about',
     icon: 'mdi-information-outline',
     children: [
-      { title: 'ข้อมูลทั่วไป', to: '/aboutUs/overview' },
-      { title: 'โครงสร้างกองทรัสต์', to: '/aboutUs/board' },
-      { title: 'Milestone', to: '/aboutUs/policy' },
+      { title: 'aboutUs.overview', to: '/aboutUs/overview' },
+      { title: 'aboutUs.board', to: '/aboutUs/board' },
+      { title: 'aboutUs.milestone', to: '/aboutUs/policy' },
     ]
   },
   {
-    title: 'การบริหารจัดการ',
+    title: 'menuMain.management',
     icon: 'mdi-cog-outline',
     children: [
-      { title: 'ผู้จัดการกองทรัสต์', to: '/management/manager' },
-      { title: 'โครงสร้างองค์กร', to: '/management/structure' },
-      { title: 'คณะกรรมการบริษัท', to: '/management/managementTeam' },
-      { title: 'คณะผู้บริหาร', to: '/management/board' },
+      { title: 'managementDetails.manager', to: '/management/manager' },
+      { title: 'managementDetails.structure', to: '/management/structure' },
+      { title: 'managementDetails.managementTeam', to: '/management/managementTeam' },
+      { title: 'managementDetails.board', to: '/management/board' },
     ]
   },
   {
-    title: 'ทรัพย์สินที่ลงทุน',
+    title: 'menuMain.assets',
     icon: 'mdi-domain',
     children: [
       { title: 'ทรัพย์สินที่ลงทุน', to: '/assets/invested' },
     ]
   },
   {
-    title: 'นักลงทุนสัมพันธ์',
+    title: 'menuMain.investorRelations',
     icon: 'mdi-chart-line',
     children: [
       {
@@ -171,7 +171,7 @@ const menuItems = [
     ]
   },
   {
-    title: 'ห้องข่าว',
+    title: 'menuMain.news',
     icon: 'mdi-newspaper',
     children: [
       { title: 'ข่าวแจ้งตลาดหลักทรัพย์', to: '/news/setAnnouncements' },
@@ -179,7 +179,7 @@ const menuItems = [
     ]
   },
   {
-    title: 'ติดต่อเรา',
+    title: 'menuMain.contact',
     to: '/contact',
     icon: 'mdi-phone'
   }

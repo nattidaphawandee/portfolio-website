@@ -6,7 +6,7 @@
     "ro": "โรมาเนีย",
     "zh": "จีน"
   },
-  "menu": {
+  "menuMain": {
     "home": "หน้าหลัก",
     "about": "เกี่ยวกับเรา",
     "management": "การบริหารจัดการ",
@@ -15,10 +15,10 @@
     "news": "ห้องข่าว",
     "contact": "ติดต่อเรา"
   },
-  "about": {
+  "aboutUs": {
     "overview": "ข้อมูลทั่วไป",
     "board": "โครงสร้างกองทรัสต์",
-    "policy": "Milestone"
+    "milestone": "Milestone"
   },
   "managementDetails": {
     "manager": "ผู้จัดการกองทรัสต์",

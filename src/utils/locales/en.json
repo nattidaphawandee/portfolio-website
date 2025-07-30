@@ -6,7 +6,7 @@
     "ro": "Romanian",
     "zh": "Chinese"
   },
-  "menu": {
+  "menuMain": {
     "home": "Home",
     "about": "About Us",
     "management": "Management",
@@ -15,10 +15,10 @@
     "news": "Newsroom",
     "contact": "Contact Us"
   },
-  "about": {
+  "aboutUs": {
     "overview": "Overview",
     "board": "Trust Structure",
-    "policy": "Milestone"
+    "milestone": "Milestone"
   },
   "managementDetails": {
     "manager": "Trust Manager",
