@@ -1,30 +1,37 @@
 <template>
   <v-data-table
-    :headers="headers"
-    :items="tableItems"
-    class="elevation-1"
-    item-value="date"
-    :item-class="rowClass"
-    @click:row="toggleRow"
-  >
-    <template #top>
-      <v-toolbar flat>
-        <v-toolbar-title>ข้อมูลหุ้น INETREIT</v-toolbar-title>
-      </v-toolbar>
-    </template>
+  :headers="headers"
+  :items="tableItems"
+  class="elevation-1"
+  item-value="date"
+  @click:row="toggleRow"
+>
+  <template #top>
+    <v-toolbar flat>
+      <v-toolbar-title>ข้อมูลหุ้น INETREIT</v-toolbar-title>
+    </v-toolbar>
+  </template>
 
-    <!-- คอลัมน์ เปลี่ยนแปลง (%) -->
-    <template #[`item.changePercent`]="{ item }">
-      <span :style="{ color: getChangeColor(item.changePercent) }">
+  <!-- Custom row -->
+  <template #item="{ item }">
+    <tr
+      :class="selectedDate === item.date ? 'selected-row' : ''"
+      @click="toggleRow($event, { item })"
+    >
+      <td>{{ item.date }}</td>
+      <td>{{ item.open }}</td>
+      <td>{{ item.high }}</td>
+      <td>{{ item.low }}</td>
+      <td>{{ item.close }}</td>
+      <td :style="{ color: getChangeColor(item.changePercent) }">
         {{ item.changePercent }}%
-      </span>
-    </template>
+      </td>
+      <td>{{ item.volume }}</td>
+      <td>{{ item.valueMB.toFixed(2) }}</td>
+    </tr>
+  </template>
+</v-data-table>
 
-    <!-- คอลัมน์ มูลค่า (ล้านบาท) -->
-    <template #[`item.valueMB`]="{ item }">
-      {{ item.valueMB.toFixed(2) }}
-    </template>
-  </v-data-table>
 </template>
 
 <script setup lang="ts">
@@ -44,16 +51,12 @@ const headers = [
 // แถวที่ถูกเลือก
 const selectedDate = ref<string | null>(null);
 
-// เปลี่ยน class ของ row
-const rowClass = (item: any) => {
-  return selectedDate.value === item.date ? 'grey lighten-3' : '';
-};
-
 // toggle highlight row
-function toggleRow(event: any, { item }: any) {
+function toggleRow(event: Event, { item }: any) {
   console.log(item)
   selectedDate.value = selectedDate.value === item.date ? null : item.date;
 }
+
 
 // กำหนดสีของ % การเปลี่ยนแปลง
 function getChangeColor(percent: number) {
@@ -106,5 +109,8 @@ init();
 <style scoped>
 .v-data-table tr:hover {
   cursor: pointer; 
+}
+.selected-row {
+  background-color: #e0e0e0 !important; /* สีเทา */
 }
 </style>
