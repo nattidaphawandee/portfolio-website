@@ -1,17 +1,24 @@
 <template>
-  
+
   <v-data-table :headers="headers" :items="filteredItems" class="elevation-1" item-value="date" @click:row="toggleRow">
-    
+
     <template #top>
       <v-toolbar flat>
         <v-toolbar-title>ข้อมูลหุ้น INETREIT</v-toolbar-title>
       </v-toolbar>
-      <DateRangePicker
-        :startDate="startDate"
-        :endDate="endDate"
-        @update:startDate="startDate = $event"
-        @update:endDate="endDate = $event"
+      <div style="background: pink; display: flex; justify-content: space-between; align-items: center;">
+        <div style="font-size: 24px;">
+          ราคาย้อนหลัง
+        </div>
+         <DateRangePicker 
+        :startDate="startDate" 
+        :endDate="endDate" 
+        :minDate="minDate" 
+        :maxDate="maxDate"
+        @update:startDate="startDate = $event" 
+        @update:endDate="endDate = $event" 
       />
+      </div>
     </template>
 
     <!-- Custom row -->
@@ -64,6 +71,8 @@ function toggleRow(event: Event, { item }: any) {
 }
 const startDate = ref<Dayjs | undefined>(undefined);
 const endDate = ref<Dayjs | undefined>(undefined);
+const minDate = ref<Dayjs | null>(null)
+const maxDate = ref<Dayjs | null>(null)
 
 // เปิดใช้งาน plugin ที่จำเป็น
 dayjs.extend(isSameOrAfter);
@@ -101,39 +110,40 @@ const tableItems = ref<any[]>([]);
 
 // คำนวณข้อมูลเพื่อใช้ในตาราง
 async function init() {
-  const res = await fetch('https://www.inetreit.com/stockservice/getStockNew/INETREIT.BK/28', {
+  const res = await fetch('https://www.inetreit.com/stockservice/getStockNew/INETREIT.BK/49', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    }
-  });
+    headers: { 'Content-Type': 'application/json' }
+  })
 
-  const rawData = await res.json();
-  console.log(rawData)
+  const rawData = await res.json()
+
+  // กำหนด min/max date จากข้อมูลจริง
+  const firstDate = rawData[0]?.date
+  const lastDate = rawData[rawData.length - 1]?.date
+  minDate.value = dayjs(firstDate, 'YYYY-MM-DD')
+  maxDate.value = dayjs(lastDate, 'YYYY-MM-DD')
 
   const processed = rawData.map((item: any, index: number, array: any[]) => {
-    let changePercent = 0;
-
+    let changePercent = 0
     if (index > 0) {
-      const prevClose = array[index - 1].close;
-      changePercent = ((item.close - prevClose) / prevClose) * 100;
+      const prevClose = array[index - 1].close
+      changePercent = ((item.close - prevClose) / prevClose) * 100
     }
 
-    const valueMB = (item.volume * item.close) / 1_000_000;
-
+    const valueMB = (item.volume * item.close) / 1_000_000
     return {
       date: item.date,
       open: item.open,
       high: item.high,
       low: item.low,
       close: item.close,
-      changePercent: + changePercent.toFixed(2),
+      changePercent: +  changePercent.toFixed(2),
       volume: item.volume,
-      valueMB,
-    };
-  });
+      valueMB
+    }
+  })
 
-  tableItems.value = processed;
+  tableItems.value = processed
 }
 
 init();
