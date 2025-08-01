@@ -31,12 +31,13 @@
           <cardBox />
       </div>
     </div>
+    <TableLandingPage />
   </div>
 </template>
 
 <script setup lang="ts">
-import { Spin } from 'ant-design-vue';
 import cardBox from '@/components/cardBox.vue';
+import TableLandingPage from '@/components/landingpage/TableLandingPage.vue';
 import compenstaionChart from '@/components/landingpage/compenstaionChart.vue';
 
 // get ข้อมูลเงินปันผล

@@ -1,36 +1,30 @@
 <template>
-  <v-data-table
-  :headers="headers"
-  :items="tableItems"
-  class="elevation-1"
-  item-value="date"
-  @click:row="toggleRow"
->
-  <template #top>
-    <v-toolbar flat>
-      <v-toolbar-title>ข้อมูลหุ้น INETREIT</v-toolbar-title>
-    </v-toolbar>
-  </template>
+  <v-data-table :headers="headers" :items="tableItems" class="elevation-1" item-value="date" @click:row="toggleRow">
+    <template #top>
+      <v-toolbar flat>
+        <v-toolbar-title>ข้อมูลหุ้น INETREIT</v-toolbar-title>
+      </v-toolbar>
+    </template>
 
-  <!-- Custom row -->
-  <template #item="{ item }">
-    <tr
-      :class="selectedDate === item.date ? 'selected-row' : ''"
-      @click="toggleRow($event, { item })"
-    >
-      <td>{{ item.date }}</td>
-      <td>{{ item.open }}</td>
-      <td>{{ item.high }}</td>
-      <td>{{ item.low }}</td>
-      <td>{{ item.close }}</td>
-      <td :style="{ color: getChangeColor(item.changePercent) }">
-        {{ item.changePercent }}%
-      </td>
-      <td>{{ item.volume }}</td>
-      <td>{{ item.valueMB.toFixed(2) }}</td>
-    </tr>
-  </template>
-</v-data-table>
+    <!-- Custom row -->
+    <template #item="{ item }">
+      <tr :class="selectedDate === item.date ? 'selected-row' : ''" @click="toggleRow($event, { item })">
+        <td>{{ item.date }}</td>
+        <td>{{ item.open }}</td>
+        <td>{{ item.high }}</td>
+        <td>{{ item.low }}</td>
+        <td>{{ item.close }}</td>
+        <td :style="{
+          color: selectedDate === item.date ? getChangeColor(item.changePercent) : 'black',
+          backgroundColor: selectedDate === item.date ? getChangeBgColor(item.changePercent) : 'transparent'
+        }">
+          {{ item.changePercent }}%
+        </td>
+        <td>{{ item.volume }}</td>
+        <td>{{ item.valueMB.toFixed(2) }}</td>
+      </tr>
+    </template>
+  </v-data-table>
 
 </template>
 
@@ -53,16 +47,25 @@ const selectedDate = ref<string | null>(null);
 
 // toggle highlight row
 function toggleRow(event: Event, { item }: any) {
-  console.log(item)
+  // console.log(item)
   selectedDate.value = selectedDate.value === item.date ? null : item.date;
 }
 
 
 // กำหนดสีของ % การเปลี่ยนแปลง
 function getChangeColor(percent: number) {
-  if (percent > 0) return 'green';
-  if (percent < 0) return 'red';
+  // if (percent > 0) return 'green';
+  // if (percent < 0) return 'red';
+  // return 'black';
+  if (percent > 0 || percent < 0) return 'white';
   return 'black';
+}
+// สีพื้นหลังของ cell เปลี่ยนแปลง (%)
+function getChangeBgColor(percent: number) {
+  if (percent > 0) return '#59CE80'; // เขียวอ่อน
+  if (percent < 0) return '#EA4B4B'; // แดงอ่อน
+  // return '#f5f5f5'; // เทาอ่อน
+   return ''; // เทาอ่อน
 }
 
 const tableItems = ref<any[]>([]);
@@ -108,9 +111,11 @@ init();
 
 <style scoped>
 .v-data-table tr:hover {
-  cursor: pointer; 
+  cursor: pointer;
 }
+
 .selected-row {
-  background-color: #e0e0e0 !important; /* สีเทา */
+  background-color: #e0e0e0 !important;
+  /* สีเทา */
 }
 </style>
