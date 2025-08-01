@@ -6,6 +6,12 @@
       <v-toolbar flat>
         <v-toolbar-title>ข้อมูลหุ้น INETREIT</v-toolbar-title>
       </v-toolbar>
+      <DateRangePicker
+        :startDate="startDate"
+        :endDate="endDate"
+        @update:startDate="startDate = $event"
+        @update:endDate="endDate = $event"
+      />
     </template>
 
     <!-- Custom row -->
