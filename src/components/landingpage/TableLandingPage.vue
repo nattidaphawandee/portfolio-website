@@ -1,5 +1,7 @@
 <template>
-  <v-data-table :headers="headers" :items="tableItems" class="elevation-1" item-value="date" @click:row="toggleRow">
+  
+  <v-data-table :headers="headers" :items="filteredItems" class="elevation-1" item-value="date" @click:row="toggleRow">
+    
     <template #top>
       <v-toolbar flat>
         <v-toolbar-title>ข้อมูลหุ้น INETREIT</v-toolbar-title>
@@ -29,8 +31,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
+import { ref, computed } from 'vue';
+import { DatePicker } from 'ant-design-vue';
+import dayjs, { Dayjs } from 'dayjs';
+import isSameOrAfter from 'dayjs/plugin/isSameOrAfter';
+import isSameOrBefore from 'dayjs/plugin/isSameOrBefore';
+import DateRangePicker from '../DateRangePicker.vue';
 const headers = [
   { title: 'วันที่', key: 'date' },
   { title: 'ราคาเปิด', key: 'open' },
@@ -50,8 +56,25 @@ function toggleRow(event: Event, { item }: any) {
   // console.log(item)
   selectedDate.value = selectedDate.value === item.date ? null : item.date;
 }
+const startDate = ref<Dayjs | undefined>(undefined);
+const endDate = ref<Dayjs | undefined>(undefined);
 
+// เปิดใช้งาน plugin ที่จำเป็น
+dayjs.extend(isSameOrAfter);
+dayjs.extend(isSameOrBefore);
 
+// ฟิลเตอร์ข้อมูลตามช่วงวันที่
+const filteredItems = computed(() => {
+  if (!startDate.value || !endDate.value) {
+    return tableItems.value;
+  }
+
+  return tableItems.value.filter(item => {
+    const itemDate = dayjs(item.date, 'YYYY-MM-DD');
+    return itemDate.isSameOrAfter(startDate.value, 'day') &&
+      itemDate.isSameOrBefore(endDate.value, 'day');
+  });
+});
 // กำหนดสีของ % การเปลี่ยนแปลง
 function getChangeColor(percent: number) {
   // if (percent > 0) return 'green';
@@ -65,7 +88,7 @@ function getChangeBgColor(percent: number) {
   if (percent > 0) return '#59CE80'; // เขียวอ่อน
   if (percent < 0) return '#EA4B4B'; // แดงอ่อน
   // return '#f5f5f5'; // เทาอ่อน
-   return ''; // เทาอ่อน
+  return ''; // เทาอ่อน
 }
 
 const tableItems = ref<any[]>([]);
@@ -80,6 +103,7 @@ async function init() {
   });
 
   const rawData = await res.json();
+  console.log(rawData)
 
   const processed = rawData.map((item: any, index: number, array: any[]) => {
     let changePercent = 0;
