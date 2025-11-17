@@ -35,8 +35,9 @@ html {
   background: rgb(var(--v-theme-containerBg));
 }
 .maxWidth {
-  max-width: 1200px;
+  // max-width: 1200px;
   margin: 0 auto;
+  max-width: 1300px;
 }
 $sizes: (
   'display-1': 44px,

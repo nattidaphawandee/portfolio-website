@@ -1,8 +1,9 @@
+โค้ดชุดนี้ที่คุณให้มาถูกใจฉันมาก 
 <template>
   <div class="home-bg">
     <v-container class="maxWidth">
-      <div v-if="isLargeScreen" class="stack-container">
-        <!-- ตัวอักษร -->
+      <div class="stack-container">
+        <!-- ตัวอักษรวางอย่างอิสระ -->
         <img :src="pText" alt="P" class="letter p" />
         <img :src="oText" alt="O" class="letter o1" />
         <img :src="rText" alt="R" class="letter r" />
@@ -12,15 +13,11 @@
         <img :src="LText" alt="L" class="letter l" />
         <img :src="iText" alt="I" class="letter i" />
         <img :src="oText" alt="O" class="letter o3" />
-
-        <div class="name-text">Nattida Phawandee</div>
+        <!-- รูปหลักวางด้านบนสุด -->
+         <div class="name-text">
+          Nattida Phawandee
+         </div>
         <img :src="HomePortfolioLanding" alt="Main" class="main-img" />
-      </div>
-
-      <div v-else class="mobile-text">
-        <h2>Welcome to My Portfolio</h2>
-       <p>สวัสดีค่ะ ฟ้าเป็นนักพัฒนาเว็บไซต์ที่หลงให้งานสร้างสรรค์และใส่ใจในรายละเอียด  
-ขอบคุณที่แวะเข้ามาชมผลงาน หวังว่าจะมีโอกาสได้ร่วมงานกันนะคะ :)</p>
       </div>
     </v-container>
   </div>
@@ -28,9 +25,6 @@
 
 <script setup lang="ts">
 // assets
-import { ref, onMounted, onUnmounted } from 'vue'
-
-// image imports
 import HomePortfolioLanding from '@/assets/images/porfolioMain.svg'
 import pText from '@/assets/images/portfolioText/P.svg'
 import oText from '@/assets/images/portfolioText/o.svg'
@@ -39,21 +33,6 @@ import tText from '@/assets/images/portfolioText/t.svg'
 import fText from '@/assets/images/portfolioText/f.svg'
 import LText from '@/assets/images/portfolioText/L.svg'
 import iText from '@/assets/images/portfolioText/i.svg'
-
-// screen size logic
-const isLargeScreen = ref(window.innerWidth >= 1194)
-
-const handleResize = () => {
-  isLargeScreen.value = window.innerWidth >= 1194
-}
-
-onMounted(() => {
-  window.addEventListener('resize', handleResize)
-})
-onUnmounted(() => {
-  window.removeEventListener('resize', handleResize)
-})
-
 </script>
 
 <style scoped lang="scss">
@@ -194,19 +173,5 @@ onUnmounted(() => {
   left: 40%;
   // transform: translate(-50%, -50%);
   z-index: 2;
-}
-.mobile-text {
-  text-align: center;
-  margin-top: 100px;
-
-  h2 {
-    font-size: 28px;
-    color: #b57646;
-  }
-
-  p {
-    font-size: 18px;
-    color: #5e4c42;
-  }
 }
 </style>
