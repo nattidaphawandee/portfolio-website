@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue';
 // assets
 import imgDemo1 from '@/assets/images/experience/WebInetreit.png';
 import imgDemo2 from '@/assets/images/experience/figmaIr.png';
-import imgDemo4 from '@/assets/images/pre-apps/slider-light-4.png';
+import imgDemo3 from '@/assets/images/experience/cxr.png';
 import imgDemo5 from '@/assets/images/pre-apps/slider-light-5.png';
 import imgDemo6 from '@/assets/images/pre-apps/slider-light-6.png';
 
@@ -25,20 +25,10 @@ const slideShow = [
     link: 'https://www.figma.com/design/i9NhbSCmuCVGx9EOn11GtL/investor-relations-website-design?node-id=0-1&m=dev&t=UQeTqTosRRea2nOh-1'
   },
   {
-    image: imgDemo4,
+    image: imgDemo3,
     name: 'Kanban App',
     link: 'app/kanban'
   },
-  {
-    image: imgDemo5,
-    name: 'Mail/Message App',
-    link: 'app/mail'
-  },
-  {
-    image: imgDemo6,
-    name: 'Social Profile',
-    link: 'app/user/social/posts'
-  }
 ];
 
 const relativeURL = ref<string | null>(null);
