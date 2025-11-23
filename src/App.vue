@@ -1,31 +1,23 @@
 <template>
-  <!-- <Suspense>
-    <div>
-      <alert-message></alert-message>
+  <Suspense>
+    <div class="main-layout">
       <RouterView />
     </div>
-  </Suspense> -->
-  <div>
-    <portfolioLanding/>
-    <EductionWork/>
-    <FrameworkSection/>
-    <CertificationSection/>
-    <DemoSection/>
-  </div>
+  </Suspense>
 </template>
 
 <script setup lang="ts">
-import DemoSection from './page/Components/DemoSection.vue';
-import EductionWork from './page/Components/EductionWork.vue';
-import { RouterView } from 'vue-router';
-import alertMessage from '@/components/alert/MaAlert.vue';
-import portfolioLanding from './views/LandingPage/portfolioLanding.vue';
-import FrameworkSection from './page/Components/FrameworkSection.vue';
-import CertificationSection from './page/Components/CertificationSection.vue';
+import { RouterView } from 'vue-router'
+
 </script>
 <style>
 .v-overlay-container {
-  /* font-family: 'Noto Sans Thai', sans-serif !important; */
-  font-family: "IBM Plex Sans Thai", sans-serif;
+  font-family: 'Noto Sans Thai', sans-serif !important;
+  /* font-family: 'IBM Plex Sans Thai', sans-serif; */
 }
+/* .main-layout{
+  background: red;
+  padding-left: 96px;
+  padding-right: 96px;
+} */
 </style>

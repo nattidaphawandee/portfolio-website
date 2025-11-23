@@ -1,0 +1,76 @@
+/* ============================================================
+   Global content container & responsive padding
+   Rules:
+   - Desktop: > 960px
+   - Tablet: 600px – 960px
+   - Mobile: <= 600px
+   - Max content width: 1440px (centered)
+   ============================================================ */
+.section-padding-x {
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+/* Tablet (<= 960px) */
+@media (max-width: $bp-desktop) {
+  .section-padding-x {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* Mobile (<= 600px) */
+@media (max-width: $bp-tablet) {
+  .section-padding-x {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* Fluid variant for full-bleed areas (e.g., menu, breadcrumb) */
+.section-padding-x--fluid {
+  box-sizing: border-box;
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+@media (max-width: $bp-desktop) {
+  .section-padding-x--fluid {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+@media (max-width: $bp-tablet) {
+  .section-padding-x--fluid {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+// /* ============================================================
+//    สำหรับกำหนด margin-top / bottom ตามตำแหน่ง Section
+//    ============================================================ */
+
+// /* Section แรก */
+// .section-first {
+//   margin-top: 40px;
+// }
+
+// /* Section ตรงกลาง */
+// .section-middle {
+//   margin-top: 64px;
+//   margin-bottom: 64px;
+// }
+
+// /* Section สุดท้าย */
+// .section-last {
+//   margin-bottom: 40px;
+// }

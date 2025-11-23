@@ -5,6 +5,7 @@
 @import './layout/sidebar';
 @import './layout/topbar';
 @import './layout/horizontal';
+@import './layout//contentMai';
 
 @import './components/VAlert';
 @import './components/VButtons';
@@ -15,7 +16,7 @@
 @import './components/VShadow';
 @import './components/VTextField';
 @import './components/VTextarea';
-@import './components/VTabs';
+// @import './components/VTabs';
 @import './components/MaAlert';
 @import './components/MaTable';
 @import './components/MaPagination';
@@ -32,13 +33,7 @@
 
 @import 'vue3-perfect-scrollbar/style.css';
 
-.DarkMaTheme .DarkPurpleTheme,
-.DarkGreenTheme,
-.DarkPinkTheme,
-.DarkYellowTheme,
-.DarkSeaGreenTheme,
-.DarkOliveGreenTheme,
-.DarkSpeechBlueTheme,
-.v-theme--DarkPurpleTheme {
+.DarkMaTheme 
+.v-theme--DarkMaTheme {
   @import './layout/dark';
 }

@@ -1,41 +1,27 @@
 <template>
     <div>
         <HomeBanner/>
+            <!-- <HeroSection/> -->
+    <EductionWork/>
+    <FrameworkSection/>
+    <CertificationSection/>
+    <DemoSection/>
     </div>
 </template>
 
 <script lang="ts" setup>
 import HomeBanner from '@/page/Components/HomeBanner.vue';
-const projects = [
-  {
-    title: 'TRAVLO',
-    description: 'Accessible Travel for people with special needs',
-    image: '/projects/travlo.png',
-  },
-  {
-    title: 'SANDRA',
-    description: 'Website Design for a premium safety wear brand',
-    image: '/projects/sandra.png',
-  },
-  {
-    title: 'FACTORY FLOW',
-    description: 'Factory Management System',
-    image: '/projects/factory.png',
-  },
-  {
-    title: 'AGODA',
-    description: 'Re-design for the AGODA website',
-    image: '/projects/agoda.png',
-  },
-  {
-    title: 'BALANCIFY',
-    description: 'Work-life balance, simplified and smart',
-    image: '/projects/balancify.png',
-  },
-]
+import HeroSection from '@/page/Components/HeroSection.vue';
+import DemoSection from '@/page/Components/DemoSection.vue';
+import EductionWork from '@/page/Components/EductionWork.vue';
+import { RouterView } from 'vue-router';
+import alertMessage from '@/components/alert/MaAlert.vue';
+import portfolioLanding from '@/views/LandingPage/portfolioLanding.vue';
+import FrameworkSection from '@/page/Components/FrameworkSection.vue';
+import CertificationSection from '@/page/Components/CertificationSection.vue';
 </script>
 
-<style scoped>
+<!-- <style scoped>
 .hero-section {
   background: #fff8f4;
   padding: 60px 0;
@@ -53,4 +39,4 @@ const projects = [
 .project-card:hover {
   transform: translateY(-5px);
 }
-</style>
+</style> -->

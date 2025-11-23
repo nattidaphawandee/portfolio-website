@@ -16,18 +16,18 @@ import 'vue3-carousel/dist/carousel.css';
 const slideShow = [
   {
     image: imgDemo1,
-    name: 'web inetreit (web)',
+    name: 'INETREIT Official Website (Front-End Development)',
     link: 'https://www.inetreit.com/home?lg=th'
   },
   {
     image: imgDemo2,
     name: 'Investor Relations Admin System – Figma UI/UX Design & Prototype',
-    link: 'https://www.figma.com/design/i9NhbSCmuCVGx9EOn11GtL/investor-relations-website-design?node-id=0-1&m=dev&t=UQeTqTosRRea2nOh-1'
+    link: 'https://drive.google.com/file/d/1L_8BpAIdWGG_e7m9hewJLgXhO6XGqSEs/view?usp=sharing'
   },
   {
     image: imgDemo3,
-    name: 'Kanban App',
-    link: 'app/kanban'
+    name: 'ระบบช่วยวิเคราะห์ภาพเอกซเรย์ทรวงอกด้วย AI (AI–CXR Screening System)',
+    link: 'https://drive.google.com/file/d/1SyHe_DyO-m-0oK6ooSn-JQEPLuadxFAg/view?usp=sharing'
   },
 ];
 
@@ -83,7 +83,6 @@ const breakpoints = ref({
   }
 });
 </script>
-
 <template>
   <div class="spacer bg-containerBg">
     <v-container class="maxWidth">

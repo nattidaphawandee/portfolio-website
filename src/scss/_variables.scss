@@ -9,7 +9,7 @@ $color-pack: false;
 // Global font size and border radius
 $font-size-root: 1rem;
 $border-radius-root: 12px;
-$body-font-family: 'Roboto','Noto Sans Thai','IBM Plex Sans Thai', sans-serif !default;
+$body-font-family: 'Noto Sans Thai','IBM Plex Sans Thai', 'Roboto',sans-serif !default;
 $heading-font-family: $body-font-family !default;
 $btn-font-weight: 400 !default;
 $btn-letter-spacing: 0 !default;
@@ -122,3 +122,11 @@ $card-text-spacer: 24px !default;
 $card-title-size: 18px !default;
 // Global Shadow
 $box-shadow: 1px 0 20px rgb(0 0 0 / 8%);
+
+// Responsive breakpoints (project-wide)
+// Desktop: >960px, Tablet: 600–960px, Mobile: <=600px
+$bp-desktop: 960px;
+$bp-tablet: 600px;
+
+$bp-ipad: 959.98px;
+$bp-mobile: 599.98px;

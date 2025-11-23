@@ -1,21 +1,24 @@
 html {
   overflow-y: auto;
 }
-// .v-main {
-//   margin-right: 20px;
-//   height: 100vh;
-// }
+
+.v-main {
+  overflow-x: hidden;
+}
+.mainContentLayout{
+  // background: rgb(94, 202, 152);
+  // padding-left: 96px;
+  //(96/1440) * 100 = 6.67%;
+  padding-left: 6.67%;
+  padding-right: 6.67%;
+}
 .horizontalLayout {
   .v-main {
     margin-right: 20px;
     margin-left: 20px;
   }
 }
-@media (max-width: 1279px) {
-  .v-main {
-    margin: 0 10px;
-  }
-}
+
 .spacer {
   padding: 100px 0;
 }
@@ -26,6 +29,7 @@ html {
 }
 .v-application {
   background: rgb(var(--v-theme-surface));
+  overflow-x: hidden;
 }
 
 .page-wrapper {
@@ -35,9 +39,8 @@ html {
   background: rgb(var(--v-theme-containerBg));
 }
 .maxWidth {
-  // max-width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
-  max-width: 1300px;
 }
 $sizes: (
   'display-1': 44px,
