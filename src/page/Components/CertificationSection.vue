@@ -21,14 +21,16 @@ const items = shallowRef([
   {
     title: 'Huawei HCIA-Cloud Computing Complete Certification',
     image: Huawel,
+    link: 'https://drive.google.com/file/d/1Z9Pnr2Fgggg3lTNffiJupnsVX_yP2IOf/view?usp=sharing',
     content:
-      'Berry can improve the user experience of your web application by providing a clear and intuitive layout, and consistent look and feel.'
+      'ใบรับรองที่แสดงความรู้พื้นฐานด้าน Cloud Computing ครอบคลุมเทคโนโลยี Virtualization, Storage, Networking, Cloud Services และการใช้งาน Huawei Cloud รวมถึงความสามารถในการเข้าใจสถาปัตยกรรมระบบคลาวด์และการจัดการทรัพยากรบนคลาวด์ในระดับเริ่มต้นถึงปานกลาง'
   },
   {
     title: 'MongoDB Associate Certification',
     image: monogoDbCertification,
+    link: 'https://drive.google.com/file/d/1yhxUeRp-Vrzht4Xl4gmbHuKRlCH8yjVy/view?usp=sharing',
     content:
-      'Berry can save developers time and effort by providing a pre-built user interface, allowing them to focus on other aspects of the project.'
+      'ใบรับรองแสดงความรู้พื้นฐานเกี่ยวกับ MongoDB รวมถึงโครงสร้างฐานข้อมูลแบบ NoSQL, การสร้างและจัดการ Collections, การเขียน Query พื้นฐาน, CRUD Operations และการทำงานกับ MongoDB Shell และ Compass'
   },
   // {
   //   title: 'Reduce Development Complexity',
@@ -55,32 +57,91 @@ const items = shallowRef([
 </script>
 
 <template>
-  <div class="spacer">
+  <section class="cert-section py-12">
     <v-container class="maxWidth">
       <v-row class="justify-center">
-        <v-col md="6" cols="12" class="text-center">
-          <h2 class="text-sm-h1 text-h2 my-3" style="line-height: 1.2">My Certification</h2>
-          <p>
-          offering a wide range of features to easily manage your backend panel
+        <v-col md="7" cols="12" class="text-center mb-8">
+          <p class="text-overline text-primary font-weight-medium mb-2">Milestones</p>
+          <h2 class="text-sm-h1 text-h2 font-weight-bold mb-4">Certification</h2>
+          <p class="text-body-1 text-medium-emphasis">
+            หลักฐานยืนยันการเรียนรู้ด้าน Cloud, Database และการออกแบบระบบที่นำมาประยุกต์ใช้ในงานจริง
           </p>
         </v-col>
-        <v-col md="12" cols="12" />
-        <v-col v-for="(item, index) in items" :key="index" md="4" sm="6" cols="12" data-aos="fade-up" data-aos-duration="800">
-          <v-card variant="outlined" class="pa-5 bg-containerBg">
-
-             <div>
-              <img :src="item.image" style="max-width: 320px;" width="100%" alt="Julia"  class="rounded-sm"/>
-              <!-- <img :src="item.image" width="56" height="56" alt="Julia" class="rounded-sm" /> -->
-             </div>
-            <h3 class="text-h3 mt-4 font-weight-medium">
-              {{ item.title }}
-            </h3>
-            <p class="my-3 text-body-1">
-              {{ item.content }}
-            </p>
+        <v-col
+          v-for="(item, index) in items"
+          :key="index"
+          md="6"
+          sm="6"
+          cols="12"
+          class="d-flex"
+        >
+          <a
+            :href="item.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cert-card-link"
+          >
+          <v-card variant="flat" class="cert-card">
+            <div class="cert-image">
+              <img :src="item.image" alt="certificate" />
+            </div>
+            <div class="cert-body">
+              <h3 class="text-h4 font-weight-medium mb-3">
+                {{ item.title }}
+              </h3>
+              <p class="text-body-2 text-medium-emphasis">
+                {{ item.content }}
+              </p>
+            </div>
           </v-card>
+          </a>
         </v-col>
       </v-row>
     </v-container>
-  </div>
+  </section>
 </template>
+
+<style scoped>
+.cert-section {
+  background: #fff8f4;
+}
+
+.cert-card-link {
+  width: 100%;
+  text-decoration: none;
+}
+
+.cert-card {
+  width: 100%;
+  border-radius: 28px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid rgba(201, 189, 179, 0.4);
+  box-shadow: 0 18px 40px rgba(70, 63, 57, 0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cert-image {
+  padding: 12px;
+  border-radius: 22px;
+  background: linear-gradient(140deg, #fff8f4 0%, #ffece2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 235px;
+}
+
+.cert-image img {
+  max-width: 260px;
+  width: 100%;
+  border-radius: 16px;
+  object-fit: contain;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.cert-body {
+  margin-top: 20px;
+}
+</style>
