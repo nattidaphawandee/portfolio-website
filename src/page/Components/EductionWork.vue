@@ -31,7 +31,7 @@ const workList = [
       'พัฒนาและดูแลระบบ Front-end ด้วย Vue.js และ TypeScript',
       'ออกแบบ UI ที่ตอบโจทย์ประสบการณ์ผู้ใช้',
       'ทำงานร่วมกับทีมออกแบบและ Back-end เพื่อให้ระบบทำงานสมบูรณ์',
-      'เขียน API และจัดการข้อมูลเบื้องต้นด้วย Golang และ Firebase',
+      'เขียน API และจัดการข้อมูลเบื้องต้นด้วย Golang และ Mongodb',
     ],
   },
 ]
@@ -42,52 +42,58 @@ const workList = [
     <v-container class="maxWidth">
       <v-row class="justify-center align-center mt-2">
         <!-- Left Section -->
-        <v-col md="6" cols="12" class="order-md-0 order-0" style="background: red;">
-          <!-- Education -->
-          <section class="mb-8">
-            <h5 class="text-sm-h1 text-h2 font-weight-medium mb-2" style="line-height: 1.2">
-              Education
-            </h5>
-            <v-list bg-color="containerBg">
-              <v-list-item
-                v-for="(edu, index) in educationList"
-                :key="'edu-' + index"
-                 style="background: plum; margin: 10px;"
-              >
-                <div class="font-weight-medium">
-                  <v-icon class="mr-1">mdi-school</v-icon>
-                  {{ edu.title }}
-                </div>
-                <div class="px-10">{{ edu.detail }}</div>
-              </v-list-item>
-            </v-list>
-          </section>
+        <v-col md="6" cols="12" class="order-md-0 order-0 info-column">
+          <p class="text-overline text-primary font-weight-medium mb-2">เส้นทางการเรียนรู้</p>
+          <h3 class="text-sm-h1 text-h2 font-weight-bold mb-4">Education & Work</h3>
+          <p class="text-body-1 text-medium-emphasis mb-8">
+            เส้นทางการเติบโตทั้งในรั้วมหาวิทยาลัยและในโลกการทำงาน
+          </p>
 
-          <!-- Work Experience -->
-          <section>
-            <h5 class="text-sm-h1 text-h2 font-weight-medium mb-2" style="line-height: 1.2">
-              ประวัติการทำงาน
-            </h5>
-            <h6 class="text-h4 font-weight-regular mb-3">
-              ประสบการณ์การทำงานในสายพัฒนาโปรแกรม โดยเฉพาะด้าน Front-end
-            </h6>
+          <div class="info-group mb-10">
+            <h4 class="group-title text-h5 font-weight-medium mb-4">ประวัติการศึกษา</h4>
+            <div
+              v-for="(edu, index) in educationList"
+              :key="'edu-' + index"
+              class="detail-card"
+            >
+              <div class="detail-icon">
+                <v-icon size="22" color="primary">mdi-school-outline</v-icon>
+              </div>
+              <div>
+                <p class="detail-title text-subtitle-1 font-weight-medium mb-1">{{ edu.title }}</p>
+                <p class="detail-text text-body-2 text-medium-emphasis">{{ edu.detail }}</p>
+              </div>
+            </div>
+          </div>
 
-            <v-list bg-color="containerBg">
-              <v-list-item
-                v-for="(work, index) in workList"
-                :key="'work-' + index"
-              >
-                <div class="font-weight-medium">
-                 <v-icon>mdi-briefcase</v-icon>
-                  {{ work.company }}
-                </div>
-                <div>{{ work.position }}</div>
-                <ul class="mt-2 ml-4">
-                  <li style="background: palegoldenrod; margin: 10px;" v-for="(item, idx) in work.details" :key="idx">{{ item }}</li>
+          <div class="info-group">
+            <h4 class="group-title text-h5 font-weight-medium mb-2">ประวัติการทำงาน</h4>
+            <p class="text-body-2 text-medium-emphasis mb-4">
+              ประสบการณ์จริงในการพัฒนาระบบและออกแบบส่วนติดต่อผู้ใช้ที่ตอบโจทย์ทั้งทีมและผู้ใช้งาน
+            </p>
+            <div
+              v-for="(work, index) in workList"
+              :key="'work-' + index"
+              class="detail-card work-card"
+            >
+              <div class="detail-icon">
+                <v-icon size="22" color="primary">mdi-briefcase-outline</v-icon>
+              </div>
+              <div>
+                <p class="detail-title text-subtitle-1 font-weight-medium mb-1">{{ work.company }}</p>
+                <p class="text-body-2 font-weight-medium text-medium-emphasis mb-3">{{ work.position }}</p>
+                <ul class="work-list">
+                  <li
+                    v-for="(item, idx) in work.details"
+                    :key="idx"
+                    class="text-body-2 text-medium-emphasis"
+                  >
+                    {{ item }}
+                  </li>
                 </ul>
-              </v-list-item>
-            </v-list>
-          </section>
+              </div>
+            </div>
+          </div>
         </v-col>
 
         <!-- Right Image -->
@@ -163,6 +169,69 @@ const workList = [
 
 
 <style scoped>
+.edu-work-section {
+  background: #fff8f4;
+}
+
+.info-column {
+  padding-right: 24px;
+}
+
+.info-group {
+  position: relative;
+}
+
+.group-title {
+  color: #2f2f2f;
+}
+
+.detail-card {
+  display: flex;
+  gap: 16px;
+  padding: 18px 22px;
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid rgba(201, 189, 179, 0.35);
+  box-shadow: 0 18px 40px rgba(70, 63, 57, 0.08);
+  margin-bottom: 16px;
+}
+
+.detail-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  background: rgba(255, 160, 140, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-title {
+  color: #1f1f1f;
+}
+
+.detail-text {
+  color: #6d6d6d;
+}
+
+.work-card {
+  background: linear-gradient(145deg, #ffffff 0%, #fff5ef 100%);
+}
+
+.work-list {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.work-list li {
+  margin-bottom: 6px;
+}
+
+.visual-column {
+  margin-top: 40px;
+}
+
+/* new */
 .heartStickers-icon {
   position: absolute;
   top: 30%;
