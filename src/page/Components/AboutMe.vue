@@ -1,5 +1,8 @@
 <script setup>
 import AboutMeImg from '@/assets/images/AboutMe/AboutMeImg.png'
+// import AboutMeImg from '@/assets/images/AboutMe/profileimg.jpeg'
+// import AboutMeImg from '@/assets/images/AboutMe/twoProfile.png'
+
 
 const profileDetails = [
   { label: 'ชื่อเล่น', value: 'ฟ้า' },
@@ -20,17 +23,14 @@ const highlightItems = [
   <section class="about-section py-12">
     <v-container class="maxWidth">
       <v-row class="align-center">
-        <v-col cols="12" md="5" class="text-center order-md-0 order-0 mb-8 mb-md-0">
-          <div class="about-photo-wrapper mx-auto">
-            <div class="photo-glow" />
+        <v-col cols="12" md="5">
             <v-img
               :src="AboutMeImg"
               alt="About Me Illustration"
-              max-width="420"
+              max-width="700"
               class="about-photo"
-              cover
+              
             />
-          </div>
         </v-col>
 
         <v-col cols="12" md="7" class="order-md-1 order-1">
@@ -90,12 +90,14 @@ const highlightItems = [
   position: absolute;
   inset: 10%;
   border-radius: 32px;
-  background: linear-gradient(135deg, rgba(255, 141, 132, 0.35), rgba(255, 237, 221, 0.8));
+  /* background: linear-gradient(135deg, rgba(255, 141, 132, 0.35), rgba(255, 237, 221, 0.8)); */
   filter: blur(30px);
 }
 
 .about-photo {
-  border-radius: 32px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+  /* border-radius: 32px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12); */
+  width: 100%;
+  /* background: red; */
 }
 </style>
