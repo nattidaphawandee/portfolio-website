@@ -1,12 +1,13 @@
 <template>
-    <div>
-        <HomeBanner/>
-            <!-- <HeroSection/> -->
-    <EductionWork/>
-    <FrameworkSection/>
-    <CertificationSection/>
-    <DemoSection/>
-    </div>
+  <div>
+    <HomeBanner />
+    <!-- <HeroSection/> -->
+    <AboutMe />
+    <EductionWork />
+    <FrameworkSection />
+    <CertificationSection />
+    <DemoSection />
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -14,6 +15,7 @@ import HomeBanner from '@/page/Components/HomeBanner.vue';
 import HeroSection from '@/page/Components/HeroSection.vue';
 import DemoSection from '@/page/Components/DemoSection.vue';
 import EductionWork from '@/page/Components/EductionWork.vue';
+import AboutMe from '@/page/Components/AboutMe.vue';
 import { RouterView } from 'vue-router';
 import alertMessage from '@/components/alert/MaAlert.vue';
 import portfolioLanding from '@/views/LandingPage/portfolioLanding.vue';

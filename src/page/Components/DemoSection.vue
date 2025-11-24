@@ -98,9 +98,9 @@ const breakpoints = ref({
         <v-col cols="12">
           <Carousel :wrap-around="true" :breakpoints="breakpoints" class="demo-slider"  :transition="500">
             <Slide v-for="(slide, i) in slideShow" :key="i">
-              <div class="carousel__item">
+              <div class="carousel-item">
                 <a :href="buildSlideUrl(slide)" target="_blank" rel="noopener noreferrer">
-                  <img alt="applications" :src="slide.image" class="w-100" />
+                  <img style="border-radius: 16px;" alt="applications" :src="slide.image" class="w-100" />
                 </a>
                 <v-list class="mt-5 d-inline-block" style="background-color: transparent" variant="text">
                   <v-list-item :href="buildSlideUrl(slide)" target="_blank" rel="noopener noreferrer">
@@ -125,6 +125,16 @@ const breakpoints = ref({
 </template>
 
 <style lang="scss">
+.carousel-item{
+  background: red;
+  padding: 16px;
+  border-radius: 24px;
+
+  /* Card 4 */
+
+background: #ffffff;
+box-shadow: 2px 11px 30px rgba(51, 51, 51, 0.08);
+}
 .demo-slider {
   .carousel__slide {
     padding: 5px;
