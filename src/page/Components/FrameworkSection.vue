@@ -92,7 +92,7 @@ const breakpoints = ref({
     snapAlign: 'center'
   },
   992: {
-    itemsToShow: 4.6,
+    itemsToShow: 4.3,
     snapAlign: 'center'
   },
   1199: {
@@ -100,22 +100,21 @@ const breakpoints = ref({
     snapAlign: 'center'
   },
   1360: {
-    itemsToShow: 7,
+    itemsToShow: 5.8,
     snapAlign: 'center'
   }
 });
 </script>
 
 <template>
-  <div class="spacer">
+  <section class="framework-section py-12">
     <v-container class="maxWidth">
-      <v-row class="justify-center">
-        <v-col md="12" cols="12" class="text-center">
-          <h2 class="text-sm-h1 text-h2 my-3" style="line-height: 1.2">Programming skills </h2>
-          <p>
-            Each framework is sold separately on different platforms. Click to
-            <a href="https://codedthemes.gitbook.io/berry/berry-eco-system" target="_blank"
-              class="text-primary more-link">Learn more</a>
+      <v-row class="justify-center text-center mb-6">
+        <v-col md="10" cols="12">
+          <p class="text-overline text-primary font-weight-medium mb-2">Tech Stack</p>
+          <h2 class="text-sm-h1 text-h2 font-weight-bold mb-4">Programming Skills</h2>
+          <p class="text-body-1 text-medium-emphasis">
+            Frameworksและเครื่องมือที่ใช้งานเป็นประจำในการออกแบบ UI, จัดการข้อมูล และพัฒนาโปรเจกต์ ที่ได้จากการทำงานจริงและศึกษาเพิ่มเติมเอง
           </p>
         </v-col>
       </v-row>
@@ -123,69 +122,81 @@ const breakpoints = ref({
     <v-container fluid>
       <v-row>
         <v-col cols="12">
-          <Carousel :wrap-around="true" class="framework-carousel" :breakpoints="breakpoints" :autoplay="2000"
-            :transition="500">
-            <Slide v-for="(slide, i) in slideShow" :key="i">
-              <div class="carousel__item">
-                <v-card class="bg-containerBg framework-box mb-3" variant="flat">
-                  <v-card-item style="display: flex; justify-content: center;">
-                    <a :href="slide.link" target="_" class="text-darkText text-decoration-none"
-                     >
-                      <div style="width: 100%; display: flex; justify-items: center;">
-                        <img alt="framework" :src="slide.logo" style="max-width: 100px;" />
-                      </div>
-                      <!-- <div>
-                        <h3 class="ma-3">{{ slide.title }}</h3>
-                      </div> -->
+          <div class="framework-panel mx-auto">
+            <Carousel
+              :wrap-around="true"
+              class="framework-carousel"
+              :breakpoints="breakpoints"
+              :autoplay="2200"
+              :transition="500"
+            >
+              <Slide v-for="(slide, i) in slideShow" :key="i">
+                <div class="carousel__item">
+                  <v-card class="framework-card" variant="flat">
+                    <a
+                      :href="slide.link"
+                      target="_blank"
+                      class="text-darkText text-decoration-none d-flex flex-column align-center"
+                    >
+                      <img alt="framework" :src="slide.logo" class="framework-logo" />
+                      <span class="framework-name text-body-2 mt-2">{{ slide.title }}</span>
                     </a>
-                  </v-card-item>
-                </v-card>
-              </div>
-            </Slide>
-            <!-- <template #addons> -->
-            <!-- <Pagination style="background: green; padding: 10px; margin: 10px;"/> -->
-            <!-- </template> -->
-          </Carousel>
+                  </v-card>
+                </div>
+              </Slide>
+            </Carousel>
+          </div>
         </v-col>
       </v-row>
     </v-container>
-  </div>
+  </section>
 </template>
 
 <style lang="scss">
-.framework-box {
-  min-width: 180px;
+.framework-section {
+  background: #fffdfb;
 }
 
-// .framework-carousel {
-//   .carousel__pagination {
-//     margin-top: 50px;
-//     @media (max-width: 600px) {
-//       margin-top: 10px;
-//       background: blue;
-//     }
-//     .carousel__pagination-item {
-//       .carousel__pagination-button {
-//         &::after {
-//           width: 10px;
-//           height: 10px;
-//           border-radius: 100%;
-//           opacity: 0.25;
-//           background: red;
-//         }
-//         &.carousel__pagination-button--active {
-//           &::after {
-//             opacity: 1;
-//             background: rgb(var(--v-theme-primary));
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-.upcoming-chip {
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
+.framework-panel {
+  max-width: 1200px;
+  padding: 24px;
+  border-radius: 32px;
+  background: #fff;
+  box-shadow: 0 24px 60px rgba(45, 32, 28, 0.08);
+}
+
+.framework-card {
+  min-width: 180px;
+  border-radius: 24px;
+  padding: 28px 18px;
+  background: linear-gradient(160deg, #ffffff 0%, #fff4ef 100%);
+  border: 1px solid rgba(201, 189, 179, 0.4);
+  box-shadow: 0 18px 40px rgba(64, 48, 40, 0.08);
+}
+
+.framework-logo {
+  max-width: 90px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.1));
+}
+
+.framework-name {
+  color: #5b5b5b;
+  letter-spacing: 0.02em;
+}
+
+.framework-carousel {
+  .carousel__slide {
+    padding: 12px;
+  }
+
+  .carousel__slide--sliding {
+    transition: 0.5s;
+  }
+
+  .carousel__item {
+    padding: 10px;
+  }
 }
 </style>
