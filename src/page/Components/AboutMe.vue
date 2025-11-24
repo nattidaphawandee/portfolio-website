@@ -99,5 +99,17 @@ const highlightItems = [
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12); */
   width: 100%;
   /* background: red; */
+  animation: about-photo-zoom 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes about-photo-zoom {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
 }
 </style>
