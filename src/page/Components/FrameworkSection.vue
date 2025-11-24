@@ -107,7 +107,7 @@ const breakpoints = ref({
 </script>
 
 <template>
-  <section class="framework-section py-12">
+  <section class="framework-section py-12" id="skills">
     <v-container class="maxWidth">
       <v-row class="justify-center text-center mb-6">
         <v-col md="10" cols="12">

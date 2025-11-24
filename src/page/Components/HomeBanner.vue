@@ -1,5 +1,5 @@
 <template>
-  <div class="home-bg">
+  <section class="home-bg" id="home">
     <v-container class="maxWidth">
       <div v-if="isLargeScreen" class="stack-container">
         <!-- ตัวอักษร -->
@@ -19,11 +19,11 @@
 
       <div v-else class="mobile-text">
         <h2>Welcome to My Portfolio</h2>
-       <p>สวัสดีค่ะ ฟ้าเป็นนักพัฒนาเว็บไซต์ที่หลงให้งานสร้างสรรค์และใส่ใจในรายละเอียด  
-ขอบคุณที่แวะเข้ามาชมผลงาน หวังว่าจะมีโอกาสได้ร่วมงานกันนะคะ :)</p>
+       <p>สวัสดีค่ะ
+ขอบคุณที่แวะเข้ามาชมผลงานนะคะ หวังว่าจะมีโอกาสได้ร่วมงานกันนะคะ :)</p>
       </div>
     </v-container>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

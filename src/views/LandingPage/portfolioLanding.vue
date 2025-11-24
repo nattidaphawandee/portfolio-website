@@ -1,26 +1,28 @@
 <template>
-  <div>
-    <HomeBanner />
-    <!-- <HeroSection/> -->
-    <AboutMe />
-    <EductionWork />
-    <FrameworkSection />
-    <CertificationSection />
-    <DemoSection />
-  </div>
+  <v-app>
+    <PortfolioMenuBar />
+    <v-main>
+      <HomeBanner />
+      <!-- <HeroSection/> -->
+      <AboutMe />
+      <EductionWork />
+      <FrameworkSection />
+      <CertificationSection />
+      <DemoSection />
+      <Contact/>
+    </v-main>
+  </v-app>
 </template>
 
 <script lang="ts" setup>
 import HomeBanner from '@/page/Components/HomeBanner.vue';
-import HeroSection from '@/page/Components/HeroSection.vue';
 import DemoSection from '@/page/Components/DemoSection.vue';
 import EductionWork from '@/page/Components/EductionWork.vue';
 import AboutMe from '@/page/Components/AboutMe.vue';
-import { RouterView } from 'vue-router';
-import alertMessage from '@/components/alert/MaAlert.vue';
-import portfolioLanding from '@/views/LandingPage/portfolioLanding.vue';
 import FrameworkSection from '@/page/Components/FrameworkSection.vue';
 import CertificationSection from '@/page/Components/CertificationSection.vue';
+import Contact from '@/page/Components/Contact.vue';
+import PortfolioMenuBar from '@/components/PortfolioMenuBar.vue';
 </script>
 
 <!-- <style scoped>

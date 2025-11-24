@@ -20,7 +20,7 @@ const highlightItems = [
 </script>
 
 <template>
-  <section class="about-section py-12">
+  <section class="about-section py-12" id="about">
     <v-container class="maxWidth">
       <v-row class="align-center">
         <v-col cols="12" md="5">

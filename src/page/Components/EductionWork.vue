@@ -38,7 +38,7 @@ const workList = [
 </script>
 
 <template>
-  <div>
+  <section class="edu-work-section py-12" id="education-work">
     <v-container class="maxWidth">
       <v-row class="justify-center align-center mt-2">
         <!-- Left Section -->
@@ -164,7 +164,7 @@ const workList = [
   </v-col>
       </v-row>
     </v-container>
-  </div>
+  </section>
 </template>
 
 
@@ -306,4 +306,3 @@ const workList = [
   }
 } */
 </style>
-

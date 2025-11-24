@@ -57,7 +57,7 @@ const items = shallowRef([
 </script>
 
 <template>
-  <section class="cert-section py-12">
+  <section class="cert-section py-12" id="certifications">
     <v-container class="maxWidth">
       <v-row class="justify-center">
         <v-col md="7" cols="12" class="text-center mb-8">

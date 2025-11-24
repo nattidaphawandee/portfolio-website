@@ -4,8 +4,6 @@ import { ref, onMounted } from 'vue';
 import imgDemo1 from '@/assets/images/experience/WebInetreit.png';
 import imgDemo2 from '@/assets/images/experience/figmaIr.png';
 import imgDemo3 from '@/assets/images/experience/cxr.png';
-import imgDemo5 from '@/assets/images/pre-apps/slider-light-5.png';
-import imgDemo6 from '@/assets/images/pre-apps/slider-light-6.png';
 
 import { LinkIcon } from 'vue-tabler-icons';
 
@@ -83,35 +81,50 @@ const breakpoints = ref({
   }
 });
 </script>
+
 <template>
-  <div class="spacer bg-containerBg">
+  <section class="demo-section py-12" id="projects">
     <v-container class="maxWidth">
       <v-row class="justify-center">
-        <v-col md="7" cols="12" class="text-center">
-          <h2 class="text-sm-h1 text-h2 my-3" style="line-height: 1.2"> ประสบการณ์ทำงาน</h2>
-          <p>ตัวอย่างงานพัฒนา Front-End ตั้งแต่ UI/UX Design (Figma), Component Development, Responsive Design, Interaction, และการจัดการ Content โดยรวมงานบริษัทและโปรเจกต์ส่วนตัวเพื่อสะท้อนสไตล์การทำงานและความสามารถด้านเทคนิค</p>
+        <v-col md="8" cols="12" class="text-center mb-6">
+          <p class="text-overline text-primary font-weight-medium mb-2">Works Highlight</p>
+          <h2 class="text-sm-h1 text-h2 font-weight-bold mb-4">ประสบการณ์ทำงาน</h2>
+          <p class="text-body-1 text-medium-emphasis">
+            ตัวอย่างงานพัฒนา Front-End ตั้งแต่การออกแบบ UX/UI ใน Figma ไปจนถึงการพัฒนา Component, Interaction,
+            Responsive Design และการเชื่อมต่อข้อมูลจริง
+          </p>
         </v-col>
       </v-row>
     </v-container>
     <v-container fluid>
       <v-row>
         <v-col cols="12">
-          <Carousel :wrap-around="true" :breakpoints="breakpoints" class="demo-slider"  :transition="500">
+          <Carousel
+            :wrap-around="true"
+            :breakpoints="breakpoints"
+            class="demo-slider"
+            :transition="500"
+          >
             <Slide v-for="(slide, i) in slideShow" :key="i">
-              <div class="carousel-item">
+              <div class="demo-card">
                 <a :href="buildSlideUrl(slide)" target="_blank" rel="noopener noreferrer">
-                  <img style="border-radius: 16px;" alt="applications" :src="slide.image" class="w-100" />
+                  <img alt="applications" :src="slide.image" class="demo-image" />
                 </a>
-                <v-list class="mt-5 d-inline-block" style="background-color: transparent" variant="text">
-                  <v-list-item :href="buildSlideUrl(slide)" target="_blank" rel="noopener noreferrer">
-                    <h3>{{ slide.name }}</h3>
-                    <template #append>
-                      <v-btn variant="text" class="ml-2" size="x-small" icon>
-                        <LinkIcon size="14" />
-                      </v-btn>
-                    </template>
-                  </v-list-item>
-                </v-list>
+                <div class="demo-meta">
+                  <h3 class="text-h5 font-weight-medium">{{ slide.name }}</h3>
+                  <v-btn
+                    variant="tonal"
+                    color="primary"
+                    size="small"
+                    class="mt-3"
+                    :href="buildSlideUrl(slide)"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    ดูรายละเอียด
+                    <LinkIcon size="16" class="ml-2" />
+                  </v-btn>
+                </div>
               </div>
             </Slide>
             <template #addons>
@@ -121,23 +134,35 @@ const breakpoints = ref({
         </v-col>
       </v-row>
     </v-container>
-  </div>
+  </section>
 </template>
 
 <style lang="scss">
-.carousel-item{
-  background: red;
-  padding: 16px;
-  border-radius: 24px;
-
-  /* Card 4 */
-
-background: #ffffff;
-box-shadow: 2px 11px 30px rgba(51, 51, 51, 0.08);
+.demo-section {
+  background: #fffdfb;
 }
+
+.demo-card {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(51, 51, 51, 0.08);
+  border: 1px solid rgba(201, 189, 179, 0.35);
+}
+
+.demo-image {
+  width: 100%;
+  border-radius: 22px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.demo-meta {
+  margin-top: 18px;
+}
+
 .demo-slider {
   .carousel__slide {
-    padding: 5px;
+    padding: 10px;
   }
 
   .carousel__slide--sliding {
@@ -146,7 +171,7 @@ box-shadow: 2px 11px 30px rgba(51, 51, 51, 0.08);
 
   .carousel__slide {
     opacity: 0.5;
-    transform: scale(0.8);
+    transform: scale(0.9);
   }
 
   .carousel__slide--active {
@@ -156,13 +181,14 @@ box-shadow: 2px 11px 30px rgba(51, 51, 51, 0.08);
 
   .carousel__prev,
   .carousel__next {
-    background: rgba(var(--v-theme-surface));
-    width: 65px;
-    height: 65px;
+    background: #fff;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     @media (max-width: 959px) {
-      width: 45px;
-      height: 45px;
+      width: 42px;
+      height: 42px;
     }
   }
 }
