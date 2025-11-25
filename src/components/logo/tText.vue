@@ -1,0 +1,17 @@
+<template>
+  <div class="logo">
+<svg width="171" height="270" viewBox="0 0 171 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g style="mix-blend-mode:multiply">
+<path d="M113.628 -8.58307e-06V189.2C113.628 198.533 115.628 205.2 119.628 209.2C123.895 213.2 130.161 215.2 138.428 215.2C144.295 215.2 149.361 214.667 153.628 213.6C157.895 212.533 161.895 210.8 165.628 208.4L170.828 255.6C164.428 260.133 155.761 263.6 144.828 266C133.895 268.667 123.228 270 112.828 270C95.7615 270 81.2281 267.733 69.2281 263.2C57.4948 258.667 48.4281 251.467 42.0281 241.6C35.8948 231.733 32.8281 218.533 32.8281 202V22.4L113.628 -8.58307e-06ZM168.028 66V121.6H0.0281252V66H168.028Z" 
+:fill="secondary"/>
+</g>
+</svg>
+
+  </div>
+</template>
+<script setup lang="ts">
+import { ref } from 'vue';
+const primary = ref('rgb(var(--v-theme-primary))');
+const secondary = ref('rgb(var(--v-theme-secondary))');
+
+</script>

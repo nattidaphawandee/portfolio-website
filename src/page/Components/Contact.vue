@@ -1,4 +1,6 @@
 <script setup>
+import contactContent from '@/components/Contact/contactContent.vue';
+
 const contactLinks = [
   { label: 'อีเมล', value: 'natida.phawan@gmail.com', link: 'mailto:natida.phawan@gmail.com' },
   { label: 'LinkedIn', value: 'linkedin.com/in/natidaphawan', link: 'https://www.linkedin.com/in/natidaphawan/' }
@@ -396,6 +398,7 @@ const contactLinks = [
         </div>
       </div>
       <div class="content">
+        <!-- <contactContent/> -->
       </div>
     </div>
     <svg style="position:fixed; top:100vh">
@@ -417,7 +420,9 @@ body {
   grid-template-rows: 1fr auto;
   grid-template-areas: "main" "footer";
   overflow-x: hidden;
-  background: #F5F7FA;
+  /* background: rgba(var(--v-theme-primary)); */
+  background: red;
+  
   min-height: 100vh;
   font-family: "Open Sans", sans-serif;
 }
@@ -425,7 +430,8 @@ body {
 body .footer {
   z-index: 1;
   /* --footer-background: #ED5565; */
-  --footer-background: #fbc896;
+  --footer-background: #A6BED1;
+  
 
   display: grid;
   position: relative;
@@ -439,15 +445,15 @@ body .footer .bubbles {
   left: 0;
   right: 0;
   height: 1rem;
-  background: var(--footer-background);
+   background: rgba(var(--v-theme-lightText));
   filter: url("#blob");
 }
 
 body .footer .bubbles .bubble {
   position: absolute;
   left: var(--position, 50%);
-  background: var(--footer-background);
-  border-radius: 100%;
+   background: rgba(var(--v-theme-lightText));
+   border-radius: 100%;
   -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
   animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
   transform: translate(-50%, 100%);
@@ -459,7 +465,7 @@ body .footer .content {
   grid-template-columns: 1fr auto;
   grid-gap: 4rem;
   padding: 2rem;
-  background: var(--footer-background);
+   background: rgba(var(--v-theme-lightText));
 }
 
 body .footer .content a,

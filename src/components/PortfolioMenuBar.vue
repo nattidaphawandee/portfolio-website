@@ -67,9 +67,9 @@ onBeforeUnmount(() => {
       v-if="isVisible"
       class="menu-app-bar"
       flat
-      color="rgba(255, 255, 255, 0.95)"
+      color="rgba(#F0E7D5, 0.95)"
     >
-      <v-toolbar-title class="font-weight-bold text-primary">Nattida Phawandee</v-toolbar-title>
+      <v-toolbar-title class="font-weight-bold text-secondary">Nattida Phawandee</v-toolbar-title>
       <v-spacer />
       <div class="d-flex align-center">
         <v-btn
@@ -77,7 +77,7 @@ onBeforeUnmount(() => {
           :key="item.id"
           variant="text"
           class="text-capitalize mx-1"
-          :color="activeSection === item.id ? 'primary' : undefined"
+          :color="activeSection === item.id ? 'secondary' : undefined"
           @click="scrollToSection(item.id)"
         >
           {{ item.label }}

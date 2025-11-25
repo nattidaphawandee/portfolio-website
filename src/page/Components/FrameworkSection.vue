@@ -112,8 +112,8 @@ const breakpoints = ref({
       <v-row class="justify-center text-center mb-6">
         <v-col md="10" cols="12">
           <p class="text-overline text-primary font-weight-medium mb-2">Tech Stack</p>
-          <h2 class="text-sm-h1 text-h2 font-weight-bold mb-4">Programming Skills</h2>
-          <p class="text-body-1 text-medium-emphasis">
+          <h2 class="text-lightText text-sm-h1 text-h2 font-weight-bold mb-4">Programming Skills</h2>
+          <p class="text-lightprimary text-body-1 text-medium-emphasis">
             Frameworksและเครื่องมือที่ใช้งานเป็นประจำในการออกแบบ UI, จัดการข้อมูล และพัฒนาโปรเจกต์ ที่ได้จากการทำงานจริงและศึกษาเพิ่มเติมเอง
           </p>
         </v-col>
@@ -154,14 +154,16 @@ const breakpoints = ref({
 
 <style lang="scss">
 .framework-section {
-  background: #fffdfb;
+  // background: #fffdfb;
+  background: rgba(var(--v-theme-secondary));
 }
 
 .framework-panel {
   max-width: 1200px;
   padding: 24px;
   border-radius: 32px;
-  background: #fff;
+  // background: #fff;
+
   box-shadow: 0 24px 60px rgba(45, 32, 28, 0.08);
 }
 
@@ -169,7 +171,7 @@ const breakpoints = ref({
   min-width: 180px;
   border-radius: 24px;
   padding: 28px 18px;
-  background: linear-gradient(160deg, #ffffff 0%, #fff4ef 100%);
+  background: linear-gradient(160deg, #ffffff 0%, #F0E7D5 100%);
   border: 1px solid rgba(201, 189, 179, 0.4);
   box-shadow: 0 18px 40px rgba(64, 48, 40, 0.08);
 }

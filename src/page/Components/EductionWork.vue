@@ -43,8 +43,8 @@ const workList = [
       <v-row class="justify-center align-center mt-2">
         <!-- Left Section -->
         <v-col md="6" cols="12" class="order-md-0 order-0 info-column">
-          <p class="text-overline text-primary font-weight-medium mb-2">เส้นทางการเรียนรู้</p>
-          <h3 class="text-sm-h1 text-h2 font-weight-bold mb-4">Education & Work</h3>
+          <p class="text-primary text-overline text-secondary font-weight-medium mb-2">เส้นทางการเรียนรู้</p>
+          <h3 class="text-secondary text-sm-h1 text-h2 font-weight-bold mb-4">Education & Work</h3>
           <p class="text-body-1 text-medium-emphasis mb-8">
             เส้นทางการเติบโตทั้งในรั้วมหาวิทยาลัยและในโลกการทำงาน
           </p>
@@ -57,7 +57,7 @@ const workList = [
               class="detail-card"
             >
               <div class="detail-icon">
-                <v-icon size="22" color="primary">mdi-school-outline</v-icon>
+                <v-icon size="22" color="lightText">mdi-school-outline</v-icon>
               </div>
               <div>
                 <p class="detail-title text-subtitle-1 font-weight-medium mb-1">{{ edu.title }}</p>
@@ -77,7 +77,7 @@ const workList = [
               class="detail-card work-card"
             >
               <div class="detail-icon">
-                <v-icon size="22" color="primary">mdi-briefcase-outline</v-icon>
+                <v-icon size="22" color="lightText">mdi-briefcase-outline</v-icon>
               </div>
               <div>
                 <p class="detail-title text-subtitle-1 font-weight-medium mb-1">{{ work.company }}</p>
@@ -97,24 +97,6 @@ const workList = [
         </v-col>
 
         <!-- Right Image -->
-        <!-- <v-col md="5" cols="12" offset-lg="1" class="order-md-3 order-1">
-          <v-row class="justify-center">
-            <v-col md="12" sm="6" cols="9">
-              <v-img 
-              :src="WorkImage" 
-              alt="Profile Image or Work Showcase" 
-              max-height="600"
-              height="100%"
-              width="auto"
-              />
-               <v-icon
-              icon="mdi-cog"
-              size="48"
-              class="gear-icon d-none d-md-block"
-            />
-            </v-col>
-          </v-row>
-        </v-col> -->
         <v-col md="6" cols="12" class="order-md-1 order-1 text-center position-relative">
     <v-img
       :src="WorkImage"
@@ -125,14 +107,6 @@ const workList = [
     />
 
     <!--  Icon -->
-
-     <!-- <v-img
-      :src="heartStickers"
-      alt="Profile Image"
-      max-width="70"
-      width="100%"
-      class="heartStickers-icon  d-none d-md-block"
-    /> -->
     <v-img
       :src="heartStickers"
       alt="Profile Image"
@@ -170,7 +144,8 @@ const workList = [
 
 <style scoped>
 .edu-work-section {
-  background: #fff8f4;
+  /* background: #fff8f4; */
+  background: rgba(var(--v-theme-primary));
 }
 
 .info-column {
@@ -182,7 +157,8 @@ const workList = [
 }
 
 .group-title {
-  color: #2f2f2f;
+  /* color: #2f2f2f; */
+  color: rgba(var(--v-theme-secondary));
 }
 
 .detail-card {
@@ -200,22 +176,25 @@ const workList = [
   width: 44px;
   height: 44px;
   border-radius: 16px;
-  background: rgba(255, 160, 140, 0.18);
+  background: rgba(var(--v-theme-secondary));
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .detail-title {
-  color: #1f1f1f;
+  /* color: #1f1f1f; */
+  color: rgba(var(--v-theme-secondary));
+
 }
 
 .detail-text {
-  color: #6d6d6d;
+  color: rgba(var(--v-theme-secondary));
+
 }
 
 .work-card {
-  background: linear-gradient(145deg, #ffffff 0%, #fff5ef 100%);
+  background: linear-gradient(145deg, #ffffff 0%, #F0E7D5 100%);
 }
 
 .work-list {
@@ -257,6 +236,7 @@ const workList = [
   /* opacity: 0.4; */
   right:60%;
   color: #666;
+  
     /* animation: zoomInOut 4s ease-in-out infinite; */
   transform: translateY(-60%);
    animation:

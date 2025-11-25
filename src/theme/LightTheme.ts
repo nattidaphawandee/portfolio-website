@@ -1,44 +1,115 @@
 import type { ThemeTypes } from '@/types/ThemeType';
 
-const MaTheme: ThemeTypes = {
-  name: 'MaTheme',
-  dark: false,
-  variables: {
-    'border-color': '#1e88e5', //old DarkGreenTheme
-    'carousel-control-size': 10, //old DarkGreenTheme
-    'high-opacity': 1 //old DarkGreenTheme
-  },
-  colors: {
-    primary: '#008CD1',
-    secondary: '#18B0EE',
-    info: '#2ABFFF',
-    success: '#2EB15B',
-    accent: '#FFAB91', //old DarkGreenTheme
-    warning: '#FFA800',
-    error: '#D84315',
-    lightprimary: '#DBEEFF',
-    lightsecondary: '#DBEEFF',
-    lightsuccess: '#CEFFDF',
-    lighterror: '#ffd7cb',
-    lightwarning: '#FFF1C1',
-    darkText: '#212121',
-    lightText: '#616161',
-    darkprimary: '#008CD1', //old DarkGreenTheme
-    darksecondary: '#18B0EE',
-    borderLight: '#d0d0d0',
-    inputBorder: '#DBEEFF',
-    containerBg: '#EAF6FF',
-    surface: '#fff',
-    'on-surface-variant': '#fff',
-    facebook: '#4267b2',//old DarkGreenTheme
-    twitter: '#1da1f2', //old DarkGreenTheme
-    linkedin: '#0e76a8', //old DarkGreenTheme
-    gray100: '#fafafa',
-    primary200: '#90caf9',
-    secondary200: '#b39ddb',
-  }
-};
+// const MaTheme: ThemeTypes = {
+//   name: 'MaTheme',
+//   dark: false,
+//   variables: {
+//     'border-color': '#1e88e5', //old DarkGreenTheme
+//     'carousel-control-size': 10, //old DarkGreenTheme
+//     'high-opacity': 1 //old DarkGreenTheme
+//   },
+//   colors: {
+//     primary: '#F0E7D5',
+//     secondary: '#212842',
+//     lightprimary: '#F0E7D5',
+//     lightsecondary: '#212842',
+//      lightText: '#F0c479',//ใช้เป็นหัวข้อ
+//     darkText: '#212121',
+//     info: '#2ABFFF',
+//     success: '#2EB15B',
+//     accent: '#FFAB91', //old DarkGreenTheme
+//     warning: '#FFA800',
+//     error: '#D84315',
+//     lightsuccess: '#CEFFDF',
+//     lighterror: '#ffd7cb',
+//     lightwarning: '#FFF1C1',
+//     borderLight: '#d0d0d0',
+//     inputBorder: '#DBEEFF',
+//     containerBg: '#EAF6FF',
+//     surface: '#fff',
+//     'on-surface-variant': '#fff',
+//     facebook: '#4267b2',//old DarkGreenTheme
+//     twitter: '#1da1f2', //old DarkGreenTheme
+//     linkedin: '#0e76a8', //old DarkGreenTheme
+//     gray100: '#fafafa',
+//     primary200: '#90caf9',
+//     secondary200: '#b39ddb',
+//   }
+// };
 
+// red
+// const MaTheme: ThemeTypes = {
+//   name: 'MaTheme',
+//   dark: false,
+//   variables: {
+//     'border-color': '#1e88e5', //old DarkGreenTheme
+//     'carousel-control-size': 10, //old DarkGreenTheme
+//     'high-opacity': 1 //old DarkGreenTheme
+//   },
+//   colors: {
+//     primary: '#EFDFBB',
+//     secondary: '#722F37',
+//     lightprimary: '#F0E7D5',
+//     lightsecondary: '#212842',
+//      lightText: '#F0c479',//ใช้เป็นหัวข้อ
+//     darkText: '#212121',
+//     info: '#2ABFFF',
+//     success: '#2EB15B',
+//     accent: '#FFAB91', //old DarkGreenTheme
+//     warning: '#FFA800',
+//     error: '#D84315',
+//     lightsuccess: '#CEFFDF',
+//     lighterror: '#ffd7cb',
+//     lightwarning: '#FFF1C1',
+//     borderLight: '#d0d0d0',
+//     inputBorder: '#DBEEFF',
+//     containerBg: '#EAF6FF',
+//     surface: '#fff',
+//     'on-surface-variant': '#fff',
+//     facebook: '#4267b2',//old DarkGreenTheme
+//     twitter: '#1da1f2', //old DarkGreenTheme
+//     linkedin: '#0e76a8', //old DarkGreenTheme
+//     gray100: '#fafafa',
+//     primary200: '#90caf9',
+//     secondary200: '#b39ddb',
+//   }
+// };
+// const MaTheme: ThemeTypes = {
+//   name: 'MaTheme',
+//   dark: false,
+//   variables: {
+//     'border-color': '#1e88e5', //old DarkGreenTheme
+//     'carousel-control-size': 10, //old DarkGreenTheme
+//     'high-opacity': 1 //old DarkGreenTheme
+//   },
+//   colors: {
+//     primary: '#F2E5c6',
+//     secondary: '#560B18',
+//     lightprimary: '#F2E5c6',
+//     lightsecondary: '#212842',
+//      lightText: '#F2D9A0',//ใช้เป็นหัวข้อ
+//     darkText: '#212121',
+//     info: '#2ABFFF',
+//     success: '#2EB15B',
+//     accent: '#FFAB91', //old DarkGreenTheme
+//     warning: '#FFA800',
+//     error: '#D84315',
+//     lightsuccess: '#CEFFDF',
+//     lighterror: '#ffd7cb',
+//     lightwarning: '#FFF1C1',
+//     borderLight: '#d0d0d0',
+//     inputBorder: '#DBEEFF',
+//     containerBg: '#EAF6FF',
+//     surface: '#fff',
+//     'on-surface-variant': '#fff',
+//     facebook: '#4267b2',//old DarkGreenTheme
+//     twitter: '#1da1f2', //old DarkGreenTheme
+//     linkedin: '#0e76a8', //old DarkGreenTheme
+//     gray100: '#fafafa',
+//     primary200: '#90caf9',
+//     secondary200: '#b39ddb',
+//   }
+// };
 
 const PurpleTheme: ThemeTypes = {
   name: 'PurpleTheme',
@@ -114,6 +185,44 @@ const GreenTheme: ThemeTypes = {
     gray100: '#fafafa',
     primary200: '#b0bec5',
     secondary200: '#80cbc4'
+  }
+};
+const MaTheme: ThemeTypes = {
+  name: 'MaTheme',
+  dark: false,
+  variables: {
+    'border-color': '#1e88e5', //old DarkGreenTheme
+    'carousel-control-size': 10, //old DarkGreenTheme
+    'high-opacity': 1 //old DarkGreenTheme
+  },
+  colors: {
+    // primary: '#EFDFBB',
+    // secondary: '#722F37',
+    primary: '#722F37',
+     secondary: '#EFDFBB',
+    lightprimary: '#F0E7D5',
+    lightsecondary: '#212842',
+     lightText: '#F0c479',//ใช้เป็นหัวข้อ
+    darkText: '#212121',
+    info: '#2ABFFF',
+    success: '#2EB15B',
+    accent: '#FFAB91', //old DarkGreenTheme
+    warning: '#FFA800',
+    error: '#D84315',
+    lightsuccess: '#CEFFDF',
+    lighterror: '#ffd7cb',
+    lightwarning: '#FFF1C1',
+    borderLight: '#d0d0d0',
+    inputBorder: '#DBEEFF',
+    containerBg: '#EAF6FF',
+    surface: '#fff',
+    'on-surface-variant': '#fff',
+    facebook: '#4267b2',//old DarkGreenTheme
+    twitter: '#1da1f2', //old DarkGreenTheme
+    linkedin: '#0e76a8', //old DarkGreenTheme
+    gray100: '#fafafa',
+    primary200: '#90caf9',
+    secondary200: '#b39ddb',
   }
 };
 

@@ -61,9 +61,9 @@ const items = shallowRef([
     <v-container class="maxWidth">
       <v-row class="justify-center">
         <v-col md="7" cols="12" class="text-center mb-8">
-          <p class="text-overline text-primary font-weight-medium mb-2">Milestones</p>
-          <h2 class="text-sm-h1 text-h2 font-weight-bold mb-4">Certification</h2>
-          <p class="text-body-1 text-medium-emphasis">
+          <p class="text-secondary text-overline text-primary font-weight-medium mb-2">Milestones</p>
+          <h2 class="text-secondary text-sm-h1 text-h2 font-weight-bold mb-4">Certification</h2>
+          <p class="text-secondary text-body-1 text-medium-emphasis">
             หลักฐานยืนยันการเรียนรู้ด้าน Cloud, Database และการออกแบบระบบที่นำมาประยุกต์ใช้ในงานจริง
           </p>
         </v-col>
@@ -86,10 +86,10 @@ const items = shallowRef([
               <img :src="item.image" alt="certificate" />
             </div>
             <div class="cert-body">
-              <h3 class="text-h4 font-weight-medium mb-3">
+              <h3 class="text-lightText text-h4 font-weight-medium mb-3">
                 {{ item.title }}
               </h3>
-              <p class="text-body-2 text-medium-emphasis">
+              <p class="text-lightprimary text-body-2 text-medium-emphasis">
                 {{ item.content }}
               </p>
             </div>
@@ -103,7 +103,8 @@ const items = shallowRef([
 
 <style scoped>
 .cert-section {
-  background: #fff8f4;
+  /* background: #fff8f4; */
+   background: rgba(var(--v-theme-primary));
 }
 
 .cert-card-link {
@@ -115,7 +116,8 @@ const items = shallowRef([
   width: 100%;
   border-radius: 28px;
   padding: 24px;
-  background: #fff;
+  /* background: #fff; */
+  background: rgba(var(--v-theme-secondary));
   border: 1px solid rgba(201, 189, 179, 0.4);
   box-shadow: 0 18px 40px rgba(70, 63, 57, 0.08);
   display: flex;
@@ -126,7 +128,7 @@ const items = shallowRef([
 .cert-image {
   padding: 12px;
   border-radius: 22px;
-  background: linear-gradient(140deg, #fff8f4 0%, #ffece2 100%);
+  /* background: linear-gradient(140deg, #fff8f4 0%, #ffece2 100%); */
   display: flex;
   justify-content: center;
   align-items: center;

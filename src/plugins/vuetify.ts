@@ -29,7 +29,7 @@ export default createVuetify({
     }
   },
   theme: {
-    defaultTheme: 'GreenTheme',
+    defaultTheme: 'MaTheme',
     themes: {
       MaTheme,
       PurpleTheme,

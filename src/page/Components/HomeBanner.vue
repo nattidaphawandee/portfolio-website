@@ -3,16 +3,15 @@
     <v-container class="maxWidth">
       <div v-if="isLargeScreen" class="stack-container">
         <!-- ตัวอักษร -->
-        <img :src="pText" alt="P" class="letter p" />
-        <img :src="oText" alt="O" class="letter o1" />
-        <img :src="rText" alt="R" class="letter r" />
-        <img :src="tText" alt="T" class="letter t" />
-        <img :src="fText" alt="F" class="letter f" />
-        <img :src="oText" alt="O" class="letter o2" />
-        <img :src="LText" alt="L" class="letter l" />
-        <img :src="iText" alt="I" class="letter i" />
-        <img :src="oText" alt="O" class="letter o3" />
-
+         <p-text class="letter p"/>
+         <oText class="letter o1"/>
+        <rText class="letter r"/>
+        <tText class="letter t"/>
+        <fText class="letter f"/>
+        <oText class="letter o2"/>
+        <LText class="letter l"/>
+        <iText class="letter i"/>
+         <oText class="letter o3"/>
         <div class="name-text">Nattida Phawandee</div>
         <img :src="HomePortfolioLanding" alt="Main" class="main-img" />
       </div>
@@ -20,7 +19,7 @@
       <div v-else class="mobile-text">
         <h2>Welcome to My Portfolio</h2>
        <p>สวัสดีค่ะ
-ขอบคุณที่แวะเข้ามาชมผลงานนะคะ หวังว่าจะมีโอกาสได้ร่วมงานกันนะคะ :)</p>
+        ขอบคุณที่แวะเข้ามาชมผลงานนะคะ หวังว่าจะมีโอกาสได้ร่วมงานกันนะคะ :)</p>
       </div>
     </v-container>
   </section>
@@ -32,13 +31,25 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 // image imports
 import HomePortfolioLanding from '@/assets/images/porfolioMain.svg'
-import pText from '@/assets/images/portfolioText/P.svg'
-import oText from '@/assets/images/portfolioText/o.svg'
-import rText from '@/assets/images/portfolioText/r.svg'
-import tText from '@/assets/images/portfolioText/t.svg'
-import fText from '@/assets/images/portfolioText/f.svg'
-import LText from '@/assets/images/portfolioText/L.svg'
-import iText from '@/assets/images/portfolioText/i.svg'
+import pText from '@/components/logo/pText.vue'
+import oText from '@/components/logo/oText.vue'
+import rText from '@/components/logo/rText.vue'
+import tText from '@/components/logo/tText.vue'
+import fText from '@/components/logo/fText.vue'
+import LText from '@/components/logo/lText.vue'
+import iText from '@/components/logo/iText.vue'
+
+
+
+
+// import pText from '@/assets/images/portfolioText/P.svg'
+// import oText from '@/assets/images/portfolioText/o.svg'
+// import rText from '@/assets/images/portfolioText/r.svg'
+// import tText from '@/assets/images/portfolioText/t.svg'
+// import fText from '@/assets/images/portfolioText/f.svg'
+// import LText from '@/assets/images/portfolioText/L.svg'
+// import iText from '@/assets/images/portfolioText/i.svg'
+// import RText from '@/components/logo/rText.vue'
 
 // screen size logic
 const isLargeScreen = ref(window.innerWidth >= 1194)
@@ -58,11 +69,12 @@ onUnmounted(() => {
 
 <style scoped lang="scss">
 .home-bg {
-  background: #FFEEDD;
+  // background: #FFEEDD;
   min-height: 832px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(var(--v-theme-primary));
 }
 
 .stack-container {
@@ -178,7 +190,9 @@ onUnmounted(() => {
   left: 25%;
   font-size: 28px;
   font-weight: 700;
-  color: #DAB794;
+  // color: #DAB794;
+  color: rgba(var(--v-theme-secondary));
+
    animation:
     dropIn 3s ease-out forwards,
     // float 2s ease-in-out infinite;
