@@ -69,7 +69,7 @@ onBeforeUnmount(() => {
       flat
       color="rgba(255, 255, 255, 0.95)"
     >
-      <v-toolbar-title class="font-weight-bold text-primary">Portfolio</v-toolbar-title>
+      <v-toolbar-title class="font-weight-bold text-primary">Nattida Phawandee</v-toolbar-title>
       <v-spacer />
       <div class="d-flex align-center">
         <v-btn
