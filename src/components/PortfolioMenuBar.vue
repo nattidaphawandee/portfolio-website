@@ -17,6 +17,8 @@ const navItems: NavItem[] = [
 ];
 
 const isVisible = ref(false);
+const isMobile = ref(false);
+const isDrawerOpen = ref(false);
 const activeSection = ref(navItems[0].id);
 
 const findActiveSection = () => {
@@ -43,6 +45,14 @@ const handleScroll = () => {
   findActiveSection();
 };
 
+const handleResize = () => {
+  isMobile.value = window.innerWidth <= 800;
+
+  if (!isMobile.value) {
+    isDrawerOpen.value = false;
+  }
+};
+
 const scrollToSection = (id: string) => {
   const el = document.getElementById(id);
   if (!el)
@@ -51,39 +61,118 @@ const scrollToSection = (id: string) => {
   el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 
+const handleNavClick = (id: string) => {
+  scrollToSection(id);
+
+  if (isMobile.value) {
+    isDrawerOpen.value = false;
+  }
+};
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', handleResize, { passive: true });
   handleScroll();
+  handleResize();
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener('resize', handleResize);
 });
 </script>
 
 <template>
   <transition name="fade">
-    <v-app-bar
-      v-if="isVisible"
-      class="menu-app-bar"
-      flat
-      color="rgba(#F0E7D5, 0.95)"
-    >
-      <v-toolbar-title class="font-weight-bold text-secondary">Nattida Phawandee</v-toolbar-title>
-      <v-spacer />
-      <div class="d-flex align-center">
+    <div v-if="isVisible">
+      <v-app-bar
+        v-if="!isMobile"
+        class="menu-app-bar"
+        flat
+        color="rgba(#F0E7D5, 0.95)"
+      >
+        <v-toolbar-title class="font-weight-bold text-secondary">Nattida Phawandee</v-toolbar-title>
+        <v-spacer />
+        <div class="d-flex align-center">
+          <v-btn
+            v-for="item in navItems"
+            :key="item.id"
+            variant="text"
+            class="text-capitalize mx-1"
+            :color="activeSection === item.id ? 'secondary' : undefined"
+            @click="scrollToSection(item.id)"
+          >
+            {{ item.label }}
+          </v-btn>
+        </div>
+      </v-app-bar>
+
+      <div
+        v-else
+        class="mobile-menu-container"
+      >
         <v-btn
-          v-for="item in navItems"
-          :key="item.id"
-          variant="text"
-          class="text-capitalize mx-1"
-          :color="activeSection === item.id ? 'secondary' : undefined"
-          @click="scrollToSection(item.id)"
+          icon="mdi-menu"
+          class="mobile-menu-btn"
+          size="large"
+          color="secondary"
+          elevation="6"
+          @click="isDrawerOpen = true"
+        />
+
+        <v-navigation-drawer
+          v-model="isDrawerOpen"
+          class="mobile-drawer"
+          color="rgba(#F0E7D5, 0.98)"
+          location="right"
+          temporary
+          width="280"
         >
-          {{ item.label }}
-        </v-btn>
+        <div style="width: 100%; display: flex; justify-content: end;">
+          <v-btn
+          icon="mdi-close"
+          size="large"
+          variant="text"
+          color="secondary"
+          elevation="0"
+          @click="isDrawerOpen = false"
+        />
+        </div>
+          <!-- <div class="mobile-drawer-header">
+            <v-avatar
+              class="me-3"
+              color="secondary"
+              size="42"
+            >
+              <span class="text-white text-h6">NP</span>
+            </v-avatar>
+            
+            <div>
+              <p class="text-secondary text-subtitle-1 mb-0 font-weight-bold">Nattida Phawandee</p>
+              <p class="text-medium-emphasis text-caption mb-0">Navigate portfolio</p>
+            </div>
+          </div> -->
+          <v-divider class="my-2" />
+          <v-list density="comfortable">
+            <v-list-item
+              v-for="item in navItems"
+              :key="item.id"
+              class="text-capitalize"
+              rounded="xl"
+              :active="activeSection === item.id"
+              active-color="secondary"
+              @click="handleNavClick(item.id)"
+            >
+              <template #title>
+                <span :class="activeSection === item.id ? 'text-secondary' : 'text-medium-emphasis'">
+                  {{ item.label }}
+                </span>
+              </template>
+            </v-list-item>
+          </v-list>
+        </v-navigation-drawer>
       </div>
-    </v-app-bar>
+    </div>
   </transition>
 </template>
 
@@ -103,6 +192,26 @@ onBeforeUnmount(() => {
   backdrop-filter: blur(18px);
   z-index: 50;
   padding-inline: 12px;
+}
+
+.mobile-menu-container {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 60;
+}
+
+.mobile-menu-btn {
+  border-radius: 999px;
+}
+
+.mobile-drawer :deep(.v-navigation-drawer__content) {
+  padding: 20px;
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
 }
 
 .fade-enter-active,
