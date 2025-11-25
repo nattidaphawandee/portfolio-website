@@ -398,7 +398,7 @@ const contactLinks = [
         </div>
       </div>
       <div class="content">
-        <!-- <contactContent/> -->
+        <contactContent/>
       </div>
     </div>
     <svg style="position:fixed; top:100vh">
@@ -454,8 +454,8 @@ body .footer .bubbles .bubble {
   left: var(--position, 50%);
    background: rgba(var(--v-theme-lightText));
    border-radius: 100%;
-  -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
-  animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+  -webkit-animation: bubble-size var(--time, 10s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 10s) ease-in infinite var(--delay, 0s);
+  animation: bubble-size var(--time, 10s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 10s) ease-in infinite var(--delay, 0s);
   transform: translate(-50%, 100%);
 }
 

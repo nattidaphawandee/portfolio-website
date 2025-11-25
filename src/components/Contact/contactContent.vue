@@ -18,14 +18,6 @@ const contactLinks = [
             หากต้องการพูดคุยเรื่องงาน ออกแบบโปรเจกต์ หรือแลกเปลี่ยนไอเดียเกี่ยวกับ Front-end & UX
             สามารถติดต่อได้ทางช่องทางด้านล่าง ฉันยินดีรับฟังทุกโอกาสใหม่ ๆ เสมอ
           </p>
-
-          <div class="message-card">
-            <p class="text-h5 font-weight-medium mb-2">พร้อมร่วมงานกับทีมที่มองหาคนรักการออกแบบและพัฒนา UI</p>
-            <p class="text-body-2 text-medium-emphasis">
-              เปิดรับทั้งแบบ Remote, Hybrid และ Onsite (Bangkok)
-            </p>
-          </div>
-
           <v-row class="mt-6">
             <v-col
               v-for="contact in contactLinks"
