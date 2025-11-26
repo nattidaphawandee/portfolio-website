@@ -14,6 +14,7 @@ const MaTheme: ThemeTypes = {
     lightprimary: '#F0E7D5',
     lightsecondary: '#212842',
      lightText: '#F0c479',//ใช้เป็นหัวข้อ
+     primary200: '#F0E7D5',// bg footer
     darkText: '#212121',
     info: '#2ABFFF',
     success: '#2EB15B',
@@ -32,7 +33,6 @@ const MaTheme: ThemeTypes = {
     twitter: '#1da1f2', //old DarkGreenTheme
     linkedin: '#0e76a8', //old DarkGreenTheme
     gray100: '#fafafa',
-    primary200: '#90caf9',
     secondary200: '#b39ddb',
   }
 };

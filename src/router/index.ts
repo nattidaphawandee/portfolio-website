@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import MainRoutes from './MainRoutes';
-import AuthRoutes from './AuthRoutes';
+
 import LandingPageRoutes from './LandingPageRoutes';
 
 export const router = createRouter({
@@ -8,8 +7,6 @@ export const router = createRouter({
   routes: [
     {
       path: '/:pathMatch(.*)*',
-      // redirect: { name: 'LandingPage' }
-      // component: () => import('@/views/404Page/404Page.vue')
     redirect: { name: 'HomePage' }
     },
     // MainRoutes,

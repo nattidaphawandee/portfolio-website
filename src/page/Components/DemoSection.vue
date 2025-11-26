@@ -139,7 +139,9 @@ const breakpoints = ref({
 
 <style lang="scss">
 .demo-section {
-  background: #fffdfb;
+  //background: #fffdfb;
+    background: rgba(var(--v-theme-secondary));
+
 }
 
 .demo-card {

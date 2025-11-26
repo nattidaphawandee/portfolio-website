@@ -8,7 +8,7 @@
       <EductionWork />
       <FrameworkSection />
       <CertificationSection />
-      <!-- <DemoSection /> -->
+      <DemoSection />
       <Contact/>
     </v-main>
   </v-app>
@@ -16,7 +16,7 @@
 
 <script lang="ts" setup>
 import HomeBanner from '@/page/Components/HomeBanner.vue';
-// import DemoSection from '@/page/Components/DemoSection.vue';
+import DemoSection from '@/page/Components/DemoSection.vue';
 import EductionWork from '@/page/Components/EductionWork.vue';
 import AboutMe from '@/page/Components/AboutMe.vue';
 import FrameworkSection from '@/page/Components/FrameworkSection.vue';

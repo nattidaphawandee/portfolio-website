@@ -445,14 +445,14 @@ body .footer .bubbles {
   left: 0;
   right: 0;
   height: 1rem;
-   background: rgba(var(--v-theme-lightText));
+   background: rgba(var(--v-theme-primary200));
   filter: url("#blob");
 }
 
 body .footer .bubbles .bubble {
   position: absolute;
   left: var(--position, 50%);
-   background: rgba(var(--v-theme-lightText));
+   background: rgba(var(--v-theme-primary200));
    border-radius: 100%;
   -webkit-animation: bubble-size var(--time, 10s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 10s) ease-in infinite var(--delay, 0s);
   animation: bubble-size var(--time, 10s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 10s) ease-in infinite var(--delay, 0s);
@@ -465,7 +465,7 @@ body .footer .content {
   grid-template-columns: 1fr auto;
   grid-gap: 4rem;
   padding: 2rem;
-   background: rgba(var(--v-theme-lightText));
+   background: rgba(var(--v-theme-primary200));
 }
 
 body .footer .content a,
