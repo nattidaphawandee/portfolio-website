@@ -10,7 +10,6 @@
         <!-- เนื้อหากลาง -->
         <div class="hero-center">
              <div style="background: red;">
-            sdl;f
          </div>
                 <div class="hero-title section-margin-x">Nattida</div>
         </div>

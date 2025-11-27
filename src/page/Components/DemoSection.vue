@@ -87,9 +87,9 @@ const breakpoints = ref({
     <v-container class="maxWidth">
       <v-row class="justify-center">
         <v-col md="8" cols="12" class="text-center mb-6">
-          <p class="text-overline text-primary font-weight-medium mb-2">Works Highlight</p>
-          <h2 class="text-sm-h1 text-h2 font-weight-bold mb-4">ประสบการณ์ทำงาน</h2>
-          <p class="text-body-1 text-medium-emphasis">
+          <p class="text-primary text-overline font-weight-medium mb-2">Works Highlight</p>
+          <h2 class="text-lightText text-sm-h1 text-h2 font-weight-bold mb-4">ตัวอย่างงาน</h2>
+          <p class="text-lightprimary text-body-1 text-medium-emphasis">
             ตัวอย่างงานพัฒนา Front-End ตั้งแต่การออกแบบ UX/UI ใน Figma ไปจนถึงการพัฒนา Component, Interaction,
             Responsive Design และการเชื่อมต่อข้อมูลจริง
           </p>
@@ -111,10 +111,10 @@ const breakpoints = ref({
                   <img alt="applications" :src="slide.image" class="demo-image" />
                 </a>
                 <div class="demo-meta">
-                  <h3 class="text-h5 font-weight-medium">{{ slide.name }}</h3>
+                  <h3 class="text-secondary text-h5 font-weight-medium">{{ slide.name }}</h3>
                   <v-btn
                     variant="tonal"
-                    color="primary"
+                    color="secondary"
                     size="small"
                     class="mt-3"
                     :href="buildSlideUrl(slide)"
@@ -145,7 +145,8 @@ const breakpoints = ref({
 }
 
 .demo-card {
-  background: #ffffff;
+  background: rgba(var(--v-theme-primary));
+
   padding: 18px;
   border-radius: 28px;
   box-shadow: 0 18px 40px rgba(51, 51, 51, 0.08);
@@ -183,7 +184,8 @@ const breakpoints = ref({
 
   .carousel__prev,
   .carousel__next {
-    background: #fff;
+    // background: #fff;
+    background: rgba(var(--v-theme-secondary));
     width: 56px;
     height: 56px;
     border-radius: 50%;
