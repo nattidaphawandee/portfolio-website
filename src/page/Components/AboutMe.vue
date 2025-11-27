@@ -7,7 +7,7 @@ import AboutMeImg from '@/assets/images/AboutMe/AboutMeImg.png'
 const profileDetails = [
   { label: 'ชื่อเล่น', value: 'ฟ้า' },
   { label: 'ตำแหน่ง', value: 'Front-end Engineer' },
-  { label: 'ถนัด', value: 'Vue.js · TypeScript · UI Engineering' },
+  { label: 'ถนัด', value: 'Vue.js · TypeScript · UX/UI design' },
   { label: 'ที่อยู่', value: 'Bangkok, Thailand' }
 ]
 

@@ -461,11 +461,15 @@ body .footer .bubbles .bubble {
 
 body .footer .content {
   z-index: 2;
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr auto;
   grid-gap: 4rem;
-  padding: 2rem;
-   background: rgba(var(--v-theme-primary200));
+  padding: 2rem; */
+  padding: 16px;
+  background: rgba(var(--v-theme-primary200));
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body .footer .content a,

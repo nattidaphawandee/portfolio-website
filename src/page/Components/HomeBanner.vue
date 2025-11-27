@@ -13,6 +13,17 @@
         <iText class="letter i"/>
          <oText class="letter o3"/>
         <div class="name-text">Nattida Phawandee</div>
+        <p class="name-subtext">สวัสดีค่ะ ขอบคุณที่แวะเข้ามาชมผลงานนะคะ หวังว่าจะมีโอกาสได้ร่วมงานกันนะคะ :)</p>
+
+        <v-btn
+          class="download-link"
+          rounded="pill"
+          href="https://drive.google.com/file/d/1MQljoCSWTF-sY8O00gDhc1KWjVq7DiiR/view?usp=sharing"
+          target="_blank"
+          rel="noopener"
+        >
+          Download Resume
+        </v-btn>
         <img :src="HomePortfolioLanding" alt="Main" class="main-img" />
       </div>
 
@@ -20,6 +31,15 @@
         <h2>Welcome to My Portfolio</h2>
        <p>สวัสดีค่ะ
         ขอบคุณที่แวะเข้ามาชมผลงานนะคะ หวังว่าจะมีโอกาสได้ร่วมงานกันนะคะ :)</p>
+         <v-btn
+          color="secondary"
+          rounded="pill"
+          href="https://drive.google.com/file/d/1MQljoCSWTF-sY8O00gDhc1KWjVq7DiiR/view?usp=sharing"
+          target="_blank"
+          rel="noopener"
+        >
+          Download Resume
+        </v-btn>
       </div>
     </v-container>
   </section>
@@ -187,7 +207,7 @@ onUnmounted(() => {
 .name-text{
   position: absolute;
   top: 70%;
-  left: 25%;
+  left: 20%;
   font-size: 28px;
   font-weight: 700;
   // color: #DAB794;
@@ -195,8 +215,47 @@ onUnmounted(() => {
 
    animation:
     dropIn 3s ease-out forwards,
-    // float 2s ease-in-out infinite;
-  // background: red;
+
+}
+
+.name-subtext{
+  position: absolute;
+  top: 77%;
+  left: 20%;
+  font-size: 16px;
+  height: auto;
+  max-width: 300px;
+  font-weight: 500;
+  // color: #DAB794;
+  color: rgba(var(--v-theme-secondary));
+
+   animation:
+    dropIn 3s ease-out forwards,
+
+}
+
+.download-link {
+  position: absolute;
+  top: 87%;
+  left: 20%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 22px;
+  border-radius: 999px;
+   color: rgba(var(--v-theme-lightText));
+  background: rgba(var(--v-theme-secondary));
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  animation: dropIn 3.5s ease-out forwards;
+  transition: transform 0.2s ease-in-out;
+}
+
+.download-link:hover {
+  transform: translateY(-2px);
 }
 
 /* รูปหลักซ้อนด้านบน */
@@ -215,12 +274,14 @@ onUnmounted(() => {
 
   h2 {
     font-size: 28px;
-    color: #b57646;
+    // color: #b57646;
+    color: rgba(var(--v-theme-secondary));
+
   }
 
   p {
     font-size: 18px;
-    color: #5e4c42;
+    color: rgba(var(--v-theme-secondary));
   }
 }
 </style>

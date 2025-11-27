@@ -1,56 +1,32 @@
 <script setup>
+import thankCute from '@/assets/images/ThankCute02.gif'
 const contactLinks = [
-  { label: 'อีเมล', value: 'natida.phawan@gmail.com', link: 'mailto:natida.phawan@gmail.com' },
-  { label: 'LinkedIn', value: 'linkedin.com/in/natidaphawan', link: 'https://www.linkedin.com/in/natidaphawan/' }
+  { label: 'อีเมล', value: 'nattida.phawandee@gmail.com', link: 'mailto:nattida.phawandee@gmail.com' },
+  { label: 'โทรศัพท์', value: '0991312183', link: 'tel:0991312183' },
 ]
 </script>
 
 <template>
-  <section class="contact-section py-12" id="contact">
-    <v-container class="maxWidth">
-      <v-row class="align-center">
-        <v-col cols="12" md="7">
-          <p class="text-primary text-overline font-weight-medium mb-2">Thank you for watching</p>
-          <h2 class="text-sm-h1 text-h2 font-weight-bold mb-4">
-            ขอบคุณที่ติดตามจนจบ
-          </h2>
-          <p class="text-body-1 text-medium-emphasis mb-6">
-            หากต้องการพูดคุยเรื่องงาน ออกแบบโปรเจกต์ หรือแลกเปลี่ยนไอเดียเกี่ยวกับ Front-end & UX
-            สามารถติดต่อได้ทางช่องทางด้านล่าง ฉันยินดีรับฟังทุกโอกาสใหม่ ๆ เสมอ
-          </p>
-          <v-row class="mt-6">
-            <v-col
-              v-for="contact in contactLinks"
-              :key="contact.label"
-              cols="12"
-              sm="6"
-            >
-              <a :href="contact.link" class="contact-link">
-                <div class="link-label text-caption text-medium-emphasis">{{ contact.label }}</div>
-                <div class="link-value text-subtitle-1 font-weight-medium">{{ contact.value }}</div>
-              </a>
-            </v-col>
-          </v-row>
-
-          <v-btn
-            class="mt-4"
-            color="primary"
-            variant="flat"
-            rounded="pill"
-            size="large"
-            href="mailto:natida.phawan@gmail.com"
-          >
-            ส่งอีเมลหาเรา
-          </v-btn>
-        </v-col>
-      </v-row>
-    </v-container>
-  </section>
+  <div>
+    <p class="text-lightsecondary text-overline font-weight-medium mb-2">Thank you for watching</p>
+    <p class="text-body-1 text-medium-emphasis mb-6">
+      หากต้องการพูดคุยเรื่องงาน
+      สามารถติดต่อได้ทางช่องทางด้านล่าง ฉันยินดีรับฟังทุกโอกาสใหม่ ๆ เสมอ
+    </p>
+    <div class="contact-grid">
+      <div v-for="contact in contactLinks" :key="contact.label" class="contact-item">
+        <a :href="contact.link" class="contact-link">
+          <div class="link-label text-caption text-medium-emphasis">{{ contact.label }}</div>
+          <div class="link-value text-subtitle-1 font-weight-medium">{{ contact.value }}</div>
+        </a>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
 .contact-section {
-  background: #fff8f4;
+  /* background: #fff8f4; */
 }
 
 .message-card {
@@ -61,21 +37,38 @@ const contactLinks = [
   box-shadow: 0 16px 38px rgba(70, 63, 57, 0.08);
 }
 
+.contact-grid {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  flex: 1;
+  min-width: 260px;
+}
+
 .contact-link {
   display: block;
   padding: 16px 20px;
   border-radius: 18px;
-  border: 1px solid rgba(201, 189, 179, 0.35);
+  /* border: 1px solid rgba(201, 189, 179, 0.35);
   background: #fff;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05); */
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease, box-shadow 0.2s ease;
 }
 
 .contact-link:hover {
   transform: translateY(-4px);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(201, 189, 179, 0.35);
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
 }
 
 
@@ -94,6 +87,6 @@ const contactLinks = [
 @media (max-width: 960px) {
   .thankyou-card {
     margin-top: 32px;
-  } 
+  }
 }
 </style>

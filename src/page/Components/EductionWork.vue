@@ -68,9 +68,7 @@ const workList = [
 
           <div class="info-group">
             <h4 class="group-title text-h5 font-weight-medium mb-2">ประวัติการทำงาน</h4>
-            <p class="text-body-2 text-medium-emphasis mb-4">
-              ประสบการณ์จริงในการพัฒนาระบบและออกแบบส่วนติดต่อผู้ใช้ที่ตอบโจทย์ทั้งทีมและผู้ใช้งาน
-            </p>
+
             <div
               v-for="(work, index) in workList"
               :key="'work-' + index"
