@@ -18,11 +18,11 @@
         <v-btn
           class="download-link"
           rounded="pill"
-          href="https://drive.google.com/file/d/1MQljoCSWTF-sY8O00gDhc1KWjVq7DiiR/view?usp=sharing"
+          href="https://drive.google.com/file/d/1XIer4lbx63rfGtoJPFs4iuOq88FlBeKk/view?usp=drive_link"
           target="_blank"
           rel="noopener"
         >
-          Download Resume
+          Download CSV
         </v-btn>
         <img :src="HomePortfolioLanding" alt="Main" class="main-img" />
       </div>
