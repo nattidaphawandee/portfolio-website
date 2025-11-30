@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+import LanguageSwitcher from './LanguageDesktop.vue';
 
 type NavItem = {
   id: string;
@@ -104,6 +105,9 @@ onBeforeUnmount(() => {
           >
             {{ item.label }}
           </v-btn>
+        
+          <!-- เปลี่ยนภาษา -->
+           <LanguageSwitcher/>
         </div>
       </v-app-bar>
 
@@ -128,7 +132,9 @@ onBeforeUnmount(() => {
           temporary
           width="280"
         >
-        <div style="width: 100%; display: flex; justify-content: end;">
+        <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+          <!-- เปลี่ยนภาษา -->
+          <LanguageSwitcher/>
           <v-btn
           icon="mdi-close"
           size="large"
