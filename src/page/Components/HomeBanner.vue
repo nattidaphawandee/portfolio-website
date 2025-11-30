@@ -13,7 +13,7 @@
         <iText class="letter i"/>
          <oText class="letter o3"/>
         <div class="name-text">Nattida Phawandee</div>
-        <p class="name-subtext">สวัสดีค่ะ ขอบคุณที่แวะเข้ามาชมผลงานนะคะ หวังว่าจะมีโอกาสได้ร่วมงานกันนะคะ :)</p>
+        <p class="name-subtext">{{ titleText }}</p>
 
         <v-btn
           class="download-link"
@@ -26,11 +26,9 @@
         </v-btn>
         <img :src="HomePortfolioLanding" alt="Main" class="main-img" />
       </div>
-
       <div v-else class="mobile-text">
-        <h2>Welcome to My Portfolio</h2>
-       <p>สวัสดีค่ะ
-        ขอบคุณที่แวะเข้ามาชมผลงานนะคะ หวังว่าจะมีโอกาสได้ร่วมงานกันนะคะ :)</p>
+        <h2>{{ mobileTitleText }}</h2>
+       <p>{{ titleText }}</p>
          <v-btn
           color="secondary"
           rounded="pill"
@@ -47,7 +45,7 @@
 
 <script setup lang="ts">
 // assets
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted ,computed} from 'vue'
 
 // image imports
 import HomePortfolioLanding from '@/assets/images/porfolioMain.svg'
@@ -59,17 +57,15 @@ import fText from '@/components/logo/fText.vue'
 import LText from '@/components/logo/lText.vue'
 import iText from '@/components/logo/iText.vue'
 
+import { FiltersLanguage } from "@/utils/language";
 
+// UI text via FiltersLanguage pattern
+const headerText = { titleTh: 'สวัสดีค่ะ ขอบคุณที่แวะเข้ามาชมผลงานนะคะ หวังว่าจะมีโอกาสได้ร่วมงานกันนะคะ :)', titleEng: 'Hello! Thank you for taking the time to view my work. I hope we’ll have the opportunity to work together :)' }
+const mobiletitle = { subTh: 'ยินดีต้อนรับ', subEng: 'Welcome to My Portfolio' }
 
+const titleText = computed(() => FiltersLanguage(headerText as any, 'title'))
+const mobileTitleText = computed(() => FiltersLanguage(mobiletitle as any, 'sub'))
 
-// import pText from '@/assets/images/portfolioText/P.svg'
-// import oText from '@/assets/images/portfolioText/o.svg'
-// import rText from '@/assets/images/portfolioText/r.svg'
-// import tText from '@/assets/images/portfolioText/t.svg'
-// import fText from '@/assets/images/portfolioText/f.svg'
-// import LText from '@/assets/images/portfolioText/L.svg'
-// import iText from '@/assets/images/portfolioText/i.svg'
-// import RText from '@/components/logo/rText.vue'
 
 // screen size logic
 const isLargeScreen = ref(window.innerWidth >= 1194)
