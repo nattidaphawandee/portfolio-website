@@ -101,7 +101,8 @@ $sizes: (
 
 .themeBluePurple,
 .themeDarkPurple {
-  background: linear-gradient(135deg, rgb(33, 150, 243) 50%, rgb(103, 58, 183) 50%);
+    background: linear-gradient(135deg,  #f2d288 50%, #722F37 50%);
+
 }
 .themeGreenDark,
 .themeDarkGreen {
@@ -137,7 +138,6 @@ $sizes: (
 .themeDarkMaPreset {
   background: linear-gradient(90deg, rgb(0, 86, 156) 50%, rgb(46, 213, 255) 50%);
 }
-
 .themeBluePurplePreset,
 .themeDarkPurplePreset {
   background: linear-gradient(90deg, rgb(33, 150, 243) 50%, rgb(103, 58, 183) 50%);

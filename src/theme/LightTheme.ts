@@ -111,6 +111,7 @@ const MaTheme: ThemeTypes = {
 //   }
 // };
 
+//red
 const PurpleTheme: ThemeTypes = {
   name: 'PurpleTheme',
   dark: false,
@@ -120,20 +121,24 @@ const PurpleTheme: ThemeTypes = {
     'high-opacity': 1
   },
   colors: {
-    primary: '#1e88e5',
-    secondary: '#5e35b1',
+  //  primary: '#EFDFBB',
+    // secondary: '#722F37',
+    primary: '#722F37',
+    secondary: '#f2d288',
+    lightprimary: '#722F37',
+    lightsecondary: '#722F37',
+     lightText: '#560B18',//ใช้เป็นหัวข้อ
+    darkText: '#212121',
+     primary200: '#F0E7D5',
+
     info: '#03c9d7',
     success: '#00c853',
     accent: '#FFAB91',
     warning: '#ffc107',
     error: '#f44336',
-    lightprimary: '#eef2f6',
-    lightsecondary: '#ede7f6',
     lightsuccess: '#b9f6ca',
     lighterror: '#f9d8d8',
     lightwarning: '#fff8e1',
-    darkText: '#212121',
-    lightText: '#616161',
     darkprimary: '#1565c0',
     darksecondary: '#4527a0',
     borderLight: '#d0d0d0',
@@ -145,7 +150,6 @@ const PurpleTheme: ThemeTypes = {
     twitter: '#1da1f2',
     linkedin: '#0e76a8',
     gray100: '#fafafa',
-    primary200: '#90caf9',
     secondary200: '#b39ddb'
   }
 };
