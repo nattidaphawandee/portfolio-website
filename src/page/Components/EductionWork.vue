@@ -1,40 +1,101 @@
-<script setup>
-import { shallowRef } from 'vue';
+<script setup lang="ts">
+import { computed } from 'vue';
+import { FiltersLanguage } from "@/utils/language";
+
 // import SvgSprite from '@/components/shared/SvgSprite.vue';
 // assets
-import HomePortfolioLanding from '@/assets/images/porfolioMain.svg'
 import WorkImage from '@/assets/images/work.svg'
 import heartStickers from '@/assets/images/stickers/heart.svg'
 import ideaStickers from '@/assets/images/stickers/idea.svg'
 import codeStickers from '@/assets/images/stickers/code.svg'
 import fireFolderStickers from '@/assets/images/stickers/fireFolder.svg'
-const educationList = [
+const sectionTexts = {
+  overlineTh: 'เส้นทางการเรียนรู้',
+  overlineEng: 'Learning Journey',
+  headingTh: 'การศึกษา & การทำงาน',
+  headingEng: 'Education & Work',
+  descTh: 'เส้นทางการเติบโตทั้งในรั้วมหาวิทยาลัยและในโลกการทำงาน',
+  descEng: 'The growth journey from university life to the professional world.'
+}
+
+const educationHeading = {
+  titleTh: 'ประวัติการศึกษา',
+  titleEng: 'Education History'
+}
+
+const workHeading = {
+  titleTh: 'ประวัติการทำงาน',
+  titleEng: 'Work Experience'
+}
+
+const educationListData = [
   {
-    title: 'ปริญญาวิศวกรรมศาสตรบัณฑิต (วศ.บ.) สาขาวิศวกรรมคอมพิวเตอร์',
-    detail: 'ภาควิชาวิศวกรรมคอมพิวเตอร์ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเชียงใหม่',
+    titleTh: 'ปริญญาวิศวกรรมศาสตรบัณฑิต (วศ.บ.) สาขาวิศวกรรมคอมพิวเตอร์',
+    titleEng: 'Bachelor of Engineering in Computer Engineering',
+    detailTh: 'ภาควิชาวิศวกรรมคอมพิวเตอร์ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเชียงใหม่',
+    detailEng: 'Department of Computer Engineering, Faculty of Engineering, Chiang Mai University'
   },
   {
-    title: 'มัธยมต้นและมัธยมศึกษาตอนปลาย (แผนวิทย์-คณิต)',
-    detail: 'โรงเรียนนวมินทราชินูทิศ บดินทรเดชา',
+    titleTh: 'มัธยมต้นและมัธยมศึกษาตอนปลาย (แผนวิทย์-คณิต)',
+    titleEng: 'Secondary School (Science-Math Program)',
+    detailTh: 'โรงเรียนนวมินทราชินูทิศ บดินทรเดชา',
+    detailEng: 'Nawaminthrachinuthit Bodindecha School'
   },
   {
-    title: 'ประถมศึกษา',
-    detail: 'โรงเรียนถนอมพิศวิทยา',
+    titleTh: 'ประถมศึกษา',
+    titleEng: 'Primary School',
+    detailTh: 'โรงเรียนถนอมพิศวิทยา',
+    detailEng: 'Thanompitvidya School'
   },
 ]
 
-const workList = [
+const workListData = [
   {
-    company: 'บริษัท อินเทอร์เน็ตประเทศไทย จำกัด (มหาชน) ตั้งแต่ 2566 - ปัจจุบัน',
-    position: 'Software Engineer (Vue.js, TypeScript, Golang)',
+    companyTh: 'บริษัท อินเทอร์เน็ตประเทศไทย จำกัด (มหาชน) ตั้งแต่ 2566 - ปัจจุบัน',
+    companyEng: 'Internet Thailand Public Company Limited, 2023 – Present',
+    positionTh: 'วิศวกรซอฟต์แวร์ (Vue.js, TypeScript, Golang)',
+    positionEng: 'Software Engineer (Vue.js, TypeScript, Golang)',
     details: [
-      'พัฒนาและดูแลระบบ Front-end ด้วย Vue.js และ TypeScript',
-      'ออกแบบ UI ที่ตอบโจทย์ประสบการณ์ผู้ใช้',
-      'ทำงานร่วมกับทีมออกแบบและ Back-end เพื่อให้ระบบทำงานสมบูรณ์',
-      'เขียน API และจัดการข้อมูลเบื้องต้นด้วย Golang และ Mongodb',
+      {
+        textTh: 'พัฒนาและดูแลระบบ Front-end ด้วย Vue.js และ TypeScript',
+        textEng: 'Develop and maintain front-end systems using Vue.js and TypeScript'
+      },
+      {
+        textTh: 'ออกแบบ UI ที่ตอบโจทย์ประสบการณ์ผู้ใช้',
+        textEng: 'Design UI solutions focused on an intuitive user experience'
+      },
+      {
+        textTh: 'ทำงานร่วมกับทีมออกแบบและ Back-end เพื่อให้ระบบทำงานสมบูรณ์',
+        textEng: 'Collaborate with design and back-end teams to deliver complete systems'
+      },
+      {
+        textTh: 'เขียน API และจัดการข้อมูลเบื้องต้นด้วย Golang และ MongoDB',
+        textEng: 'Build APIs and handle basic data processing with Golang and MongoDB'
+      },
     ],
   },
 ]
+
+const overlineText = computed(() => FiltersLanguage(sectionTexts as any, 'overline'))
+const headingText = computed(() => FiltersLanguage(sectionTexts as any, 'heading'))
+const descriptionText = computed(() => FiltersLanguage(sectionTexts as any, 'desc'))
+const educationHeadingText = computed(() => FiltersLanguage(educationHeading as any, 'title'))
+const workHeadingText = computed(() => FiltersLanguage(workHeading as any, 'title'))
+
+const educationList = computed(() =>
+  educationListData.map((item) => ({
+    title: FiltersLanguage(item as any, 'title'),
+    detail: FiltersLanguage(item as any, 'detail'),
+  })),
+)
+
+const workList = computed(() =>
+  workListData.map((item) => ({
+    company: FiltersLanguage(item as any, 'company'),
+    position: FiltersLanguage(item as any, 'position'),
+    details: item.details.map((detail) => FiltersLanguage(detail as any, 'text')),
+  })),
+)
 </script>
 
 <template>
@@ -43,14 +104,14 @@ const workList = [
       <v-row class="justify-center align-center mt-2">
         <!-- Left Section -->
         <v-col md="6" cols="12" class="order-md-0 order-0 info-column">
-          <p class="text-primary text-overline text-secondary font-weight-medium mb-2">เส้นทางการเรียนรู้</p>
-          <h3 class="text-secondary text-sm-h1 text-h2 font-weight-bold mb-4">Education & Work</h3>
+          <p class="text-primary text-overline text-secondary font-weight-medium mb-2">{{ overlineText }}</p>
+          <h3 class="text-secondary text-sm-h1 text-h2 font-weight-bold mb-4">{{ headingText }}</h3>
           <p class="text-body-1 text-medium-emphasis mb-8">
-            เส้นทางการเติบโตทั้งในรั้วมหาวิทยาลัยและในโลกการทำงาน
+            {{ descriptionText }}
           </p>
 
           <div class="info-group mb-10">
-            <h4 class="group-title text-h5 font-weight-medium mb-4">ประวัติการศึกษา</h4>
+            <h4 class="group-title text-h5 font-weight-medium mb-4">{{ educationHeadingText }}</h4>
             <div
               v-for="(edu, index) in educationList"
               :key="'edu-' + index"
@@ -67,7 +128,7 @@ const workList = [
           </div>
 
           <div class="info-group">
-            <h4 class="group-title text-h5 font-weight-medium mb-2">ประวัติการทำงาน</h4>
+            <h4 class="group-title text-h5 font-weight-medium mb-2">{{ workHeadingText }}</h4>
 
             <div
               v-for="(work, index) in workList"
