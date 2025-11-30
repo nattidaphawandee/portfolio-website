@@ -1,22 +1,73 @@
-<script setup>
+<script setup lang="ts">
 import AboutMeImg from '@/assets/images/AboutMe/AboutMeImg.png'
-// import AboutMeImg from '@/assets/images/AboutMe/profileimg.jpeg'
-// import AboutMeImg from '@/assets/images/AboutMe/twoProfile.png'
+import { FiltersLanguage } from "@/utils/language";
+import { computed } from 'vue'
 
+const sectionTexts = {
+  overlineTh: 'Nice to meet you',
+  overlineEng: 'Nice to meet you',
+  headingTh: 'About Me',
+  headingEng: 'About Me',
+}
 
-const profileDetails = [
-  { label: 'ชื่อเล่น', value: 'ฟ้า' },
-  { label: 'ตำแหน่ง', value: 'Software Engineer' },
-  { label: 'ถนัด', value: 'Vue.js · TypeScript · UX/UI design' },
-  { label: 'ที่อยู่', value: 'Bangkok, Thailand' }
+const aboutParagraphsData = [
+  {
+    textTh:
+      'สวัสดีค่ะ ชื่อฟ้านะคะ ปัจจุบันทำงานในตำแหน่ง Software Engineer โดยรับผิดชอบงานด้าน Front-End เป็นหลัก เคยฝึก Back-End มาบ้างและพร้อมต่อยอดเป็น Full Stack รวมถึงมีความสนใจงาน Mobile App ด้วย',
+    textEng:
+      'Hi! I’m Fah, currently working as a Software Engineer focused on Front-End development. I have some hands-on experience with Back-End work and am ready to grow into a Full Stack role, with a strong interest in mobile app development as well.',
+  },
+  {
+    textTh:
+      'ขณะนี้กำลังมองหาโอกาสในตำแหน่ง Front-End, Full Stack, Back-End หรือ Mobile App Developer พร้อมเปิดรับการเรียนรู้เทคโนโลยีใหม่ ๆ ตามความต้องการของทีม และสามารถทำงานได้ในทุกรูปแบบ ไม่ว่าจะเป็น Onsite (Bangkok), Hybrid หรือ WFH',
+    textEng:
+      'I’m currently looking for opportunities as a Front-End, Full Stack, Back-End, or Mobile App Developer. I’m open to learning new technologies to meet team needs and can work onsite (Bangkok), hybrid, or fully remote.',
+  },
 ]
 
-const highlightItems = [
-  'รักการสร้างสรรค์ UI ที่ใช้งานง่ายและ Responsive',
-  'เชื่อในการพัฒนาระบบที่เข้าใจผู้ใช้เป็นศูนย์กลาง',
-  'ทำงานร่วมกับทีมดีไซน์และ Back-end ได้ลื่นไหล',
-  'ชอบทดลองเทคโนโลยีใหม่ ๆ เพื่อยกระดับงาน'
+const profileDetailsData = [
+  { labelTh: 'ชื่อเล่น', labelEng: 'Nickname', valueTh: 'ฟ้า', valueEng: 'Fah' },
+  { labelTh: 'ตำแหน่ง', labelEng: 'Role', valueTh: 'วิศวกรซอฟต์แวร์', valueEng: 'Software Engineer' },
+  {
+    labelTh: 'ถนัด',
+    labelEng: 'Specialties',
+    valueTh: 'Vue.js · TypeScript · UX/UI Design',
+    valueEng: 'Vue.js · TypeScript · UX/UI Design',
+  },
+  { labelTh: 'ที่อยู่', labelEng: 'Location', valueTh: 'กรุงเทพฯ, ประเทศไทย', valueEng: 'Bangkok, Thailand' },
 ]
+
+const highlightItemsData = [
+  {
+    textTh: 'รักการสร้างสรรค์ UI ที่ใช้งานง่ายและ Responsive',
+    textEng: 'Love crafting intuitive, responsive UIs',
+  },
+  {
+    textTh: 'เชื่อในการพัฒนาระบบที่เข้าใจผู้ใช้เป็นศูนย์กลาง',
+    textEng: 'Believe in building systems centered around user empathy',
+  },
+  {
+    textTh: 'ทำงานร่วมกับทีมดีไซน์และ Back-end ได้ลื่นไหล',
+    textEng: 'Collaborate seamlessly with design and back-end teams',
+  },
+  {
+    textTh: 'ชอบทดลองเทคโนโลยีใหม่ ๆ เพื่อยกระดับงาน',
+    textEng: 'Enjoy experimenting with new tech to elevate solutions',
+  },
+]
+
+const overlineText = computed(() => FiltersLanguage(sectionTexts as any, 'overline'))
+const headingText = computed(() => FiltersLanguage(sectionTexts as any, 'heading'))
+const aboutParagraphs = computed(() => aboutParagraphsData.map((item) => FiltersLanguage(item as any, 'text')))
+
+const profileDetails = computed(() =>
+  profileDetailsData.map((item) => ({
+    label: FiltersLanguage(item as any, 'label'),
+    value: FiltersLanguage(item as any, 'value'),
+  })),
+)
+
+const highlightItems = computed(() => highlightItemsData.map((item) => FiltersLanguage(item as any, 'text')))
 </script>
 
 <template>
@@ -34,15 +85,15 @@ const highlightItems = [
         </v-col>
 
         <v-col cols="12" md="7" class="order-md-1 order-1">
-          <p class="text-primary text-overline font-weight-medium mb-2">Nice to meet you</p>
-          <h3 class="text-lightText text-h2 text-sm-h1 font-weight-bold mb-4">About Me</h3>
-          <p class="text-primary text-body-1 text-medium-emphasis mb-6">
-            สวัสดีค่ะ ชื่อฟ้านะคะ ปัจจุบันทำงานในตำแหน่ง Software Engineer โดยรับผิดชอบงานด้าน Front-End เป็นหลัก
-            เคยฝึก Back-End มาบ้างและพร้อมต่อยอดเป็น Full Stack รวมถึงมีความสนใจงาน Mobile App ด้วย                  
-            </p>
-            <p class="text-primary text-body-1 text-medium-emphasis mb-6">
-                ขณะนี้กำลังมองหาโอกาสในตำแหน่ง Front-End, Full Stack, Back-End หรือ Mobile App Developer พร้อมเปิดรับการเรียนรู้เทคโนโลยีใหม่ ๆ ตามความต้องการของทีม และสามารถทำงานได้ในทุกรูปแบบ ไม่ว่าจะเป็น Onsite(bangkok), Hybrid หรือ WFH
-            </p>
+          <p class="text-primary text-overline font-weight-medium mb-2">{{ overlineText }}</p>
+          <h3 class="text-lightText text-h2 text-sm-h1 font-weight-bold mb-4">{{ headingText }}</h3>
+          <p
+            v-for="(paragraph, idx) in aboutParagraphs"
+            :key="`paragraph-${idx}`"
+            class="text-primary text-body-1 text-medium-emphasis mb-6"
+          >
+            {{ paragraph }}
+          </p>
 
           <v-row>
             <v-col
