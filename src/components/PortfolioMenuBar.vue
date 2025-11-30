@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import LanguageSwitcher from './LanguageDesktop.vue';
+import { useCustomizerStore } from '@/stores/customizer';
 
 type NavItem = {
   id: string;
@@ -70,6 +71,8 @@ const handleNavClick = (id: string) => {
   }
 };
 
+const customizer = useCustomizerStore();
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll, { passive: true });
   window.addEventListener('resize', handleResize, { passive: true });
@@ -108,6 +111,14 @@ onBeforeUnmount(() => {
         
           <!-- เปลี่ยนภาษา -->
            <LanguageSwitcher/>
+          <v-btn
+            class="select-color-btn ml-4"
+            color="secondary"
+            variant="flat"
+            @click.stop="customizer.SET_CUSTOMIZER_DRAWER(true)"
+          >
+            <v-icon>mdi-palette</v-icon>
+          </v-btn>
         </div>
       </v-app-bar>
 
@@ -135,6 +146,15 @@ onBeforeUnmount(() => {
         <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
           <!-- เปลี่ยนภาษา -->
           <LanguageSwitcher/>
+          <v-btn
+            class="select-color-btn"
+            size="small"
+            variant="flat"
+            color="secondary"
+            @click.stop="customizer.SET_CUSTOMIZER_DRAWER(true)"
+          >
+           <v-icon>mdi-palette</v-icon>
+          </v-btn>
           <v-btn
           icon="mdi-close"
           size="large"
@@ -166,7 +186,7 @@ onBeforeUnmount(() => {
               class="text-capitalize"
               rounded="xl"
               :active="activeSection === item.id"
-              active-color="secondary"
+              :color="activeSection === item.id ? 'secondary' : undefined"
               @click="handleNavClick(item.id)"
             >
               <template #title>
@@ -228,6 +248,12 @@ onBeforeUnmount(() => {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.select-color-btn {
+  text-transform: none;
+  border-radius: 999px;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {

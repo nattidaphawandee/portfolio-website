@@ -1,18 +1,30 @@
 <template>
-  <v-app>
-    <PortfolioMenuBar />
-    <v-main>
-      <HomeBanner />
-      <!-- <HeroSection/> -->
-      <AboutMe />
-      <EductionWork />
-      <FrameworkSection />
-      <CertificationSection />
-      <DemoSection />
-      <Contact/>
-    </v-main>
-  </v-app>
+    <v-app
+      :theme="customizer.actTheme"
+      :class="[
+        customizer.actTheme,
+        customizer.fontTheme,
+        customizer.mini_sidebar ? 'mini-sidebar' : '',
+        customizer.setHorizontalLayout ? 'horizontalLayout' : 'verticalLayout',
+        customizer.inputBg ? 'inputWithbg' : ''
+      ]"
+    >
+      <Customizer />
+      <PortfolioMenuBar />
+      <v-main>
+        <!-- <v-container fluid class="page-wrapper"> -->
+           <HomeBanner />
+          <AboutMe />
+          <EductionWork />
+          <FrameworkSection />
+          <CertificationSection />
+          <DemoSection />
+          <Contact/>
+        <!-- </v-container> -->
+      </v-main>
+    </v-app>
 </template>
+
 
 <script lang="ts" setup>
 import HomeBanner from '@/page/Components/HomeBanner.vue';
@@ -23,6 +35,10 @@ import FrameworkSection from '@/page/Components/FrameworkSection.vue';
 import CertificationSection from '@/page/Components/CertificationSection.vue';
 import Contact from '@/page/Components/Contact.vue';
 import PortfolioMenuBar from '@/components/PortfolioMenuBar.vue';
+import Customizer from '@/layouts/full/customizer/CustomizerPanel.vue';
+import { useCustomizerStore } from '@/stores/customizer';
+const customizer = useCustomizerStore();
+
 </script>
 
 <!-- <style scoped>
