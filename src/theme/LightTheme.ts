@@ -15,6 +15,7 @@ const MaTheme: ThemeTypes = {
     lightsecondary: '#212842',
      lightText: '#F0c479',//ใช้เป็นหัวข้อ
      primary200: '#F0E7D5',// bg footer
+     TextMenu: '#212842',
     darkText: '#212121',
     info: '#2ABFFF',
     success: '#2EB15B',
@@ -130,7 +131,7 @@ const PurpleTheme: ThemeTypes = {
      lightText: '#560B18',//ใช้เป็นหัวข้อ
     darkText: '#212121',
      primary200: '#F0E7D5',
-
+    TextMenu: '#560B18',
     info: '#03c9d7',
     success: '#00c853',
     accent: '#FFAB91',
@@ -164,6 +165,7 @@ const GreenTheme: ThemeTypes = {
   colors: {
     primary: '#607d8b',
     secondary: '#009688',
+    TextMenu: '#00897b',
     info: '#03c9d7',
     success: '#14bb38',
     accent: '#d9534f',

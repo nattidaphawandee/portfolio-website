@@ -74,7 +74,7 @@ function clearoptions() {
   >
     <v-card class="py-5 px-4">
       <div class="d-flex align-center justify-space-between mb-2">
-        <v-card-title class="text-subtitle-1 font-weight-medium mb-0 px-0">Preset Color</v-card-title>
+        <v-card-title class="text-subtitle-1 font-weight-medium mb-0 px-0">Select Theme</v-card-title>
         <v-btn
           icon="mdi-close"
           variant="text"
@@ -83,7 +83,7 @@ function clearoptions() {
         />
       </div>
       <v-card-text class="pa-0">
-        <v-item-group v-model="customizer.actTheme" mandatory>
+        <v-item-group v-model="customizer.actTheme" mandatory style="display: flex; justify-content: space-around;" >
           <v-item v-for="theme in themeColors" v-slot="{ isSelected, toggle }" :key="theme.name" :value="theme.name">
             <v-avatar rounded="circle" :class="theme.bg" class="mr-2 cursor-pointer ma-2" size="40" @click="toggle">
               <ChecksIcon v-if="isSelected" color="white" />

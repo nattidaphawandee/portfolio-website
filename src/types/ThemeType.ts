@@ -5,6 +5,7 @@ export type ThemeTypes = {
   colors: {
     primary?: string;
     secondary?: string;
+    TextMenu? : string
     info?: string;
     success?: string;
     accent?: string;

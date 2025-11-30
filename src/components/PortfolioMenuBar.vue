@@ -93,9 +93,8 @@ onBeforeUnmount(() => {
         v-if="!isMobile"
         class="menu-app-bar"
         flat
-        color="rgba(#F0E7D5, 0.95)"
       >
-        <v-toolbar-title class="font-weight-bold text-secondary">Nattida Phawandee</v-toolbar-title>
+        <v-toolbar-title class="font-weight-bold text-secondary">Nattida</v-toolbar-title>
         <v-spacer />
         <div class="d-flex align-center">
           <v-btn
@@ -216,8 +215,12 @@ onBeforeUnmount(() => {
   /* border-top-right-radius: 0px  0px; */
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(18px);
-  z-index: 50;
-  padding-inline: 12px;
+  z-index: 9999;
+  padding-inline: 12px;    
+  color: rgba(var(--v-theme-TextMenu));
+    
+  /* color="rgba(#F0E7D5, 0.95)" */
+
 }
 
 .mobile-menu-container {
@@ -242,7 +245,7 @@ onBeforeUnmount(() => {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s ease;
+  transition: opacity 0.1s ease;
 }
 
 .fade-enter-from,
