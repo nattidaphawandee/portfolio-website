@@ -1,35 +1,63 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted,computed } from 'vue';
 // assets
 import imgDemo1 from '@/assets/images/experience/WebInetreit.png';
 import imgDemo2 from '@/assets/images/experience/figmaIr.png';
 import imgDemo3 from '@/assets/images/experience/cxr.png';
 
 import { LinkIcon } from 'vue-tabler-icons';
+import { FiltersLanguage } from "@/utils/language";
 
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
 
 import 'vue3-carousel/dist/carousel.css';
-
-const slideShow = [
+const slideShowData = [
   {
     image: imgDemo1,
-    name: 'INETREIT Official Website (Front-End Development)',
-    link: 'https://www.inetreit.com/home?lg=th'
+    nameTh: 'เว็บไซต์ทางการ INETREIT (พัฒนา Front-End)',
+    nameEng: 'INETREIT Official Website (Front-End Development)',
+    linkTh: 'https://www.inetreit.com/home?lg=th',
+    linkEng: 'https://www.inetreit.com/home?lg=en'
   },
   {
     image: imgDemo2,
-    name: 'Investor Relations Admin System – Figma UI/UX Design & Prototype',
-    link: 'https://drive.google.com/file/d/1L_8BpAIdWGG_e7m9hewJLgXhO6XGqSEs/view?usp=sharing'
+    nameTh: 'ระบบ IR Admin – ออกแบบ UX/UI & Prototype ใน Figma',
+    nameEng: 'Investor Relations Admin System – Figma UI/UX Design & Prototype',
+    linkTh: 'https://drive.google.com/file/d/1L_8BpAIdWGG_e7m9hewJLgXhO6XGqSEs/view?usp=sharing',
+    linkEng: 'https://drive.google.com/file/d/1L_8BpAIdWGG_e7m9hewJLgXhO6XGqSEs/view?usp=sharing'
   },
   {
     image: imgDemo3,
-    name: 'ระบบช่วยวิเคราะห์ภาพเอกซเรย์ทรวงอกด้วย AI (AI–CXR Screening System)',
-    link: 'https://drive.google.com/file/d/1SyHe_DyO-m-0oK6ooSn-JQEPLuadxFAg/view?usp=sharing'
+    nameTh: 'ระบบช่วยวิเคราะห์ภาพเอกซเรย์ทรวงอกด้วย AI (AI–CXR Screening System)',
+    nameEng: 'AI–CXR Screening System – AI chest X-ray analysis',
+    linkTh: 'https://drive.google.com/file/d/1SyHe_DyO-m-0oK6ooSn-JQEPLuadxFAg/view?usp=sharing',
+    linkEng: 'https://drive.google.com/file/d/1SyHe_DyO-m-0oK6ooSn-JQEPLuadxFAg/view?usp=sharing'
   },
 ];
+const slideShow = computed(() =>
+  slideShowData.map((slide) => ({
+    ...slide,
+    name: FiltersLanguage(slide as any, 'name'),
+    link: FiltersLanguage(slide as any, 'link')
+  }))
+);
 
 const relativeURL = ref<string | null>(null);
+
+const headeText = { 
+  titleTh: 'ผลงาน', 
+  titleEng: 'Project' }
+const headeMsgText = computed(() => FiltersLanguage(headeText as any, 'title'))
+
+const subTitleText = { 
+  titleTh: 'ตัวอย่างงานพัฒนา Front-End ตั้งแต่การออกแบบ UX/UI ใน Figma ไปจนถึงการพัฒนา Component, Interaction, Responsive Design และการเชื่อมต่อข้อมูลจริง', 
+  titleEng: 'Examples of Front-End development work ranging from UX/UI design in Figma to building components, interactions, responsive layouts, and connecting to real data.' }
+const subTitleMsgText = computed(() => FiltersLanguage(subTitleText as any, 'title'))
+
+const detailText = { 
+  titleTh: 'ดูรายละเอียด', 
+  titleEng: 'View details.' }
+const detailMsgText = computed(() => FiltersLanguage(detailText as any, 'title'))
 
 onMounted(async () => {
   try {
@@ -39,7 +67,10 @@ onMounted(async () => {
   }
 });
 
-type SlideItem = (typeof slideShow)[number];
+type SlideItem = {
+  name?: string | null;
+  link?: string | null;
+};
 const isAbsoluteUrl = (url: string) => /^https?:\/\//i.test(url);
 const appendToBase = (path: string) => {
   const base = relativeURL.value ?? '/';
@@ -88,10 +119,9 @@ const breakpoints = ref({
       <v-row class="justify-center">
         <v-col md="8" cols="12" class="text-center mb-6">
           <p class="text-primary text-overline font-weight-medium mb-2">Works Highlight</p>
-          <h2 class="text-lightText text-sm-h1 text-h2 font-weight-bold mb-4">ตัวอย่างงาน</h2>
+          <h2 class="text-lightText text-sm-h1 text-h2 font-weight-bold mb-4">{{ headeMsgText }}</h2>
           <p class="text-lightprimary text-body-1 text-medium-emphasis">
-            ตัวอย่างงานพัฒนา Front-End ตั้งแต่การออกแบบ UX/UI ใน Figma ไปจนถึงการพัฒนา Component, Interaction,
-            Responsive Design และการเชื่อมต่อข้อมูลจริง
+            {{ subTitleMsgText }}
           </p>
         </v-col>
       </v-row>
@@ -121,7 +151,7 @@ const breakpoints = ref({
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    ดูรายละเอียด
+                    {{ detailMsgText }}
                     <LinkIcon size="16" class="ml-2" />
                   </v-btn>
                 </div>
