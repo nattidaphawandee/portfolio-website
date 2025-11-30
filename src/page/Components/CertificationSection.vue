@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { shallowRef } from 'vue';
+import { computed } from 'vue';
+import { FiltersLanguage } from "@/utils/language";
 
 // import offer1 from '@/assets/images/landing/offer/offer-1.png';
 // import offer2 from '@/assets/images/landing/offer/offer-2.png';
@@ -17,20 +18,24 @@ import offer6 from '@/assets/images/frameworks/git-original.svg'
 import monogoDbCertification from '@/assets/images/Certification/mongodb.a58f100b.jpg'
 import Huawel from '@/assets/images/Certification/Huawel.png'
 
-const items = shallowRef([
+const itemsData = [
   {
     title: 'Huawei HCIA-Cloud Computing Complete Certification',
     image: Huawel,
     link: 'https://drive.google.com/file/d/1Z9Pnr2Fgggg3lTNffiJupnsVX_yP2IOf/view?usp=sharing',
-    content:
-      'ใบรับรองที่แสดงความรู้พื้นฐานด้าน Cloud Computing ครอบคลุมเทคโนโลยี Virtualization, Storage, Networking, Cloud Services และการใช้งาน Huawei Cloud รวมถึงความสามารถในการเข้าใจสถาปัตยกรรมระบบคลาวด์และการจัดการทรัพยากรบนคลาวด์ในระดับเริ่มต้นถึงปานกลาง'
+    contentTh:
+      'ใบรับรองที่แสดงความรู้พื้นฐานด้าน Cloud Computing ครอบคลุมเทคโนโลยี Virtualization, Storage, Networking, Cloud Services และการใช้งาน Huawei Cloud รวมถึงความสามารถในการเข้าใจสถาปัตยกรรมระบบคลาวด์และการจัดการทรัพยากรบนคลาวด์ในระดับเริ่มต้นถึงปานกลาง',
+    contentEng:
+      'Certification demonstrating foundational knowledge of cloud computing, covering virtualization, storage, networking, cloud services, and working with Huawei Cloud, along with the ability to understand cloud architecture and manage cloud resources from beginner to intermediate level.'
   },
   {
     title: 'MongoDB Associate Certification',
     image: monogoDbCertification,
     link: 'https://drive.google.com/file/d/1yhxUeRp-Vrzht4Xl4gmbHuKRlCH8yjVy/view?usp=sharing',
-    content:
-      'ใบรับรองแสดงความรู้พื้นฐานเกี่ยวกับ MongoDB รวมถึงโครงสร้างฐานข้อมูลแบบ NoSQL, การสร้างและจัดการ Collections, การเขียน Query พื้นฐาน, CRUD Operations และการทำงานกับ MongoDB Shell และ Compass'
+    contentTh:
+      'ใบรับรองแสดงความรู้พื้นฐานเกี่ยวกับ MongoDB รวมถึงโครงสร้างฐานข้อมูลแบบ NoSQL, การสร้างและจัดการ Collections, การเขียน Query พื้นฐาน, CRUD Operations และการทำงานกับ MongoDB Shell และ Compass',
+    contentEng:
+      'Certification proving foundational knowledge of MongoDB, including NoSQL data modeling, creating and managing collections, basic query writing, CRUD operations, and working with MongoDB Shell and Compass.'
   },
   // {
   //   title: 'Reduce Development Complexity',
@@ -53,7 +58,17 @@ const items = shallowRef([
   //   image: offer6,
   //   content: 'Berry is a performance-centric dashboard template that is designed to deliver optimal performance for your admin panel.'
   // }
-]);
+];
+const items = computed(() =>
+  itemsData.map((item) => ({
+    ...item,
+    content: FiltersLanguage(item as any, 'content'),
+  })),
+);
+const subTitleText = { 
+  titleTh: 'หากต้องการพูดคุยเรื่องงานสามารถติดต่อได้ตามทางช่องทางด้านล่างค่ะ ยินดีรับฟังทุกโอกาสใหม่ ๆ เสมอ', 
+  titleEng: 'If you’d like to discuss work opportunities, feel free to reach out through the contact channels below. I’m always open to new opportunities.' }
+const subTitleMsgText = computed(() => FiltersLanguage(subTitleText as any, 'title'))
 </script>
 
 <template>
@@ -64,7 +79,7 @@ const items = shallowRef([
           <p class="text-secondary text-overline text-primary font-weight-medium mb-2">Milestones</p>
           <h2 class="text-secondary text-sm-h1 text-h2 font-weight-bold mb-4">Certification</h2>
           <p class="text-secondary text-body-1 text-medium-emphasis">
-            หลักฐานยืนยันการเรียนรู้ด้าน Cloud, Database และการออกแบบระบบที่นำมาประยุกต์ใช้ในงานจริง
+            {{ subTitleMsgText }}
           </p>
         </v-col>
         <v-col
