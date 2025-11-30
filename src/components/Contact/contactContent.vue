@@ -1,26 +1,41 @@
-<script setup>
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted ,computed} from 'vue'
+import { FiltersLanguage } from "@/utils/language";
+
 import thankCute from '@/assets/images/ThankCute02.gif'
-const contactLinks = [
+const contactLinkData = [
   {
-    label: 'อีเมล',
+    labelTh: 'อีเมล',
+    labelEng: 'Email',
     value: 'nattida.phawandee@gmail.com',
     link: 'mailto:nattida.phawandee@gmail.com',
     icon: 'mdi-email',
   },
   {
-    label: 'โทรศัพท์',
+    labelTh: 'เบอร์โทร',
+    labelEng: 'Phone',
     value: '0991312183',
     link: 'tel:0991312183',
     icon: 'mdi-phone',
   },
 ]
+const contactLinks = computed(() =>
+  contactLinkData.map((contact) => ({
+    ...contact,
+    label: FiltersLanguage(contact as any, 'label'),
+  })),
+)
+const thankText = { 
+  titleTh: 'หากต้องการพูดคุยเรื่องงานสามารถติดต่อได้ตามทางช่องทางด้านล่างค่ะ ยินดีรับฟังทุกโอกาสใหม่ ๆ เสมอ', 
+  titleEng: 'If you’d like to discuss work opportunities, feel free to reach out through the contact channels below. I’m always open to new opportunities.' }
+const thankMsgText = computed(() => FiltersLanguage(thankText as any, 'title'))
 </script>
 
 <template>
   <div>
     <p class="text-lightsecondary text-overline font-weight-medium mb-2">Thank you for watching</p>
     <p class="text-body-1 text-medium-emphasis mb-6">
-      หากต้องการพูดคุยเรื่องงานสามารถติดต่อได้ตามทางช่องทางด้านล่างค่ะ ยินดีรับฟังทุกโอกาสใหม่ ๆ เสมอ
+      {{ thankMsgText }}
     </p>
     <div class="contact-grid">
       <div v-for="contact in contactLinks" :key="contact.label" class="contact-item">
