@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref ,computed} from 'vue';
+import { FiltersLanguage } from "@/utils/language";
+
 // assets
 import Bootstrap from '@/assets/images/frameworks/bootstrap.svg';
 import Codeigniter from '@/assets/images/frameworks/codeigniter.svg';
@@ -24,6 +26,11 @@ import GitHub from '@/assets/images/frameworks/git-original.svg'
 import { Carousel, Slide, Pagination } from 'vue3-carousel';
 
 import 'vue3-carousel/dist/carousel.css';
+
+const subText = { 
+  titleTh: 'Frameworks และเครื่องมือที่ใช้งานเป็นประจำในการออกแบบ UI, จัดการข้อมูล และพัฒนาโปรเจกต์ ที่ได้จากการทำงานจริงและศึกษาเพิ่มเติมเอง', 
+  titleEng: 'Frameworks and tools I regularly use for UI design, data management, and project development, gained through real-world work and self-study.' }
+const subTitleMsgText = computed(() => FiltersLanguage(subText as any, 'title'))
 
 const slideShow = [
   {
@@ -104,6 +111,8 @@ const breakpoints = ref({
     snapAlign: 'center'
   }
 });
+
+
 </script>
 
 <template>
@@ -114,7 +123,7 @@ const breakpoints = ref({
           <p class="text-overline text-primary font-weight-medium mb-2">Tech Stack</p>
           <h2 class="text-lightText text-sm-h1 text-h2 font-weight-bold mb-4">Programming Skills</h2>
           <p class="text-lightprimary text-body-1 text-medium-emphasis">
-            Frameworksและเครื่องมือที่ใช้งานเป็นประจำในการออกแบบ UI, จัดการข้อมูล และพัฒนาโปรเจกต์ ที่ได้จากการทำงานจริงและศึกษาเพิ่มเติมเอง
+            {{ subTitleMsgText }}
           </p>
         </v-col>
       </v-row>
