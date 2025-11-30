@@ -12,10 +12,10 @@ const themeColors = ref([
     name: 'PurpleTheme',
     bg: 'themeBluePurple'
   },
-  {
-    name: 'GreenTheme',
-    bg: 'themeGreenDark'
-  },
+  // {
+  //   name: 'GreenTheme',
+  //   bg: 'themeGreenDark'
+  // },
   {
     name: 'PinkTheme',
     bg: 'themePink'
@@ -24,18 +24,18 @@ const themeColors = ref([
     name: 'YellowTheme',
     bg: 'themeYellow'
   },
-  {
-    name: 'SeaGreenTheme',
-    bg: 'themeSeaGreen'
-  },
-  {
-    name: 'OliveGreenTheme',
-    bg: 'themeOliveGreen'
-  },
-  {
-    name: 'SpeechBlueTheme',
-    bg: 'themeSpeechBlue'
-  }
+  // {
+  //   name: 'SeaGreenTheme',
+  //   bg: 'themeSeaGreen'
+  // },
+  // {
+  //   name: 'OliveGreenTheme',
+  //   bg: 'themeOliveGreen'
+  // },
+  // {
+  //   name: 'SpeechBlueTheme',
+  //   bg: 'themeSpeechBlue'
+  // }
 ]);
 
 // Dark Theme Colors
