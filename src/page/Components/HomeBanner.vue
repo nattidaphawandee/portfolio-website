@@ -1,6 +1,7 @@
 <template>
   <section class="home-bg" id="home">
     <v-container class="maxWidth">
+      {{ customizer.actTheme }}
       <div v-if="isLargeScreen" class="stack-container">
         <!-- ตัวอักษร -->
          <p-text class="letter p"/>
@@ -58,6 +59,12 @@ import LText from '@/components/logo/lText.vue'
 import iText from '@/components/logo/iText.vue'
 
 import { FiltersLanguage } from "@/utils/language";
+
+import { useCustomizerStore } from '@/stores/customizer';
+const customizer = useCustomizerStore();
+import { useLanguageStore } from '@/stores/languageStore'
+
+
 
 // UI text via FiltersLanguage pattern
 const headerText = { titleTh: 'สวัสดีค่ะ ขอบคุณที่แวะเข้ามาชมผลงานนะคะ หวังว่าจะมีโอกาสได้ร่วมงานกันนะคะ :)', titleEng: 'Hello! Thank you for taking the time to view my work. I hope we’ll have the opportunity to work together :)' }
