@@ -24,6 +24,7 @@ import GitHub from '@/assets/images/frameworks/git-original.svg'
 
 
 import { Carousel, Slide, Pagination } from 'vue3-carousel';
+import type { Breakpoints } from 'vue3-carousel';
 
 import 'vue3-carousel/dist/carousel.css';
 
@@ -81,7 +82,7 @@ const slideShow = [
 
 ];
 
-const breakpoints = ref({
+const breakpoints = ref<Breakpoints>({
   300: {
     itemsToShow: 1,
     snapAlign: 'center'

@@ -9,6 +9,7 @@ import { LinkIcon } from 'vue-tabler-icons';
 import { FiltersLanguage } from "@/utils/language";
 
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
+import type { Breakpoints } from 'vue3-carousel';
 
 import 'vue3-carousel/dist/carousel.css';
 const slideShowData = [
@@ -97,7 +98,7 @@ const buildSlideUrl = (slide: SlideItem) => {
   return appendToBase(linkValue);
 };
 
-const breakpoints = ref({
+const breakpoints = ref<Breakpoints>({
   300: {
     itemsToShow: 1.05,
     snapAlign: 'center'
