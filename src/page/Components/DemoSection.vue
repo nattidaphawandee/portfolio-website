@@ -32,7 +32,7 @@ const slideShowData = [
     nameTh: 'ระบบช่วยวิเคราะห์ภาพเอกซเรย์ทรวงอกด้วย AI (AI–CXR Screening System)',
     nameEng: 'AI–CXR Screening System – AI chest X-ray analysis',
     linkTh: 'https://drive.google.com/file/d/1SyHe_DyO-m-0oK6ooSn-JQEPLuadxFAg/view?usp=sharing',
-    linkEng: 'https://drive.google.com/file/d/1SyHe_DyO-m-0oK6ooSn-JQEPLuadxFAg/view?usp=sharing'
+    linkEng: 'https://drive.google.com/file/d/1P1ptN3uqfDgN8fQKZd6yV22xVPI7FQxP/view?usp=drive_link'
   },
 ];
 const slideShow = computed(() =>

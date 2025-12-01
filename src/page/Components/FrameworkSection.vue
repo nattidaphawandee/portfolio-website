@@ -65,6 +65,11 @@ const slideShow = [
     link: 'https://vuetifyjs.com/en/'
   },
   {
+    title: 'Tailwind',
+    logo: Tailwind,
+    link: 'https://tailwindcss.com/'
+  },
+  {
     title: 'GitHub',
     logo: GitHub,
     link: 'https://github.com/'
@@ -73,6 +78,11 @@ const slideShow = [
     title: 'Docker',
     logo: Docker,
     link: 'https://www.docker.com/'
+  },
+   {
+    title: 'Figma',
+    logo: Figma,
+    link: 'https://www.figma.com/'
   },
   {
     title: 'Arduino',
@@ -181,7 +191,10 @@ const breakpoints = ref<Breakpoints>({
   min-width: 180px;
   border-radius: 24px;
   padding: 28px 18px;
-  background: linear-gradient(160deg, #ffffff 0%, #F0E7D5 100%);
+  background: rgba(var(--v-theme-primary));
+  // color: rgba(var(--v-theme-secondary));;
+    // background: linear-gradient(160deg, #ffffff 0%, rgba(var(--v-theme-primary)) 100%);
+  // background: linear-gradient(160deg, #ffffff 0%, #F0E7D5 100%);
   border: 1px solid rgba(201, 189, 179, 0.4);
   box-shadow: 0 18px 40px rgba(64, 48, 40, 0.08);
 }
@@ -194,8 +207,9 @@ const breakpoints = ref<Breakpoints>({
 }
 
 .framework-name {
-  color: #5b5b5b;
+  color: rgba(var(--v-theme-secondary));
   letter-spacing: 0.02em;
+  font-weight: 600;
 }
 
 .framework-carousel {
