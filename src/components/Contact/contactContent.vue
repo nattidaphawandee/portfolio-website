@@ -34,7 +34,7 @@ const thankMsgText = computed(() => FiltersLanguage(thankText as any, 'title'))
 <template>
   <div>
     <p class="text-lightsecondary text-overline font-weight-medium mb-2">Thank you for watching</p>
-    <p class="text-body-1 text-medium-emphasis mb-6">
+    <p class="text-textFoot text-body-1 text-medium-emphasis mb-6">
       {{ thankMsgText }}
     </p>
     <div class="contact-grid">
@@ -44,8 +44,8 @@ const thankMsgText = computed(() => FiltersLanguage(thankText as any, 'title'))
             <v-icon color="lightText">{{ contact.icon }}</v-icon>
           </div>
           <div class="contact-info">
-            <div class="link-label text-caption text-medium-emphasis">{{ contact.label }}</div>
-            <div class="link-value text-subtitle-1 font-weight-medium">{{ contact.value }}</div>
+            <div class="text-textFoot link-label text-caption text-medium-emphasis">{{ contact.label }}</div>
+            <div class="text-textFoot link-value text-subtitle-1 font-weight-medium">{{ contact.value }}</div>
           </div>
         </a>
       </div>

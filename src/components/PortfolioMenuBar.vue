@@ -2,6 +2,7 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import LanguageSwitcher from './LanguageDesktop.vue';
 import { useCustomizerStore } from '@/stores/customizer';
+import PaletteTheamimg from '@/assets/images/paletteTheam2.png'
 
 type NavItem = {
   id: string;
@@ -110,14 +111,18 @@ onBeforeUnmount(() => {
         
           <!-- เปลี่ยนภาษา -->
            <LanguageSwitcher/>
-          <v-btn
+          <!-- <v-btn
             class="select-color-btn ml-4"
             color="secondary"
-            variant="flat"
             @click.stop="customizer.SET_CUSTOMIZER_DRAWER(true)"
-          >
-            <v-icon>mdi-palette</v-icon>
-          </v-btn>
+          > -->
+            <v-img
+            @click.stop="customizer.SET_CUSTOMIZER_DRAWER(true)"
+              :src="PaletteTheamimg"
+              alt="Theme palette"
+              class="select-color-img"              
+            />
+          <!-- </v-btn> -->
         </div>
       </v-app-bar>
 
@@ -144,16 +149,27 @@ onBeforeUnmount(() => {
         >
         <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
           <!-- เปลี่ยนภาษา -->
-          <LanguageSwitcher/>
-          <v-btn
+         <div style="display: flex; align-items: center;">
+           <LanguageSwitcher/>
+          <div
             class="select-color-btn"
             size="small"
             variant="flat"
             color="secondary"
             @click.stop="customizer.SET_CUSTOMIZER_DRAWER(true)"
           >
-           <v-icon>mdi-palette</v-icon>
-          </v-btn>
+            <v-img
+              :src="PaletteTheamimg"
+              alt="Theme palette"
+              class="select-color-img"
+              width="20"
+              height="20"
+              cover
+            />
+          </div>
+         </div>
+
+
           <v-btn
           icon="mdi-close"
           size="large"
@@ -255,8 +271,17 @@ onBeforeUnmount(() => {
 
 .select-color-btn {
   text-transform: none;
+  /* border-radius: 999px; */
+  /* font-weight: 600; */
+}
+
+.select-color-img {
   border-radius: 999px;
-  font-weight: 600;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  margin: 12px;
+  
 }
 
 @media (max-width: 768px) {

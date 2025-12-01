@@ -27,7 +27,7 @@ const aboutParagraphsData = [
 
 const profileDetailsData = [
   { labelTh: 'ชื่อเล่น', labelEng: 'Nickname', valueTh: 'ฟ้า', valueEng: 'Fah' },
-  { labelTh: 'ตำแหน่ง', labelEng: 'Role', valueTh: 'วิศวกรซอฟต์แวร์', valueEng: 'Software Engineer' },
+  { labelTh: 'ตำแหน่ง', labelEng: 'Role', valueTh: 'Software Engineer', valueEng: 'Software Engineer' },
   {
     labelTh: 'ถนัด',
     labelEng: 'Specialties',

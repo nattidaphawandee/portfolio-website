@@ -6,6 +6,7 @@ export type ThemeTypes = {
     primary?: string;
     secondary?: string;
     TextMenu? : string
+    textFoot? :string
     info?: string;
     success?: string;
     accent?: string;

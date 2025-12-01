@@ -53,7 +53,7 @@ const workListData = [
   {
     companyTh: 'บริษัท อินเทอร์เน็ตประเทศไทย จำกัด (มหาชน) ตั้งแต่ 2566 - ปัจจุบัน',
     companyEng: 'Internet Thailand Public Company Limited, 2023 – Present',
-    positionTh: 'วิศวกรซอฟต์แวร์ (Vue.js, TypeScript, Golang)',
+    positionTh: 'Software Engineer (Vue.js, TypeScript, Golang)',
     positionEng: 'Software Engineer (Vue.js, TypeScript, Golang)',
     details: [
       {
@@ -225,7 +225,8 @@ const workList = computed(() =>
   gap: 16px;
   padding: 18px 22px;
   border-radius: 22px;
-  background: #fff;
+  /* background: #fff; */
+  background: rgba(var(--v-theme-surface));
   border: 1px solid rgba(201, 189, 179, 0.35);
   box-shadow: 0 18px 40px rgba(70, 63, 57, 0.08);
   margin-bottom: 16px;
@@ -253,7 +254,8 @@ const workList = computed(() =>
 }
 
 .work-card {
-  background: linear-gradient(145deg, #ffffff 0%, #F0E7D5 100%);
+  background: #ffffff;
+  /* background: linear-gradient(145deg, # 0%, rgba(var(--v-theme-primary)) 50%); */
 }
 
 .work-list {
