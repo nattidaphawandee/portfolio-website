@@ -24,7 +24,7 @@ const slideShowData = [
     nameTh: 'ระบบ IR Admin – ออกแบบ UX/UI & Prototype ใน Figma',
     nameEng: 'Investor Relations Admin System – Figma UI/UX Design & Prototype',
     linkTh: 'https://drive.google.com/file/d/1L_8BpAIdWGG_e7m9hewJLgXhO6XGqSEs/view?usp=sharing',
-    linkEng: 'https://drive.google.com/file/d/1L_8BpAIdWGG_e7m9hewJLgXhO6XGqSEs/view?usp=sharing'
+    linkEng: 'https://drive.google.com/file/d/1mJfMC5x9gtKr92QqyUifuwf3qw-TdgPQ/view?usp=drive_link'
   },
   {
     image: imgDemo3,
