@@ -1,7 +1,6 @@
 <template>
   <section class="home-bg" id="home">
     <v-container class="maxWidth">
-      {{ customizer.actTheme }}
       <div v-if="isLargeScreen" class="stack-container">
         <!-- ตัวอักษร -->
          <p-text class="letter p"/>
@@ -19,11 +18,11 @@
         <v-btn
           class="download-link"
           rounded="pill"
-          href="https://drive.google.com/file/d/1XIer4lbx63rfGtoJPFs4iuOq88FlBeKk/view?usp=drive_link"
+          :href="downloadResumeLink"
           target="_blank"
           rel="noopener"
         >
-          Download CSV
+          Download Resume
         </v-btn>
         <img :src="HomePortfolioLanding" alt="Main" class="main-img" />
       </div>
@@ -33,7 +32,7 @@
          <v-btn
           color="secondary"
           rounded="pill"
-          href="https://drive.google.com/file/d/1MQljoCSWTF-sY8O00gDhc1KWjVq7DiiR/view?usp=sharing"
+          :href="downloadResumeLink"
           target="_blank"
           rel="noopener"
         >
@@ -63,15 +62,41 @@ import { FiltersLanguage } from "@/utils/language";
 import { useCustomizerStore } from '@/stores/customizer';
 const customizer = useCustomizerStore();
 import { useLanguageStore } from '@/stores/languageStore'
-
+const languageStore = useLanguageStore()
 
 
 // UI text via FiltersLanguage pattern
 const headerText = { titleTh: 'สวัสดีค่ะ ขอบคุณที่แวะเข้ามาชมผลงานนะคะ หวังว่าจะมีโอกาสได้ร่วมงานกันนะคะ :)', titleEng: 'Hello! Thank you for taking the time to view my work. I hope we’ll have the opportunity to work together :)' }
 const mobiletitle = { subTh: 'ยินดีต้อนรับ', subEng: 'Welcome to My Portfolio' }
 
+const resumeLinks: Record<'th' | 'eng', Record<string, string>> = {
+  th: {
+    default: 'https://drive.google.com/file/d/1XIer4lbx63rfGtoJPFs4iuOq88FlBeKk/view?usp=sharing',
+    MaTheme: 'https://drive.google.com/file/d/1XIer4lbx63rfGtoJPFs4iuOq88FlBeKk/view?usp=sharing',
+    MaThema: 'https://drive.google.com/file/d/1XIer4lbx63rfGtoJPFs4iuOq88FlBeKk/view?usp=sharing',
+    PurpleTheme: 'https://drive.google.com/file/d/1fuRI94W4nbaZ-RT2SMek1rSGQ-XQN2QB/view?usp=drive_link',
+    PinkTheme: 'https://drive.google.com/file/d/1Qpu-NpC1qgkC0nQ6IvKI6-9K32FcL048/view?usp=drive_link',
+    YellowTheme: 'https://drive.google.com/file/d/1q0Hr-vTZoQX9Jlcpddn1xW-CfYesvqkL/view?usp=sharing'
+  },
+  eng: {
+    default: 'https://drive.google.com/file/d/1m8l3cQ5iAjS6f2d9K-uqaneyndPpkvH4/view?usp=sharing',
+    MaTheme: 'https://drive.google.com/file/d/1m8l3cQ5iAjS6f2d9K-uqaneyndPpkvH4/view?usp=sharing',
+    MaThema: 'https://drive.google.com/file/d/1m8l3cQ5iAjS6f2d9K-uqaneyndPpkvH4/view?usp=sharing',
+    PurpleTheme: 'https://drive.google.com/file/d/1IhU0xiC8BvBSbO8Jx47mdIApz91KpKZV/view?usp=drive_link',
+    PinkTheme: 'https://drive.google.com/file/d/1NCbTUkp3fZtyZkFr3gmZstvQ2_QdZrQX/view?usp=sharing',
+    YellowTheme: 'https://drive.google.com/file/d/16dPs1av5hUdNLfM5vEx9RRcjoFBtg0Lk/view?usp=sharing'
+  }
+}
+
 const titleText = computed(() => FiltersLanguage(headerText as any, 'title'))
 const mobileTitleText = computed(() => FiltersLanguage(mobiletitle as any, 'sub'))
+const downloadResumeLink = computed(() => {
+  const lang = languageStore.language ?? 'th'
+  const theme = (customizer.actTheme || '').trim()
+  const themeKey = theme === '' ? 'default' : theme
+  const langMap = resumeLinks[lang] ?? resumeLinks.th
+  return langMap[themeKey] ?? langMap.default
+})
 
 
 // screen size logic
