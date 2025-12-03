@@ -71,17 +71,17 @@ const mobiletitle = { subTh: 'ยินดีต้อนรับ', subEng: 'We
 
 const resumeLinks: Record<'th' | 'eng', Record<string, string>> = {
   th: {
-    default: 'https://drive.google.com/file/d/1XIer4lbx63rfGtoJPFs4iuOq88FlBeKk/view?usp=sharing',
-    MaTheme: 'https://drive.google.com/file/d/1XIer4lbx63rfGtoJPFs4iuOq88FlBeKk/view?usp=sharing',
-    MaThema: 'https://drive.google.com/file/d/1XIer4lbx63rfGtoJPFs4iuOq88FlBeKk/view?usp=sharing',
+    default: 'https://drive.google.com/file/d/18AlGU8lIVcnRwVS0rVk_XV-L2WXpFC6z/view?usp=drive_link',
+    MaTheme: 'https://drive.google.com/file/d/1wRdT-zh8xNt2iBX8ZTX8brJ61y-SbBl-/view?usp=drive_link',
+    MaThema: 'https://drive.google.com/file/d/1wRdT-zh8xNt2iBX8ZTX8brJ61y-SbBl-/view?usp=drive_link',
     PurpleTheme: 'https://drive.google.com/file/d/1fuRI94W4nbaZ-RT2SMek1rSGQ-XQN2QB/view?usp=drive_link',
     PinkTheme: 'https://drive.google.com/file/d/1Qpu-NpC1qgkC0nQ6IvKI6-9K32FcL048/view?usp=drive_link',
     YellowTheme: 'https://drive.google.com/file/d/1q0Hr-vTZoQX9Jlcpddn1xW-CfYesvqkL/view?usp=sharing'
   },
   eng: {
-    default: 'https://drive.google.com/file/d/1m8l3cQ5iAjS6f2d9K-uqaneyndPpkvH4/view?usp=sharing',
-    MaTheme: 'https://drive.google.com/file/d/1m8l3cQ5iAjS6f2d9K-uqaneyndPpkvH4/view?usp=sharing',
-    MaThema: 'https://drive.google.com/file/d/1m8l3cQ5iAjS6f2d9K-uqaneyndPpkvH4/view?usp=sharing',
+    default: 'https://drive.google.com/file/d/18AlGU8lIVcnRwVS0rVk_XV-L2WXpFC6z/view?usp=drive_link',
+    MaTheme: 'https://drive.google.com/file/d/18AlGU8lIVcnRwVS0rVk_XV-L2WXpFC6z/view?usp=drive_link',
+    MaThema: 'https://drive.google.com/file/d/18AlGU8lIVcnRwVS0rVk_XV-L2WXpFC6z/view?usp=drive_link',
     PurpleTheme: 'https://drive.google.com/file/d/1IhU0xiC8BvBSbO8Jx47mdIApz91KpKZV/view?usp=drive_link',
     PinkTheme: 'https://drive.google.com/file/d/1NCbTUkp3fZtyZkFr3gmZstvQ2_QdZrQX/view?usp=sharing',
     YellowTheme: 'https://drive.google.com/file/d/16dPs1av5hUdNLfM5vEx9RRcjoFBtg0Lk/view?usp=sharing'
