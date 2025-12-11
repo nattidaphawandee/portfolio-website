@@ -13,10 +13,11 @@ const sectionTexts = {
 const aboutParagraphsData = [
   {
     textTh:
-      'สวัสดีค่ะ ชื่อฟ้านะคะ ปัจจุบันทำงานในตำแหน่ง Software Engineer โดยรับผิดชอบงานด้าน Front-End เป็นหลัก เคยฝึก Back-End มาบ้างและพร้อมต่อยอดเป็น Full Stack รวมถึงมีความสนใจงาน Mobile App ด้วย',
+      'สวัสดีค่ะ ชื่อฟ้านะคะ ปัจจุบันทำงานในตำแหน่ง Software Engineer โดยรับผิดชอบงานด้าน Front-End และ Back-End ด้าน Front-End มีประสบการณ์การพัฒนาเว็บด้วย Vue.js และ React ด้าน Back-End มีประสบการณ์การพัฒนาด้วย Golang, Node.js รวมถึงการทำงานกับฐานข้อมูล MongoDB ฉันสนใจพัฒนาทักษะทั้งฝั่ง Front-End และ Back-End อย่างต่อเนื่อง พร้อมเรียนรู้เทคโนโลยีใหม่ ๆ เพื่อให้สอดคล้องกับความต้องการของทีม และสนใจงานด้าน Mobile App ด้วยค่ะ',
     textEng:
-      'Hi! I’m Fah, currently working as a Software Engineer focused on Front-End development. I have some hands-on experience with Back-End work and am ready to grow into a Full Stack role, with a strong interest in mobile app development as well.',
+      'Hello, my name is Fa. I am currently working as a Software Engineer, responsible for both Front-End and Back-End development. On the Front-End side, I have experience with Vue.js and React. On the Back-End side, I work with Golang, Node.js, and MongoDB. I’m passionate about continuously improving my skills across the full stack, open to learning new technologies, and also interested in Mobile App development.',
   },
+  
   {
     textTh:
       'ขณะนี้กำลังมองหาโอกาสในตำแหน่ง Front-End, Full Stack, Back-End หรือ Mobile App Developer พร้อมเปิดรับการเรียนรู้เทคโนโลยีใหม่ ๆ ตามความต้องการของทีม และสามารถทำงานได้ในทุกรูปแบบ ไม่ว่าจะเป็น Onsite (Bangkok), Hybrid หรือ WFH',
