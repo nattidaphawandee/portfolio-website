@@ -66,8 +66,8 @@ const items = computed(() =>
   })),
 );
 const subTitleText = { 
-  titleTh: 'หากต้องการพูดคุยเรื่องงานสามารถติดต่อได้ตามทางช่องทางด้านล่างค่ะ ยินดีรับฟังทุกโอกาสใหม่ ๆ เสมอ', 
-  titleEng: 'If you’d like to discuss work opportunities, feel free to reach out through the contact channels below. I’m always open to new opportunities.' }
+  titleTh: '', 
+  titleEng: '' }
 const subTitleMsgText = computed(() => FiltersLanguage(subTitleText as any, 'title'))
 </script>
 
