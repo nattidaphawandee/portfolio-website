@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted,computed } from 'vue';
 // assets
-import imgDemo1 from '@/assets/images/experience/WebInetreit.png';
+import imgDemo1 from '@/assets/images/experience/overview-WebInetreit.png';
 import imgDemo2 from '@/assets/images/experience/figmaIr.png';
 import imgDemo3 from '@/assets/images/experience/cxr.png';
 import imgDemo4 from '@/assets/images/experience/logDashbord-overview.png';
