@@ -4,6 +4,9 @@ import { ref, onMounted,computed } from 'vue';
 import imgDemo1 from '@/assets/images/experience/WebInetreit.png';
 import imgDemo2 from '@/assets/images/experience/figmaIr.png';
 import imgDemo3 from '@/assets/images/experience/cxr.png';
+import imgDemo4 from '@/assets/images/experience/logDashbord-overview.png';
+
+
 
 import { LinkIcon } from 'vue-tabler-icons';
 import { FiltersLanguage } from "@/utils/language";
@@ -33,6 +36,13 @@ const slideShowData = [
     nameEng: 'AI–CXR Screening System – AI chest X-ray analysis',
     linkTh: 'https://drive.google.com/file/d/1SyHe_DyO-m-0oK6ooSn-JQEPLuadxFAg/view?usp=sharing',
     linkEng: 'https://drive.google.com/file/d/1P1ptN3uqfDgN8fQKZd6yV22xVPI7FQxP/view?usp=drive_link'
+  },
+  {
+    image: imgDemo4,
+    nameTh: 'Centralized Log Management Dashboard – แดชบอร์ดจัดการล็อกแบบรวมศูนย์สำหรับการตรวจสอบและวิเคราะห์ล็อกของระบบ',
+    nameEng: 'Centralized Log Management Dashboard – Centralized log management dashboard for monitoring and analyzing system logs',
+    linkTh: 'https://drive.google.com/file/d/1NyDI_2LsrmogoCML-AXXdxWjnYXykXLd/view?usp=sharing',
+    linkEng: 'https://drive.google.com/file/d/1QZfiJ_2rPDGlPQdead-_RuniO1ijpzpn/view?usp=sharing'
   },
 ];
 const slideShow = computed(() =>
